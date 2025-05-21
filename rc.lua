@@ -399,8 +399,7 @@ globalkeys = gears.table.join(
 
 ---------------- {{{ Custom.keybinds }}} ---------------------------------------------------------|
 
-              awful.key({ }, "Print", function () awful.util.spawn(".config/awesome/scripts/maimfs.sh") end),
-              awful.key({modkey,"Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/maimcs.sh") end),
+              awful.key({modkey,"Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/maim.sh") end),
               awful.key({modkey }, "b", function () awful.util.spawn("firefox") end),
               awful.key({modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/colorpicker.sh") end),
               awful.key({modkey }, "e", function () awful.util.spawn("thunar") end),
