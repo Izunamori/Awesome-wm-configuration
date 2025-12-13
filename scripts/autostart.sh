@@ -10,11 +10,11 @@ lxsession &
 
 
 ### прочее ### ------------------------------------------------------------------------
-telegram-desktop &
-clipit &
+Telegram &
+pgrep -x clipit || clipit &
 xcompmgr &
-# steam -silent &
-# discord --start-minimized &
+steam -silent &
+/home/izunamori/Documents/Apps/Discord/Discord --start-minimized &
 xset m 1 1 &
 otd-daemon &
 flatpak run com.github.wwmm.easyeffects --gapplication-service &

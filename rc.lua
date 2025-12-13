@@ -122,9 +122,11 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Steam", "steam" },
-                                    { "Osu-lazer", "osu-lazer" },
+                                    { "Osu-lazer", "/home/izunamori/Games/osu-lazer/osu.AppImage" },
                                     { "Full update", "kitty -e yay -Suy --noconfirm" },
                                     { "Flatpak update", "kitty -e flatpak update"},
+                                    { "Gamma 1", "xrandr --output DP-0 --gamma 1:1:1"},
+                                    { "Gamma 2", "xrandr --output DP-0 --gamma 2:2:2"},
                                    
                                   }
                         })
@@ -261,8 +263,6 @@ local tasklist_buttons = gears.table.join(
             mykeyboardlayout,
             tbox_separator,
             mytextclock,
-            tbox_separator,
-            volume_widget(),
             tbox_separator,
             centered_systray,
             tbox_separator,
@@ -443,6 +443,8 @@ awful.key({ "Control" }, "comma", function()
         awful.tag.viewprev()
     end
 end),
+
+
 
 --------------------------------------------------------------------------------------------------|
 

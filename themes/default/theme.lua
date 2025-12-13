@@ -13,8 +13,8 @@ local theme = {}
 
 theme.font          = "JetBrainsMono Bold 12"
 
-theme.bg_normal     = "#14161B"
-theme.bg_focus      = "#14161B"
+theme.bg_normal     = "#1a1a1a"
+theme.bg_focus      = "#1a1a1a" -- #14161B
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
@@ -24,10 +24,10 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(4)
-theme.border_width  = dpi(3)
+theme.useless_gap   = dpi(3)
+theme.border_width  = dpi(0)
 theme.border_normal = "#14161b99"
-theme.border_focus  = "#858badE6"
+theme.border_focus  = "#414141e6"
 theme.border_marked = "#1e1e2e"
 
 -- There are other variable sets
@@ -97,7 +97,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/home/izunamori/Изображения/Обои/1.png"
+theme.wallpaper = "/home/izunamori/Pictures/Wallpaper/1.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
