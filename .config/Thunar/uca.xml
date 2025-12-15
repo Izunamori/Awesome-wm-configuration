@@ -63,4 +63,15 @@
 	<text-files/>
 	<video-files/>
 </action>
+<action>
+	<icon></icon>
+	<name>Frame Blending</name>
+	<submenu></submenu>
+	<unique-id>1765692650372875-1</unique-id>
+	<command>/home/izunamori/.config/awesome/scripts/frame_blending.sh</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
 </actions>
