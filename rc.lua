@@ -47,6 +47,12 @@ tbox_separator = wibox.widget {
     font = "JetBrains Mono Bold 11",
     widget = wibox.widget.textbox
 }
+
+space_separator = wibox.widget {
+    text = "  ",
+    font = "JetBrains Mono Bold 11",
+    widget = wibox.widget.textbox
+}
  
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -121,13 +127,11 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Steam", "steam" },
-                                    { "Osu-lazer", "/home/izunamori/Games/osu-lazer/osu.AppImage" },
+                                    { "Discord Update", "kitty -e /home/izunamori/.config/awesome/scripts/discord_update.sh" },
                                     { "Full update", "kitty -e yay -Suy --noconfirm" },
                                     { "Flatpak update", "kitty -e flatpak update"},
-                                    { "Gamma 1", "xrandr --output DP-0 --gamma 1:1:1"},
-                                    { "Gamma 2", "xrandr --output DP-0 --gamma 2:2:2"},
-                                   
+                                    { "OBS-Studio", "obs"},
+                                    { "xprop", "kitty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE)\"; read -p \"Press Enter to continue...\"'"},                                   
                                   }
                         })
 
@@ -206,7 +210,7 @@ local tasklist_buttons = gears.table.join(
       set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }, s, awful.layout.layouts[1])
+    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 " }, s, awful.layout.layouts[1])
 
     -- Пример настройки панели
     local mysystray = wibox.widget.systray()
@@ -247,18 +251,17 @@ local tasklist_buttons = gears.table.join(
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            tbox_separator,
             s.mytaglist,
             tbox_separator,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-            tbox_separator,
             layout = wibox.layout.fixed.horizontal,
-            ram_widget(),
-            tbox_separator,
+            tbox_separator,            
             cpu_widget(),
+            tbox_separator,
+            ram_widget(),
             tbox_separator,
             mykeyboardlayout,
             tbox_separator,
@@ -267,7 +270,7 @@ local tasklist_buttons = gears.table.join(
             centered_systray,
             tbox_separator,
             logout_menu_widget(),
-            tbox_separator,
+            space_separator
         },
         
     }
@@ -325,38 +328,13 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
-    -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
-              {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
-              {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
-              {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
-              {description = "focus the previous screen", group = "screen"}),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
-              {description = "jump to urgent client", group = "client"}),
-    --awful.key({ modkey,           }, "Tab",
-        --function ()
-            --awful.client.focus.history.previous()
-            --if client.focus then
-                --client.focus:raise()
-            --end
-        --end,
-        --{description = "go back", group = "client"}),
-
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
-
-    awful.key({ modkey, "Control" }, "a",     function () awful.tag.incmwfact( 0.05)          end,
-              {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey, "Control" }, "d",     function () awful.tag.incmwfact(-0.05)          end,
-              {description = "decrease master width factor", group = "layout"}),
+    -- awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+              -- {description = "quit awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
@@ -386,7 +364,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "p",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey }, "x",
+    awful.key({ modkey, "Control", "Shift" }, "l",
               function ()
                   awful.prompt.run {
                     prompt       = "Run Lua code: ",
@@ -399,52 +377,40 @@ globalkeys = gears.table.join(
 
 ---------------- {{{ Custom.keybinds }}} ---------------------------------------------------------|
 
-              awful.key({modkey,"Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/maim.sh") end),
-              awful.key({modkey }, "b", function () awful.util.spawn("firefox") end),
-              awful.key({modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/colorpicker.sh") end),
-              awful.key({modkey }, "e", function () awful.util.spawn("thunar") end),
-              awful.key({modkey }, "/", function () awful.util.spawn("code") end),
-              awful.key({"Control","Shift" }, "n", function () awful.util.spawn("kitty -e nmtui") end),
-              awful.key({modkey }, "]", function () awful.util.spawn("kitty btop") end),
-              awful.key({"Control","Shift" }, "l", function () awful.util.spawn("vlc https://www.youtube.com/watch?v=jfKfPfyJRdk") end),
-              awful.key({modkey, "Shift" }, "c", function () awful.util.spawn("kitty -e cmus") end),
-              --awful.key({ modkey, "Shift" }, "p",              function () cmus_widget:play_pause() end, {description = "toggle track",   group = "cmus"}),
-              awful.key({ modkey, "Control" }, "space", function () awful.util.spawn("playerctl play-pause") end),
+            --- screenshots ---
+            awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/maim.sh") end),
+            awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/maim_fullscreen.sh") end),
 
--- Следующий рабочий стол (аналог ALT + .)
-awful.key({ "Mod1" }, "period", function()
-    awful.screen.focus_relative(1)
-    awful.tag.viewnext()
-end),
+            --- programs/scripts ---
+            awful.key({ modkey }, "b", function () awful.util.spawn("firefox") end),
+            awful.key({ modkey, "Mod1" }, "g", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/gamma.sh") end),
+            awful.key({ modkey }, "o", function () awful.util.spawn("/home/izunamori/Games/osu-lazer/osu.AppImage") end),
+            awful.key({ modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/colorpicker.sh") end),
+            awful.key({ modkey }, "e", function () awful.util.spawn("thunar") end),
+            awful.key({ modkey }, "/", function () awful.util.spawn("/home/izunamori/Documents/Apps/VSCode-linux-x64/code") end),
+            awful.key({ "Control", "Shift" }, "l", function () awful.util.spawn("vlc https://www.youtube.com/watch?v=jfKfPfyJRdk") end),
+            awful.key({ "Control", "Shift" }, "Escape", function () awful.util.spawn("kitty btop") end),
+            
+            --- media ---
+            awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause") end),
+            awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl next") end),
+            awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl previous") end),
 
--- Предыдущий рабочий стол (аналог ALT + ,)
+            --- window managment ---
 
-awful.key({ "Mod1" }, "comma", function()
-    awful.screen.focus_relative(-1)
-    awful.tag.viewprev()
-end),
+            -- focus
+            awful.key({ modkey, "Mod1" }, "w", function () awful.client.focus.bydirection("up") end),
+            awful.key({ modkey, "Mod1" }, "a", function () awful.client.focus.bydirection("left") end),
+            awful.key({ modkey, "Mod1" }, "s", function () awful.client.focus.bydirection("down") end),
+            awful.key({ modkey, "Mod1" }, "d", function () awful.client.focus.bydirection("right") end),
 
--- Переместить окно на следующий рабочий стол (аналог CTRL + .)
-awful.key({ "Control" }, "period", function()
-    if client.focus then
-        local tag = client.focus.screen.selected_tag
-        local idx = tag.index
-        awful.client.movetotag(tag.screen.tags[idx % #tag.screen.tags + 1], client.focus)
-        awful.tag.viewnext()
-    end
-end),
+            -- resize
+            awful.key({ modkey, "Control" }, "a",     function () awful.tag.incmwfact( 0.05) end,
+                {description = "increase master width factor", group = "layout"}),
+            awful.key({ modkey, "Control" }, "d",     function () awful.tag.incmwfact(-0.05) end,
+                {description = "decrease master width factor", group = "layout"}),
 
--- Переместить окно на предыдущий рабочий стол (аналог CTRL + ,)
-awful.key({ "Control" }, "comma", function()
-    if client.focus then
-        local tag = client.focus.screen.selected_tag
-        local idx = tag.index
-        awful.client.movetotag(tag.screen.tags[(idx - 2) % #tag.screen.tags + 1], client.focus)
-        awful.tag.viewprev()
-    end
-end),
-
-
+            --move
 
 --------------------------------------------------------------------------------------------------|
 
@@ -597,10 +563,15 @@ awful.rules.rules = {
 
     -- определенный рабочий стол
     {
-        rule = { class = "firefox" },
-        properties = { tag = " 3 " }
+        rule = { class = "steam_app*" },
+        properties = { tag = " 1 " }
     },
-    
+
+    {
+        rule = { class = "osu!" },
+        properties = { tag = " 1 " }
+    },
+
     {
         rule = { class = "telegram-desktop" },
         properties = { tag = " 2 " }
@@ -617,6 +588,11 @@ awful.rules.rules = {
     },
 
     {
+        rule = { class = "firefox" },
+        properties = { tag = " 3 " }
+    },  
+    
+    {
         rule = { class = "code-oss" },
         properties = { tag = " 4 " }
     },
@@ -627,15 +603,10 @@ awful.rules.rules = {
     },
 
     {
-        rule = { class = "steam_app*" },
-        properties = { tag = " 1 " }
+        rule = { class = "v2rayN" },
+        properties = { tag = " 6 " }
     },
-
-    {
-        rule = { class = "osu!" },
-        properties = { tag = " 1 " }
-    },
-
+    
     -- Floating clients.
     { rule_any = {
         instance = {
@@ -644,6 +615,7 @@ awful.rules.rules = {
           "pinentry",
         },
         class = {
+          "mpv",  
           "Arandr",
           "PhotoQT",
           "photoqt",
@@ -671,6 +643,14 @@ awful.rules.rules = {
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
       }, properties = { floating = true }},
+
+      { rule_any = {
+        instance = {},
+        class = {},
+        name = {
+          "Media viever"
+        },
+      }, properties = { fullscreen = true }},
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }

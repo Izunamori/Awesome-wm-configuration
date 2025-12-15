@@ -11,12 +11,12 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "JetBrainsMono Bold 12"
+theme.font          = "JetBrainsMono Bold 10"
 
 theme.bg_normal     = "#1a1a1a"
-theme.bg_focus      = "#1a1a1a" -- #14161B
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_focus      = "#1a1a1a"
+theme.bg_urgent     = "#655944ff"
+theme.bg_minimize   = "#373737ff"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#aaaaaa"
@@ -25,7 +25,7 @@ theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap   = dpi(3)
-theme.border_width  = dpi(0)
+theme.border_width  = dpi(2)
 theme.border_normal = "#14161b99"
 theme.border_focus  = "#414141e6"
 theme.border_marked = "#1e1e2e"
@@ -41,10 +41,10 @@ theme.border_marked = "#1e1e2e"
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.taglist_bg_focus = "#323232ff"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(6)
+local taglist_square_size = dpi(5)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, theme.fg_normal
 )
@@ -62,7 +62,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
-theme.menu_height = dpi(25)
+theme.menu_height = dpi(30)
 theme.menu_width  = dpi(165)
 
 -- You can add as many variables as

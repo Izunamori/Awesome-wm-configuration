@@ -13,11 +13,12 @@ lxsession &
 Telegram &
 pgrep -x clipit || clipit &
 xcompmgr &
-steam -silent &
+# steam -silent &
 /home/izunamori/Documents/Apps/Discord/Discord --start-minimized &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xset m 1 1 &
 otd-daemon &
-flatpak run com.github.wwmm.easyeffects --gapplication-service &
+# flatpak run com.github.wwmm.easyeffects --gapplication-service &
 pactl set-source-volume \@DEFAULT_SOURCE@ 99% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 99% &

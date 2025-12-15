@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Монитор для проверки
+OUTPUT="DP-0"
+
+# Получаем текущую гамму
+current_gamma=$(xrandr --verbose | grep -A 10 "$OUTPUT" | grep "Gamma:" | awk '{print $2}')
+
+# Извлекаем значения гаммы (формат R:G:B)
+IFS=':' read -r gamma_r gamma_g gamma_b <<< "$current_gamma"
+
+echo "Текущая гамма для $OUTPUT: $current_gamma"
+
+# Проверяем и корректируем гамму
+if (( $(echo "$gamma_r > 1" | bc -l) )); then
+    echo "Гамма R ($gamma_r) > 1, устанавливаю 1"
+    gamma_r=1
+fi
+
+if (( $(echo "$gamma_g > 1" | bc -l) )); then
+    echo "Гамма G ($gamma_g) > 1, устанавливаю 1"
+    gamma_g=1
+fi
+
+if (( $(echo "$gamma_b > 1" | bc -l) )); then
+    echo "Гамма B ($gamma_b) > 1, устанавливаю 1"
+    gamma_b=1
+fi
+
+if (( $(echo "$gamma_r < 2" | bc -l) )); then
+    echo "Гамма R ($gamma_r) < 2, устанавливаю 2"
+    gamma_r=2
+fi
+
+if (( $(echo "$gamma_g < 2" | bc -l) )); then
+    echo "Гамма G ($gamma_g) < 2, устанавливаю 2"
+    gamma_g=2
+fi
+
+if (( $(echo "$gamma_b < 2" | bc -l) )); then
+    echo "Гамма B ($gamma_b) < 2, устанавливаю 2"
+   
