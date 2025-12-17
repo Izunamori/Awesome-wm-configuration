@@ -29,7 +29,7 @@ systemctl --user enable opentabletdriver.service --now
         Option "AccelSpeed" "0.3"
     EndSection
 ```
-## Soft link ofr ~/Pictures
+## Soft link for ~/Pictures
 ```bash
 ln -s /mnt/HDD/pictures_linux ~/Pictures
 ```
