@@ -33,4 +33,6 @@ systemctl --user enable opentabletdriver.service --now
 ```bash
 mv ~/Pictures ~/Pictures.backup
 ln -s /mnt/HDD/pictures_linux ~/Pictures
+mv ~/Videos ~/Videos.backup
+ln -s /mnt/HDD/videos_linux ~/Videos
 ```
