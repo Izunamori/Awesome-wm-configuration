@@ -31,5 +31,6 @@ systemctl --user enable opentabletdriver.service --now
 ```
 ## Soft link for ~/Pictures
 ```bash
+mv ~/Pictures ~/Pictures.backup
 ln -s /mnt/HDD/pictures_linux ~/Pictures
 ```
