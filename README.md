@@ -10,7 +10,7 @@ makepkg -si
 ## My pkgs
 ```bash
 sudo pacman -Syyu xcompmgr thunar steam tumbler ffmpegthumbs ffmpegthumbnailer maim mpv fish ttf-jetbrains-mono playerctl ntfs-3g pavucontrol lib32-nvidia-utils gvfs nwg-look qt6ct kvantum polkit-gnome xcolor pipewire pipewire-pulse file-roller zip unzip btop flatpak obs-studio jp2a discord vscode telegram-desktop gparted telegram-desktop gparted thunar-archive-plugin polkit-gnome xclip --noconfirm
-yay -S ttf-font-awesome ttf-jetbrains-mono-nerd tela-circle-icon-theme polychromatic ttf-monocraft teamspeak opentabletdriver clipit adw-gtk-theme-git kvantum-theme-libadwaita-git --noconfirm
+yay -S ttf-font-awesome ttf-jetbrains-mono-nerd tela-circle-icon-theme polychromatic ttf-monocraft teamspeak opentabletdriver clipit adw-gtk-theme-git kvantum-theme-libadwaita-git photoqt-bin --noconfirm
 ```
 ## OTD
 ```bash
