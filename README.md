@@ -16,7 +16,7 @@ yay -S ttf-font-awesome ttf-jetbrains-mono-nerd tela-circle-icon-theme polychrom
 ```bash
 systemctl --user enable opentabletdriver.service --now
 ```
-## Mouse sensitivity
+## Mouse sensitivity & keyboard settings
 ```bash
     sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
 ```
@@ -28,6 +28,18 @@ systemctl --user enable opentabletdriver.service --now
         Option "AccelProfile" "flat"
         Option "AccelSpeed" "0.3"
     EndSection
+```
+```bash
+    sudo nano /etc/X11/xorg.conf.d/00-keyboard.conf
+```
+```bash                   
+Section "InputClass"
+    Identifier "system-keyboard"
+    MatchIsKeyboard "on"
+    Option "XkbLayout" "us,ru"
+    Option "XkbModel" "pc105"
+    Option "XkbOptions" "grp:alt_shift_toggle,terminate:ctrl_alt_bksp"
+EndSection
 ```
 ## Soft link for ~/Pictures & ~/Videos
 ```bash
