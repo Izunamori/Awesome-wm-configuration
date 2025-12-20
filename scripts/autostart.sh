@@ -5,7 +5,7 @@ xrandr --output DP-0 --mode 2560x1440 --rate 164.83 &
 
 
 ### Раскладки ### ---------------------------------------------------------------------
-setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,terminate:ctrl_alt_cksp &
+# setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,terminate:ctrl_alt_cksp &
 lxsession &
 
 
