@@ -131,6 +131,7 @@ mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesom
                                     { "Full update", "kitty -e yay -Suy --noconfirm" },
                                     { "Flatpak update", "kitty -e flatpak update"},
                                     { "OBS-Studio", "obs"},
+                                    { "FGG", "chromium https://hub.f.gg/"},
                                     { "xprop", "kitty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE)\"; read -p \"Press Enter to continue...\"'"},                                   
                                   }
                         })
@@ -384,7 +385,11 @@ globalkeys = gears.table.join(
             --- programs/scripts ---
             awful.key({ modkey }, "b", function () awful.util.spawn("firefox") end),
             awful.key({ modkey, "Mod1" }, "g", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/gamma.sh") end),
-            awful.key({ modkey }, "o", function () awful.util.spawn("/home/izunamori/Games/osu-lazer/osu.AppImage") end),
+            awful.key({ modkey }, "o", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/osu_lazer_low_latency.sh") end),
+            awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("/home/izunamori/Git/osu-winello/osu-wine") end),
+            awful.key({ modkey, "Shift" }, "o", function () awful.util.spawn("otd-gui") end),
+            awful.key({ modkey, "Shift" }, "v", function () awful.util.spawn("v2rayn") end),
+            awful.key({ modkey, "Control", "Shift" }, "v", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/kill_v2rayN") end),
             awful.key({ modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/colorpicker.sh") end),
             awful.key({ modkey }, "e", function () awful.util.spawn("thunar") end),
             awful.key({ modkey }, "/", function () awful.util.spawn("/home/izunamori/Documents/Apps/VSCode-linux-x64/code") end),
@@ -593,12 +598,17 @@ awful.rules.rules = {
     },  
     
     {
-        rule = { class = "code-oss" },
+        rule = { class = "Code" },
         properties = { tag = " 4 " }
     },
 
     {
-        rule = { class = "steam" },
+        rule = { class = "jetbrains-rider" },
+        properties = { tag = " 4 " }
+    },
+
+    {
+        rule = { class = "steamwebhelper" },
         properties = { tag = " 5 " }
     },
 
@@ -617,7 +627,7 @@ awful.rules.rules = {
         class = {
           "mpv",  
           "Arandr",
-          "PhotoQT",
+          --"PhotoQt",
           "photoqt",
           --"thunar",
           --"Thunar",
