@@ -217,10 +217,10 @@ awful.screen.connect_for_each_screen(function(s)
     -- Каждый экран имеет свою таблицу тегов
     if s.index == 1 then
         -- Первый монитор: теги 1-6
-        awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 " }, s, awful.layout.layouts[1])
+        awful.tag({ " 󰊴 ", " 󰎇 ", "  ", " 󰨞 ", "  " }, s, awful.layout.layouts[1])
     else
         -- Второй монитор: теги 7-12 (чтобы сохранить 6 тегов на экран)
-        awful.tag({ " 7 " }, s, awful.layout.layouts[1])
+        awful.tag({ "   " }, s, awful.layout.layouts[1])
     end
 
     -- Пример настройки панели
@@ -551,55 +551,43 @@ awful.rules.rules = {
      }
     },
 
-    -- определенный рабочий стол (только на первом экране)
-    {
-        rule = { class = "steam_app*" },
-        properties = { tag = screen[1].tags[1] }
+    -- прикрепление окон к тегам
+
+    --
+    -- 1 монитор
+    --
+    { -- 1 тег
+        rule = { class = "steam_app*",
+                         "osu!"            },
+        properties = { tag = screen[1].tags[1], screen = 1 }
     },
 
-    {
-        rule = { class = "osu!" },
-        properties = { tag = screen[1].tags[1] }
-    },
-
-    {
-        rule = { class = "telegram-desktop" },
+    { -- 2 тег
+        rule = { class = "v2rayN" },
         properties = { tag = screen[1].tags[2], screen = 1 }
-    },
+    }, 
 
-    {
-        rule = { class = "TelegramDesktop" },
-        properties = { tag = screen[2].tags[7], screen = 2 }
-    },
-
-    {
-        rule = { class = "discord" },
-        properties = { tag = screen[2].tags[7], screen = 2 }
-    },
-
-    {
+    { -- 2 тег
         rule = { class = "firefox" },
         properties = { tag = screen[1].tags[3], screen = 1 }
     },  
     
-    {
-        rule = { class = "Code" },
+    { -- 2 тег
+        rule = { class = "Code",
+                         "jetbrains-rider" },
         properties = { tag = screen[1].tags[4], screen = 1 }
     },
 
-    {
-        rule = { class = "jetbrains-rider" },
-        properties = { tag = screen[1].tags[4], screen = 1 }
-    },
-
-    {
+    { -- 2 тег
         rule = { class = "steam" },
         properties = { tag = screen[1].tags[5], screen = 1 }
     },
 
-    {
-        rule = { class = "v2rayN" },
-        properties = { tag = screen[1].tags[6], screen = 1 }
+    -- 2 монитор
+    { -- 7 тег
+        rule = { class = "discord",
+                         "TelegramDesktop" },
+        properties = { tag = screen[2].tags[7], screen = 2 }
     },
     
     -- Floating clients.
