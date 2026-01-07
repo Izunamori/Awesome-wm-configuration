@@ -4,7 +4,6 @@ pcall(require, "luarocks.loader")
 
 -- {{{ Bar ----------------------------------------------------------------------------------------
 
-
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -44,13 +43,13 @@ local mycpu = lain.widget.cpu{
 
 tbox_separator = wibox.widget {
     text = " | ",
-    font = "JetBrains Mono Bold 11",
+    font = "Sono ExtraBold 12",
     widget = wibox.widget.textbox
 }
 
 space_separator = wibox.widget {
     text = "  ",
-    font = "JetBrains Mono Bold 11",
+    font = "Sono ExtraBold 12",
     widget = wibox.widget.textbox
 }
  
@@ -126,13 +125,17 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 
-mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Discord Update", "kitty -e /home/izunamori/.config/awesome/scripts/discord_update.sh" },
-                                    { "Full update", "kitty -e yay -Suy --noconfirm" },
-                                    { "Flatpak update", "kitty -e flatpak update"},
+scripts = {
+    { "xprop", "kitty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE)\"; read -p \"Press Enter to continue...\"'"},  
+    { "Discord Update", "kitty -e /home/izunamori/.config/awesome/scripts/discord_update.sh" },
+    { "Full update", "kitty -e yay -Suy --noconfirm" },
+    { "Flatpak update", "kitty -e flatpak update"},
+}
+
+mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
+                                    { "Scripts", scripts },
                                     { "OBS-Studio", "obs"},
-                                    { "FGG", "chromium https://hub.f.gg/"},
-                                    { "xprop", "kitty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE)\"; read -p \"Press Enter to continue...\"'"},                                   
+                                    -- { "FGG", "chromium https://hub.f.gg/"},                                                                     
                                   }
                         })
 
@@ -153,7 +156,10 @@ mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
-                    awful.button({ }, 1, function(t) t:view_only() end),
+                    awful.button({ }, 1, function(t) 
+                        t:view_only()
+                        awful.screen.focus(t.screen)
+                    end),
                     awful.button({ modkey }, 1, function(t)
                                               if client.focus then
                                                   client.focus:move_to_tag(t)
@@ -191,27 +197,31 @@ local tasklist_buttons = gears.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
+local function set_wallpaper(s)
+    -- Wallpaper
+    if beautiful.wallpaper then
+        local wallpaper = beautiful.wallpaper
+        -- If wallpaper is a function, call it with the screen
+        if type(wallpaper) == "function" then
+            wallpaper = wallpaper(s)
+        end
+        gears.wallpaper.maximized(wallpaper, s, true)
+    end
+end
 
-  local function set_wallpaper(s)
-      -- Wallpaper
-      if beautiful.wallpaper then
-          local wallpaper = beautiful.wallpaper
-          -- If wallpaper is a function, call it with the screen
-          if type(wallpaper) == "function" then
-              wallpaper = wallpaper(s)
-          end
-          gears.wallpaper.maximized(wallpaper, s, true)
-      end
-  end
+screen.connect_signal("property::geometry", set_wallpaper)
+awful.screen.connect_for_each_screen(function(s)
+    -- Wallpaper
+    set_wallpaper(s)
 
-  
-  screen.connect_signal("property::geometry", set_wallpaper)
-  awful.screen.connect_for_each_screen(function(s)
-      -- Wallpaper
-      set_wallpaper(s)
-
-    -- Each screen has its own tag table.
-    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 " }, s, awful.layout.layouts[1])
+    -- Каждый экран имеет свою таблицу тегов
+    if s.index == 1 then
+        -- Первый монитор: теги 1-6
+        awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 " }, s, awful.layout.layouts[1])
+    else
+        -- Второй монитор: теги 7-12 (чтобы сохранить 6 тегов на экран)
+        awful.tag({ " 7 " }, s, awful.layout.layouts[1])
+    end
 
     -- Пример настройки панели
     local mysystray = wibox.widget.systray()
@@ -273,19 +283,10 @@ local tasklist_buttons = gears.table.join(
             logout_menu_widget(),
             space_separator
         },
-        
     }
 end)
 
-
 -- }}} --------------------------------------------------------------------------------------------
-
---
---
---
---
---
---
 
 -- {{{ Mouse bindings -----------------------------------------------------------------------------
 root.buttons(gears.table.join(
@@ -294,13 +295,6 @@ root.buttons(gears.table.join(
     awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}} --------------------------------------------------------------------------------------------
-
---
---
---
---
---
---
 
 -- {{{ Key bindings -------------------------------------------------------------------------------
 
@@ -415,8 +409,6 @@ globalkeys = gears.table.join(
             awful.key({ modkey, "Control" }, "d",     function () awful.tag.incmwfact(-0.05) end,
                 {description = "decrease master width factor", group = "layout"}),
 
-            --move
-
 --------------------------------------------------------------------------------------------------|
 
     -- Menubar
@@ -467,27 +459,27 @@ clientkeys = gears.table.join(
         end ,
         {description = "(un)maximize horizontally", group = "client"})
 )
-	 
+
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 6 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
-                        local screen = awful.screen.focused()
-                        local tag = screen.tags[i]
-                        if tag then
-                           tag:view_only()
-                        end
+                      local focused_screen = awful.screen.focused()
+                      local tag = focused_screen.tags[i]
+                      if tag then
+                          tag:view_only()
+                      end
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
         awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
-                      local screen = awful.screen.focused()
-                      local tag = screen.tags[i]
+                      local focused_screen = awful.screen.focused()
+                      local tag = focused_screen.tags[i]
                       if tag then
                          awful.tag.viewtoggle(tag)
                       end
@@ -497,7 +489,8 @@ for i = 1, 9 do
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
-                          local tag = client.focus.screen.tags[i]
+                          local focused_screen = awful.screen.focused()
+                          local tag = focused_screen.tags[i]
                           if tag then
                               client.focus:move_to_tag(tag)
                           end
@@ -508,7 +501,8 @@ for i = 1, 9 do
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
                   function ()
                       if client.focus then
-                          local tag = client.focus.screen.tags[i]
+                          local focused_screen = awful.screen.focused()
+                          local tag = focused_screen.tags[i]
                           if tag then
                               client.focus:toggle_tag(tag)
                           end
@@ -535,18 +529,9 @@ clientbuttons = gears.table.join(
 -- Set keys
 root.keys(globalkeys)
 
-
 -- }}} --------------------------------------------------------------------------------------------
 
---
---
---
---
---
---
-
 -- {{{ Rules --------------------------------------------------------------------------------------
-
 
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
@@ -566,55 +551,55 @@ awful.rules.rules = {
      }
     },
 
-    -- определенный рабочий стол
+    -- определенный рабочий стол (только на первом экране)
     {
         rule = { class = "steam_app*" },
-        properties = { tag = " 1 " }
+        properties = { tag = screen[1].tags[1] }
     },
 
     {
         rule = { class = "osu!" },
-        properties = { tag = " 1 " }
+        properties = { tag = screen[1].tags[1] }
     },
 
     {
         rule = { class = "telegram-desktop" },
-        properties = { tag = " 2 " }
+        properties = { tag = screen[1].tags[2], screen = 1 }
     },
 
     {
         rule = { class = "TelegramDesktop" },
-        properties = { tag = " 2 " }
+        properties = { tag = screen[2].tags[7], screen = 2 }
     },
 
     {
         rule = { class = "discord" },
-        properties = { tag = " 2 " }
+        properties = { tag = screen[2].tags[7], screen = 2 }
     },
 
     {
         rule = { class = "firefox" },
-        properties = { tag = " 3 " }
+        properties = { tag = screen[1].tags[3], screen = 1 }
     },  
     
     {
         rule = { class = "Code" },
-        properties = { tag = " 4 " }
+        properties = { tag = screen[1].tags[4], screen = 1 }
     },
 
     {
         rule = { class = "jetbrains-rider" },
-        properties = { tag = " 4 " }
+        properties = { tag = screen[1].tags[4], screen = 1 }
     },
 
     {
-        rule = { class = "steamwebhelper" },
-        properties = { tag = " 5 " }
+        rule = { class = "steam" },
+        properties = { tag = screen[1].tags[5], screen = 1 }
     },
 
     {
         rule = { class = "v2rayN" },
-        properties = { tag = " 6 " }
+        properties = { tag = screen[1].tags[6], screen = 1 }
     },
     
     -- Floating clients.
@@ -645,7 +630,8 @@ awful.rules.rules = {
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester",  -- xev.
+          "Event Tester",
+          "Friends List",  -- xev.
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -656,9 +642,11 @@ awful.rules.rules = {
 
       { rule_any = {
         instance = {},
-        class = {},
+        class = {
+            "PhotoQt",
+        },
         name = {
-          "Media viever"
+          "Media viever",
         },
       }, properties = { fullscreen = true }},
 
@@ -666,23 +654,11 @@ awful.rules.rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = false }
     },
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
-
 
 -- }}} --------------------------------------------------------------------------------------------
 
---
---
---
---
---
---
-
 -- {{{ Signals ------------------------------------------------------------------------------------
-
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
@@ -756,6 +732,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 awful.spawn.with_shell("~/.config/awesome/scripts/autostart.sh")
-
 
 -- }}} --------------------------------------------------------------------------------------------
