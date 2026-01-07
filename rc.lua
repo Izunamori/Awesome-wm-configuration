@@ -217,11 +217,11 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Каждый экран имеет свою таблицу тегов
     if s.index == 1 then
-        -- Первый монитор: теги 1-6
+        -- Первый монитор
         awful.tag({ "  1  ", "  2  ", "  3  ", "  4  ", "  5  " }, s, awful.layout.layouts[1])
     else
-        -- Второй монитор: теги 7-12 (чтобы сохранить 6 тегов на экран)
-        awful.tag({ "   " }, s, awful.layout.layouts[1])
+        -- Второй монитор
+        awful.tag({ "  1  ", "  2  "  }, s, awful.layout.layouts[1])
     end
 
     -- Пример настройки панели
@@ -264,25 +264,23 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            tbox_separator,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            tbox_separator,            
-            cpu_widget(),
-            tbox_separator,
-            ram_widget(),
-            tbox_separator,
+            layout = wibox.layout.fixed.horizontal,           
+            
+            space_separator,
             mykeyboardlayout,
-            tbox_separator,
+            space_separator,
             mytextclock,
-            tbox_separator,
+            space_separator,
             centered_systray,
-            tbox_separator,
-            logout_menu_widget(),
-            space_separator
+            space_separator,
+            -- cpu_widget(),
+            -- space_separator,
+            -- ram_widget(),
+            -- logout_menu_widget(),
         },
     }
 end)
@@ -592,11 +590,11 @@ awful.rules.rules = {
     -- 2 монитор
     {
         rule = { class = "discord", },
-        properties = { tag = screen[2].tags[7], screen = 2 }
+        properties = { tag = screen[2].tags[2], screen = 2 }
     },
     {
         rule = { class = "TelegramDesktop" },
-        properties = { tag = screen[2].tags[7], screen = 2 }
+        properties = { tag = screen[2].tags[1], screen = 2 }
     },
     
     -- Floating clients.
