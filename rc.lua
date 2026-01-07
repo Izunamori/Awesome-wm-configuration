@@ -135,6 +135,7 @@ scripts = {
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
                                     { "Scripts", scripts },
                                     { "OBS-Studio", "obs"},
+                                    { "Helvum", "helvum"},
                                     -- { "FGG", "chromium https://hub.f.gg/"},                                                                     
                                   }
                         })
@@ -217,7 +218,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Каждый экран имеет свою таблицу тегов
     if s.index == 1 then
         -- Первый монитор: теги 1-6
-        awful.tag({ " 󰊴 ", " 󰎇 ", "  ", " 󰨞 ", "  " }, s, awful.layout.layouts[1])
+        awful.tag({ "  1  ", "  2  ", "  3  ", "  4  ", "  5  " }, s, awful.layout.layouts[1])
     else
         -- Второй монитор: теги 7-12 (чтобы сохранить 6 тегов на экран)
         awful.tag({ "   " }, s, awful.layout.layouts[1])
@@ -556,37 +557,45 @@ awful.rules.rules = {
     --
     -- 1 монитор
     --
-    { -- 1 тег
-        rule = { class = "steam_app*",
-                         "osu!"            },
+    {
+        rule = { class = "osu!" },
+        properties = { tag = screen[1].tags[1], screen = 1 }
+    },
+    {
+        rule = { class = "steam_app_*" },
         properties = { tag = screen[1].tags[1], screen = 1 }
     },
 
-    { -- 2 тег
+    {
         rule = { class = "v2rayN" },
         properties = { tag = screen[1].tags[2], screen = 1 }
     }, 
 
-    { -- 2 тег
+    {
         rule = { class = "firefox" },
         properties = { tag = screen[1].tags[3], screen = 1 }
     },  
     
-    { -- 2 тег
-        rule = { class = "Code",
-                         "jetbrains-rider" },
+    {
+        rule = { class = "jetbrains-rider" },
         properties = { tag = screen[1].tags[4], screen = 1 }
     },
-
-    { -- 2 тег
+    {
+        rule = { class = "Code" },
+        properties = { tag = screen[1].tags[4], screen = 1 }
+    },
+    {
         rule = { class = "steam" },
         properties = { tag = screen[1].tags[5], screen = 1 }
     },
 
     -- 2 монитор
-    { -- 7 тег
-        rule = { class = "discord",
-                         "TelegramDesktop" },
+    {
+        rule = { class = "discord", },
+        properties = { tag = screen[2].tags[7], screen = 2 }
+    },
+    {
+        rule = { class = "TelegramDesktop" },
         properties = { tag = screen[2].tags[7], screen = 2 }
     },
     
