@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "JetBrainsMono Bold 10"
+theme.font          = "Sono Bold"
 
 theme.bg_normal     = "#1a1a1a"
 theme.bg_focus      = "#1a1a1a"
@@ -24,7 +24,7 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(3)
+theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(0)
 theme.border_normal = "#14161b99"
 theme.border_focus  = "#414141e6"
@@ -63,7 +63,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(30)
-theme.menu_width  = dpi(165)
+theme.menu_width  = dpi(200)
 
 -- You can add as many variables as
 -- you wish and access them by using
