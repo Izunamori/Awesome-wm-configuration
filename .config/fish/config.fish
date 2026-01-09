@@ -11,3 +11,5 @@ set -U fish_greeting ""
 # Говорит терминалу установить курсор в виде блока
 echo -ne "\e[2 q"
 
+fastfetch
+
