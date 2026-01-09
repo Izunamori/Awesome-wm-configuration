@@ -218,10 +218,10 @@ awful.screen.connect_for_each_screen(function(s)
     -- Каждый экран имеет свою таблицу тегов
     if s.index == 1 then
         -- Первый монитор
-        awful.tag({ "  1  ", "  2  ", "  3  ", "  4  ", "  5  " }, s, awful.layout.layouts[1])
+        awful.tag({ "  ⚫  ", "  ⚫  ", "  ⚫  ", "  ⚫  ", "  ⚫  " }, s, awful.layout.layouts[1])
     else
         -- Второй монитор
-        awful.tag({ "  1  ", "  2  "  }, s, awful.layout.layouts[1])
+        awful.tag({ "  ⚫  ", "  ⚫  "  }, s, awful.layout.layouts[1])
     end
 
     -- Пример настройки панели
@@ -593,6 +593,10 @@ awful.rules.rules = {
         properties = { tag = screen[2].tags[2], screen = 2 }
     },
     {
+        rule = { class = "vesktop", },
+        properties = { tag = screen[2].tags[2], screen = 2 }
+    },
+    {
         rule = { class = "TelegramDesktop" },
         properties = { tag = screen[2].tags[1], screen = 2 }
     },
@@ -608,6 +612,7 @@ awful.rules.rules = {
           "mpv",  
           "Arandr",
           --"PhotoQt",
+          "ElyPrismLauncher", 
           "photoqt",
           --"thunar",
           --"Thunar",
