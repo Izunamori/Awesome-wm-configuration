@@ -27,6 +27,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Мои виджеты
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 
 -- ========== РАБОЧИЙ ВИДЖЕТ СИСТЕМЫ (без иконок) ==========
 local sys_monitor = wibox.widget {
@@ -143,7 +144,7 @@ end
 beautiful.init(".config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -186,16 +187,20 @@ myawesomemenu = {
 }
 
 scripts = {
-    { "xprop", "kitty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE)\"; read -p \"Press Enter to continue...\"'"},  
-    { "Discord Update", "kitty -e /home/izunamori/.config/awesome/scripts/discord_update.sh" },
-    { "Full update", "kitty -e yay -Suy --noconfirm" },
-    { "Flatpak update", "kitty -e flatpak update"},
+    { "xprop", "alacritty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE)\"; read -p \"Press Enter to continue...\"'"},  
+    { "Discord Update", "alacritty -e /home/izunamori/.config/awesome/scripts/discord_update.sh" },
+    { "Full update", "alacritty -e yay -Suy --noconfirm" },
+    { "Flatpak update", "alacritty -e flatpak update"},
+}
+
+programs = {
+    { "OBS-Studio", "obs"},
+    { "Helvum", "helvum"},
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
-                                    { "Scripts", scripts },
-                                    { "OBS-Studio", "obs"},
-                                    { "Helvum", "helvum"},
+                                    { "Scripts >_", scripts },
+                                    { "Programs", programs },
                                     -- { "FGG", "chromium https://hub.f.gg/"},                                                                     
                                   }
                         })
@@ -334,9 +339,10 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            sys_monitor,
+            -- sys_monitor,
             -- mykeyboardlayout,
             mytextclock,
+            calendar_widge,
             space_separator,
             centered_systray,
             space_separator,
@@ -450,7 +456,7 @@ globalkeys = gears.table.join(
             awful.key({ modkey }, "e", function () awful.util.spawn("thunar") end),
             awful.key({ modkey }, "/", function () awful.util.spawn("/home/izunamori/Documents/Apps/VSCode-linux-x64/code") end),
             awful.key({ "Control", "Shift" }, "l", function () awful.util.spawn("vlc https://www.youtube.com/watch?v=jfKfPfyJRdk") end),
-            awful.key({ "Control", "Shift" }, "Escape", function () awful.util.spawn("kitty btop") end),
+            awful.key({ "Control", "Shift" }, "Escape", function () awful.util.spawn("alacritty -e btop") end),
             
             --- media ---
             awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause") end),
