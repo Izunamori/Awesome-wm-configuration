@@ -28,6 +28,66 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 
+-- ========== РАБОЧИЙ ВИДЖЕТ СИСТЕМЫ (без иконок) ==========
+local sys_monitor = wibox.widget {
+    {
+        {
+            id = 'sys_text',
+            text = "System Monitor",
+            font = "Montserrat Medium 11",
+            widget = wibox.widget.textbox
+        },
+        left = 10,
+        right = 10,
+        widget = wibox.container.margin
+    },
+    widget = wibox.container.background
+}
+
+local function update_sys_monitor()
+    local cpu_cmd = [[bash -c "top -bn1 | grep 'Cpu(s)' | awk '{print $2+$4}' | cut -d'.' -f1"]]
+    local cpu_temp_cmd = [[bash -c "sensors | grep -E '(Package id|Core 0)' | head -1 | awk '{print \$4}' | tr -d '+°C'"]]
+    local gpu_cmd = [[bash -c "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits 2>/dev/null || echo '0,0'"]]
+    local ram_cmd = [[bash -c "free | grep Mem | awk '{printf \"%.0f\", \$3/\$2 * 100.0}'"]]
+    
+    awful.spawn.easy_async(cpu_cmd, function(cpu_usage)
+        local cpu = cpu_usage:gsub("%s+", "")
+        cpu = cpu:match("%d+") or "0"
+        
+        awful.spawn.easy_async(cpu_temp_cmd, function(cpu_temp)
+            
+            awful.spawn.easy_async(gpu_cmd, function(gpu_data)
+                local gpu_load, gpu_temp = "0", "0"
+                if gpu_data then
+                    gpu_load, gpu_temp = gpu_data:match("([^,]+),([^,]+)")
+                    gpu_load = gpu_load:gsub("%s+", "") or "0"
+                    gpu_temp = gpu_temp:gsub("%s+", "") or "0"
+                end
+                
+                awful.spawn.easy_async(ram_cmd, function(ram_usage)
+                    local ram = ram_usage:gsub("%s+", "")
+                    ram = ram:match("%d+") or "0"
+                                        
+                    local text = string.format(
+                        " CPU %s%%    %sGPU %s%% %s°C    RAM %s%% ",
+                        cpu, cpu_temp, gpu_load, gpu_temp, ram
+                    )
+                    
+                    sys_monitor:get_children_by_id('sys_text')[1]:set_text(text)
+                end)
+            end)
+        end)
+    end)
+end
+
+local sys_timer = gears.timer({
+    timeout = 1,
+    call_now = true,
+    autostart = true,
+    callback = update_sys_monitor
+})
+-- =====================================================
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -258,7 +318,12 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
-    -- Add widgets to the wibox
+    --##############################################################
+    --##############################################################
+    -- Add widgets to the wibox ####################################
+    --##############################################################
+    --##############################################################
+
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
@@ -268,11 +333,9 @@ awful.screen.connect_for_each_screen(function(s)
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,           
-            
-            space_separator,
-            mykeyboardlayout,
-            space_separator,
+            layout = wibox.layout.fixed.horizontal,
+            sys_monitor,
+            -- mykeyboardlayout,
             mytextclock,
             space_separator,
             centered_systray,
