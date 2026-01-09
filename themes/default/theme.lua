@@ -11,11 +11,11 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Sono Bold"
+theme.font          = "Montserrat Medium 12"
 
-theme.bg_normal     = "#1a1a1a"
-theme.bg_focus      = "#1a1a1a"
-theme.bg_urgent     = "#655944ff"
+theme.bg_normal     = "#1a1a1aff"
+theme.bg_focus      = "#1a1a1aff"
+theme.bg_urgent     = "#65594400"
 theme.bg_minimize   = "#373737ff"
 theme.bg_systray    = theme.bg_normal
 
@@ -41,7 +41,7 @@ theme.border_marked = "#1e1e2e"
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
-theme.taglist_bg_focus = "#323232ff"
+theme.taglist_bg_focus = "#32323288"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(5)
