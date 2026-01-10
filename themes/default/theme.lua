@@ -13,10 +13,10 @@ local theme = {}
 
 theme.font          = "Montserrat Medium 12"
 
-theme.bg_normal     = "#1a1a1aff"
-theme.bg_focus      = "#1a1a1aff"
+theme.bg_normal     = "#101010ff"
+theme.bg_focus      = "#101010ff"
 theme.bg_urgent     = "#65594400"
-theme.bg_minimize   = "#373737ff"
+theme.bg_minimize   = "#32323288"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#aaaaaa"
