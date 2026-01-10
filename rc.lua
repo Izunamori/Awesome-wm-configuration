@@ -367,7 +367,7 @@ root.buttons(gears.table.join(
 -- {{{ Key bindings -------------------------------------------------------------------------------
 
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    awful.key({ modkey,           }, "h",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -376,7 +376,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ modkey,           }, "Tab",
+    awful.key({ "Mod1",           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
         end,
@@ -457,6 +457,26 @@ globalkeys = gears.table.join(
             awful.key({ modkey }, "/", function () awful.util.spawn("/home/izunamori/Documents/Apps/VSCode-linux-x64/code") end),
             awful.key({ "Control", "Shift" }, "l", function () awful.util.spawn("vlc https://www.youtube.com/watch?v=jfKfPfyJRdk") end),
             awful.key({ "Control", "Shift" }, "Escape", function () awful.util.spawn("alacritty -e btop") end),
+
+            --- monitor focus swap ---
+
+            awful.key({ modkey }, "Tab", function()
+                local current = awful.screen.focused()
+                local other_screen = nil
+                
+                for s in screen do
+                    if s ~= current then
+                        other_screen = s
+                        break
+                    end
+                end
+                
+                if other_screen then
+                    awful.screen.focus(other_screen)
+                else
+                    awful.screen.focus(screen[1])
+                end
+            end),
             
             --- media ---
             awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause") end),
@@ -628,6 +648,7 @@ awful.rules.rules = {
         rule = { class = "osu!" },
         properties = { tag = screen[1].tags[1], screen = 1 }
     },
+
     {
         rule = { class = "steam_app_*" },
         properties = { tag = screen[1].tags[1], screen = 1 }
@@ -657,7 +678,7 @@ awful.rules.rules = {
         properties = { tag = screen[1].tags[4], screen = 1 }
     },
     {
-        rule = { class = "steam" },
+        rule = { name = "Steam" },
         properties = { tag = screen[1].tags[5], screen = 1 }
     },
 
