@@ -70,7 +70,7 @@ local function update_sys_monitor()
                     ram = ram:match("%d+") or "0"
                                         
                     local text = string.format(
-                        " CPU %s%%    %sGPU %s%% %s°C    RAM %s%% ",
+                        "( Cpu %s%%    %sGpu %s%% %s°C    Mem %s%% )",
                         cpu, cpu_temp, gpu_load, gpu_temp, ram
                     )
                     
@@ -199,8 +199,8 @@ programs = {
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
-                                    { "Scripts >_", scripts },
-                                    { "Programs", programs },
+                                    { "  Scripts", scripts },
+                                    { "  Programs", programs },
                                     -- { "FGG", "chromium https://hub.f.gg/"},                                                                     
                                   }
                         })
@@ -339,7 +339,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            -- sys_monitor,
+            sys_monitor,
             -- mykeyboardlayout,
             mytextclock,
             calendar_widge,
@@ -635,6 +635,11 @@ awful.rules.rules = {
 
     {
         rule = { class = "v2rayN" },
+        properties = { tag = screen[1].tags[2], screen = 1 }
+    },
+    
+    {
+        rule = { class = "obs" },
         properties = { tag = screen[1].tags[2], screen = 1 }
     }, 
 
