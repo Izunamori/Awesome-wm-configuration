@@ -283,10 +283,10 @@ awful.screen.connect_for_each_screen(function(s)
     -- Каждый экран имеет свою таблицу тегов
     if s.index == 1 then
         -- Первый монитор
-        awful.tag({ "  ⚫  ", "  ⚫  ", "  ⚫  ", "  ⚫  ", "  ⚫  " }, s, awful.layout.layouts[1])
+        awful.tag({ "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  " }, s, awful.layout.layouts[1]) -- ⚫
     else
         -- Второй монитор
-        awful.tag({ "  ⚫  ", "  ⚫  "  }, s, awful.layout.layouts[1])
+        awful.tag({ "  ✦  ", "  ✦  "  }, s, awful.layout.layouts[1])
     end
 
     -- Пример настройки панели
