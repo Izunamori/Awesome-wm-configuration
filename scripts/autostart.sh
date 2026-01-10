@@ -12,11 +12,14 @@ lxsession &
 
 
 ### прочее ### ------------------------------------------------------------------------
-Telegram &
+# Telegram &
+AyuGram &
+/usr/share/applications/yandexmusic.desktop
 pgrep -x clipit || clipit &
 xcompmgr &
 # steam -silent &
 /home/izunamori/Documents/Apps/Discord/Discord --start-minimized &
+# vesktop &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xset m 1 1 &
 otd-daemon &
