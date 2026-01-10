@@ -669,6 +669,10 @@ awful.rules.rules = {
         rule = { class = "TelegramDesktop" },
         properties = { tag = screen[2].tags[1], screen = 2 }
     },
+    {
+        rule = { class = "AyuGram" },
+        properties = { tag = screen[2].tags[1], screen = 2 }
+    },
     
     -- Floating clients.
     { rule_any = {
