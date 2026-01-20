@@ -2,10 +2,10 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Open terminal in this dir</name>
+	<name>Open in terminal </name>
 	<submenu></submenu>
 	<unique-id>1744211089543487-1</unique-id>
-	<command>kitty --directory %f</command>
+	<command>alacritty --working-directory %f</command>
 	<description>Example for a custom action</description>
 	<range></range>
 	<patterns>*</patterns>
