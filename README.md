@@ -55,3 +55,12 @@ cd ~/Git
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
 ~/Git/Graphite-gtk-theme/install.sh -t default -c dark -s compact -l --tweaks black
 ```
+## Sync configs with repository
+```bash
+rm -r ~/.config/fish; ln -s ~/.config/awesome/.config/fish/ ~/.config/fish
+rm -r ~/.config/Thunar; ln -s ~/.config/awesome/.config/Thunar/ ~/.config/Thunar
+rm -r ~/.config/pipewire; ln -s ~/.config/awesome/.config/pipewire/ ~/.config/pipewire
+rm -r ~/.config/MangoHud; ln -s ~/.config/awesome/.config/MangoHud/ ~/.config/MangoHud
+rm -r ~/.config/btop; ln -s ~/.config/awesome/.config/btop/ ~/.config/btop
+rm -r ~/.config/alacritty; ln -s ~/.config/awesome/.config/alacritty/ ~/.config/alacritty
+```
