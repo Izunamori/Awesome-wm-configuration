@@ -62,6 +62,16 @@ awful.rules.rules = {
         properties = { tag = screen[1].tags[2], screen = 1 }
     },
     {
+    rule = { class = "OpenTabletDriver.UX" },
+    properties = { 
+        tag = screen[1].tags[2], 
+        screen = 1,
+        floating = true,
+        width = 1200,
+        height = 1000
+        }
+    },
+    {
         rule = { class = "firefox" },
         properties = { tag = screen[1].tags[3], screen = 1 }
     },  
@@ -125,6 +135,7 @@ awful.rules.rules = {
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
+          "OpenTabletDriver.UX",
           "xtightvncviewer"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client

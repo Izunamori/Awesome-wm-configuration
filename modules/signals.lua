@@ -97,6 +97,16 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
+--- Centering windows ---
+client.connect_signal("manage", function(c)
+    if c.floating or awful.client.floating.get(c) then
+        awful.placement.centered(c, {
+            honor_workarea = true, 
+            honor_padding = true  
+        })
+    end
+end)
+
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})

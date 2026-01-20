@@ -150,12 +150,12 @@ naughty.config.defaults.spacing              = 10
 
 -- BEHAVIOR / UX (clean, non-intrusive)
 naughty.config.defaults.position       = "bottom_right"
-naughty.config.defaults.screen         = nil
+naughty.config.defaults.screen         = 1
 naughty.config.defaults.ontop          = true
 naughty.config.defaults.sticky         = false
 naughty.config.defaults.ignore_suspend = false
 
-naughty.config.defaults.timeout        = 6
+naughty.config.defaults.timeout        = 7
 naughty.config.defaults.hover_timeout  = 0
 
 naughty.config.defaults.max_width      = 420

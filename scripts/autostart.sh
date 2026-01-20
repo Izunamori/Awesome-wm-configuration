@@ -35,4 +35,7 @@ __GL_SYNC_TO_VBLANK=0
 GL_SYNC_DISPLAY_DEVICE=DP-0 
 vblank_mode=0
 
-export PATH="$HOME/.local/bin:$PATH"
+export ELECTRON_EXTRA_FLAGS="--disable-gpu-vsync"
+export ELECTRON_ENABLE_GPU_VSYNC=false
+
+export GOOGLE_CHROME_FLAGS="--disable-gpu-vsync"
