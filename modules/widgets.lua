@@ -67,7 +67,7 @@ local function update_sys_monitor()
                     ram = ram:match("%d+") or "0"
                                         
                     local text = string.format(
-                        "( Cpu %s%%    %sGpu %s%% %s°C    Mem %s%% )",
+                        " Cpu %s%%    %sGpu %s%% %s°C    Mem %s%% ",
                         cpu, cpu_temp, gpu_load, gpu_temp, ram
                     )
                     

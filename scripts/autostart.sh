@@ -32,5 +32,7 @@ pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 
 __GL_SYNC_TO_VBLANK=0
-__GL_SYNC_DISPLAY_DEVICE=DP-0 
+GL_SYNC_DISPLAY_DEVICE=DP-0 
 vblank_mode=0
+
+export PATH="$HOME/.local/bin:$PATH"

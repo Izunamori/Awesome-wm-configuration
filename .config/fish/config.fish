@@ -15,3 +15,5 @@ printf "\e[4 q"
 echo ""
 fastfetch
 
+export PATH="$HOME/.local/bin:$PATH"
+
