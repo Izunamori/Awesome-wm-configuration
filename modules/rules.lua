@@ -1,0 +1,166 @@
+-- ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+-- ██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+-- ██████╔╝██║   ██║██║     █████╗  ███████╗
+-- ██╔══██╗██║   ██║██║     ██╔══╝  ╚════██║
+-- ██║  ██║╚██████╔╝███████╗███████╗███████║
+-- ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝
+
+-- Standard awesome library
+local gears = require("gears")
+local awful = require("awful")
+-- require("awful.autofocus")
+
+-- Widget and layout library
+local wibox = require("wibox")
+local lain = require("lain")
+
+
+-- Theme handling library
+local beautiful = require("beautiful")
+
+-- Notification library
+local naughty = require("naughty")
+local menubar = require("menubar")
+
+--####################################
+
+--- Rules for all clients ---
+
+-- Rules to apply to new clients (through the "manage" signal).
+awful.rules.rules = {
+    { rule = { },
+      properties = { border_width = beautiful.border_width,
+                     border_color = beautiful.border_normal,
+                     focus = awful.client.focus.filter,
+                     maximized = false,
+                     maximized_horizontal = false,
+                     maximized_vertical = false,
+                     raise = true,
+                     keys = clientkeys,
+                     buttons = clientbuttons,
+                     screen = awful.screen.preferred,
+                     placement = awful.placement.centered -- +awful.placement.no_overlap+awful.placement.no_offscreen
+                    }
+    },
+
+    --- {{{ Tag rules }}} ---
+
+    --- 1 Monitor ---
+    {
+        rule = { class = "osu!" },
+        properties = { tag = screen[1].tags[1], screen = 1 }
+    },
+    {
+        rule = { class = "steam_app_*" },
+        properties = { tag = screen[1].tags[1], screen = 1 }
+    },
+    {
+        rule = { class = "v2rayN" },
+        properties = { tag = screen[1].tags[2], screen = 1 }
+    },
+    {
+        rule = { class = "obs" },
+        properties = { tag = screen[1].tags[2], screen = 1 }
+    },
+    {
+        rule = { class = "firefox" },
+        properties = { tag = screen[1].tags[3], screen = 1 }
+    },  
+    {
+        rule = { class = "jetbrains-rider" },
+        properties = { tag = screen[1].tags[4], screen = 1 }
+    },
+    {
+        rule = { class = "Code" },
+        properties = { tag = screen[1].tags[4], screen = 1 }
+    },
+    {
+        rule = { name = "Steam" },
+        properties = { tag = screen[1].tags[5], screen = 1 }
+    },
+    {
+        rule = { name = "Media viever" },
+        properties = { tag = screen[1].tags[2], screen = 1 }
+    },
+
+    --- 2 Monitor ---
+    {
+        rule = { class = "discord", },
+        properties = { tag = screen[2].tags[2], screen = 2 }
+    },
+    {
+        rule = { class = "TeamSpeak", },
+        properties = { tag = screen[2].tags[2], screen = 2 }
+    },
+    {
+        rule = { class = "vesktop", },
+        properties = { tag = screen[2].tags[2], screen = 2 }
+    },
+    {
+        rule = { class = "TelegramDesktop" },
+        properties = { tag = screen[2].tags[1], screen = 2 }
+    },
+    {
+        rule = { class = "AyuGram" },
+        properties = { tag = screen[2].tags[1], screen = 2 }
+    },
+    
+    --- Floating clients ---
+    { rule_any = {
+        instance = {
+          "DTA",  -- Firefox addon DownThemAll.
+          "copyq",  -- Includes session name in class.
+          "pinentry",
+        },
+        class = {
+          "mpv",
+          "v2rayN",  
+          "Arandr",
+          "ElyPrismLauncher", 
+          "photoqt",
+          "Blueman-manager",
+          "Gpick",
+          "Kruler",
+          "MessageWin",  -- kalarm.
+          "Sxiv",
+          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+          "Wpa_gui",
+          "veromix",
+          "xtightvncviewer"},
+
+        -- Note that the name property shown in xprop might be set slightly after creation of the client
+        -- and the name shown there might not match defined rules here.
+        name = {
+          "Event Tester",
+          "Friends List",  -- xev.
+        },
+        role = {
+          "AlarmWindow",  -- Thunderbird's calendar.
+          "ConfigManager",  -- Thunderbird's about:config.
+          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+        }
+    }, properties = { floating = true }},
+
+    --- Fullscreen clients ---
+    { rule_any = {
+        instance = {},
+        class = {
+            "PhotoQt",
+            "imv",
+        },
+        name = {
+            "Media viever",
+        },
+    }, properties = { fullscreen = true }},
+
+    --- Maximized clients ---
+    { rule_any = {
+        instance = {},
+        class = {
+            "    ",
+        },
+        name = {
+            "Media viever",
+        },
+    }, properties = { maximized = true }},
+}

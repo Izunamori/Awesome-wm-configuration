@@ -1,0 +1,57 @@
+## yay
+```bash
+sudo pacman -S --needed base-devel git
+mkdir Git
+cd Git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+## My pkgs
+```bash
+sudo pacman -Syyu reflector thunar steam tumbler ffmpegthumbs ffmpegthumbnailer maim mpv fish ttf-jetbrains-mono playerctl ntfs-3g pavucontrol lib32-nvidia-utils gvfs nwg-look polkit-gnome xcolor pipewire pipewire-pulse engrampa zip unzip btop flatpak obs-studio jp2a discord gparted telegram-desktop gparted thunar-archive-plugin xclip aria2 --noconfirm
+yay -S ttf-font-awesome ttf-jetbrains-mono-nerd tela-circle-icon-theme polychromatic ttf-monocraft teamspeak opentabletdriver clipit --noconfirm
+```
+## OTD
+```bash
+systemctl --user enable opentabletdriver.service --now
+```
+## Mouse sensitivity & keyboard settings
+```bash
+echo -e 'Section "InputClass"
+                       Identifier "libinput mouse"
+                       MatchIsPointer "on"
+                       MatchDriver "libinput"
+                       Option "AccelProfile" "flat"
+                       Option "AccelSpeed" "0.3"
+                   EndSection' | sudo tee /etc/X11/xorg.conf.d/40-libinput.conf > /dev/null
+```
+```bash
+echo -e 'Section "InputClass"
+                       Identifier "system-keyboard"
+                       MatchIsKeyboard "on"
+                       Option "XkbLayout" "us,ru"
+                       Option "XkbModel" "pc105"
+                       Option "XkbOptions" "grp:alt_shift_toggle,terminate:ctrl_alt_bksp"
+                   EndSection' | sudo tee /etc/X11/xorg.conf.d/00-keyboard.conf > /dev/null
+```
+## Soft link for ~/Pictures & ~/Videos
+```bash
+mv ~/Pictures ~/Pictures.backup
+ln -s /mnt/HDD/pictures_linux ~/Pictures
+mv ~/Videos ~/Videos.backup
+ln -s /mnt/HDD/videos_linux ~/Videos
+```
+## Main monitor tags fast fix 
+```bash
+echo "(sleep 1 && awesome-client 'awesome.restart()') &" >> ~/.xprofile
+```
+## Osu contest wallpapers
+https://drive.google.com/drive/folders/1Nm4zB7QWDt6u4piY9MBQwlfVnTq9eos8
+## Installing graphite GTK  theme with tweaks
+```bash
+mkdir ~/Git
+cd ~/Git
+git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
+~/Git/Graphite-gtk-theme/install.sh -t default -c dark -s compact -l --tweaks black
+```
