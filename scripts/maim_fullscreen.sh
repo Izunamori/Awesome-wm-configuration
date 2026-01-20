@@ -19,7 +19,7 @@ fi
 TEMP_FILE=$(mktemp -p /tmp screenshot_XXXXXX.png)
 FINAL_FILE="$SCREENSHOT_DIR/Screenshot-$(date "+%d_%m_%Y_%H:%M_%S").png"
 
-if maim -g "$MONITOR_GEOMETRY" "$TEMP_FILE" 2>/dev/null; then
+if maim --hidecursor -g "$MONITOR_GEOMETRY" "$TEMP_FILE" 2>/dev/null; then
     mv "$TEMP_FILE" "$FINAL_FILE"
     xclip -selection clipboard -t image/png < "$FINAL_FILE"
     command -v notify-send >/dev/null 2>&1 && \

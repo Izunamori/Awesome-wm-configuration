@@ -12,7 +12,7 @@ TEMP_FILE=$(mktemp -p /tmp screenshot_XXXXXX.png)
 FINAL_FILE="$SCREENSHOT_DIR/Screenshot-$(date "+%d_%m_%Y_%H:%M_%S").png"
 
 # Делаем скриншот с обработкой ошибок
-if maim -s "$TEMP_FILE" 2>/dev/null; then
+if maim --hidecursor -s "$TEMP_FILE" 2>/dev/null; then
     # Перемещаем временный файл в финальное расположение
     mv "$TEMP_FILE" "$FINAL_FILE"
     
