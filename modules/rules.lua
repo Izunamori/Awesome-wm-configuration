@@ -11,7 +11,7 @@ local awful = require("awful")
 
 -- Widget and layout library
 local wibox = require("wibox")
-local lain = require("lain")
+-- local lain = require("lain")
 
 
 -- Theme handling library

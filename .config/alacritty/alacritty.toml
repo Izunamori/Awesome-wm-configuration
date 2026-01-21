@@ -12,19 +12,19 @@ multiplier = 3
 
 # Font
 [font]
-size = 13
+size = 15
 
 [font.normal]
-family = "Sono"
-style = "Medium"
+family = "Anonymous Pro"
+style = "Bold"
 
 [font.bold]
-family = "Sono"
+family = "Anonymous Pro Bold"
 style = "Bold"
 
 [font.italic]
-family = "Sono"
-style = "Italic"
+family = "Anonymous Pro Bold"
+style = "Bold Italic"
 
 [font.bold_italic]
 family = "Sono"
