@@ -19,15 +19,15 @@ family = "Anonymous Pro"
 style = "Bold"
 
 [font.bold]
-family = "Anonymous Pro Bold"
+family = "Anonymous Pro"
 style = "Bold"
 
 [font.italic]
-family = "Anonymous Pro Bold"
+family = "Anonymous Pro"
 style = "Bold Italic"
 
 [font.bold_italic]
-family = "Sono"
+family = "Anonymous Pro"
 style = "Bold Italic"
 
 # Cursor
