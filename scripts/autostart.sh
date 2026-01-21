@@ -3,8 +3,11 @@
 ### Монитор ### -----------------------------------------------------------------------
 #xrandr --output DP-0 --mode 2560x1440 --rate 164.83 &
 
-xrandr --output HDMI-0 --mode 1360x768 --pos 2560x672 --rotate normal &
-xrandr --output DP-0 --primary --mode 2560x1440 --rate 164.83 --pos 0x0 --rotate normal &
+# Указываем сначала DP-0, потом HDMI-0
+xrandr \
+  --output HDMI-0 --mode 1920x1080 --rate 165.00 --pos -1920x280 --rotate normal \
+  --output DP-0 --primary --mode 2560x1440 --rate 164.83 --pos 0x0 --rotate normal &
+ #xrandr --output HDMI-0 --mode 1920x1080 --pos 2560x672 --rotate normal &
 
 ### Раскладки ### ---------------------------------------------------------------------
 # setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,terminate:ctrl_alt_cksp &

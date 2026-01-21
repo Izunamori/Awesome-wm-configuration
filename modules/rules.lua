@@ -93,9 +93,9 @@ awful.rules.rules = {
     },
 
     --- 2 Monitor ---
-    {
+     {
         rule = { class = "discord", },
-        properties = { tag = screen[2].tags[2], screen = 2 }
+        properties = { tag = screen[2].tags[1], screen = 2 }
     },
     {
         rule = { class = "TeamSpeak", },
@@ -107,7 +107,7 @@ awful.rules.rules = {
     },
     {
         rule = { class = "TelegramDesktop" },
-        properties = { tag = screen[2].tags[1], screen = 2 }
+       properties = { tag = screen[2].tags[1], screen = 2 }
     },
     {
         rule = { class = "AyuGram" },

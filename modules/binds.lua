@@ -65,7 +65,7 @@ globalkeys = gears.table.join(
         {description = "| запустить Colorpicker", group = "Programs/scripts"}),
     awful.key({ modkey }, "e", function () awful.util.spawn(filemanager) end,
         {description = "| запустить файловый менеджер", group = "Programs/scripts"}),
-    awful.key({ modkey }, "/", function () awful.util.spawn(editor .. " --disable-gpu-vsync") end,
+    awful.key({ modkey }, "/", function () awful.util.spawn(editor) end,
         {description = "| запустить VS Code", group = "Programs/scripts"}),
     awful.key({ "Control", "Shift" }, "Escape", function () awful.util.spawn(terminal .. " -e btop") end,
         {description = "| запустить Btop (системный монитор)", group = "Programs/scripts"}),
