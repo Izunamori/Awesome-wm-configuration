@@ -12,7 +12,7 @@ multiplier = 3
 
 # Font
 [font]
-size = 15
+size = 12
 
 [font.normal]
 family = "Anonymous Pro"
