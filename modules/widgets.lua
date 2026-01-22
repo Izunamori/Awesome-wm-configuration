@@ -219,6 +219,7 @@ scripts = {
     { "Discord Update", terminal .. " -e /home/izunamori/.config/awesome/scripts/discord_update.sh" },
     { "Full update", terminal .. " -e yay -Suy --ignore wireplumber --noconfirm" },
     { "Flatpak update", terminal .. " -e flatpak update"},
+    { "git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/git_push_dotfiles.sh"},
 }
 
 programs = {

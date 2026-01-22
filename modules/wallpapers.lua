@@ -66,7 +66,7 @@ function swap_wallpapers()
     end)
 end
 
-local function setup_wallpapers()
+local function setup_rnd_wallpapers()
     awful.screen.connect_for_each_screen(function(s)
         if s.index == 1 then
             -- 1 Monitor
@@ -85,4 +85,16 @@ local function setup_wallpapers()
     end)
 end
 
+local function setup_wallpapers()
+    awful.screen.connect_for_each_screen(function(s)
+        if s.index == 1 then
+            set_wallpaper(s)
+        else
+            -- 1 Monitor (other monitors)
+            set_wallpaper(s)
+        end
+    end)
+end
+
+-- setup_rnd_wallpapers()
 setup_wallpapers()
