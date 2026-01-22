@@ -39,7 +39,7 @@
 	<name>Create desktop file</name>
 	<submenu></submenu>
 	<unique-id>1752600130033249-1</unique-id>
-	<command>bash -c &apos;mkdir -p ~/.local/share/applications &amp;&amp; f=~/.local/share/applications/%n.desktop &amp;&amp; echo -e &quot;[Desktop Entry]\nName=%n\nExec=%f\nIcon=application-x-executable\nType=Application\nTerminal=false\nCategories=Utility;&quot; &gt; &quot;$f&quot; &amp;&amp; chmod +x &quot;$f&quot; &amp;&amp; code &quot;$f&quot;&apos;</command>
+	<command>bash -c &apos;mkdir -p ~/.local/share/applications &amp;&amp; f=~/.local/share/applications/%n.desktop &amp;&amp; echo -e &quot;[Desktop Entry]\nName=%n\nExec=%f\nIcon=application-x-executable\nType=Application\nTerminal=false\nCategories=Utility;&quot; &gt; &quot;$f&quot; &amp;&amp; chmod +x &quot;$f&quot; &amp;&amp; alacritty -e vim &quot;$f&quot;&apos;</command>
 	<description></description>
 	<range>*</range>
 	<patterns>*</patterns>
@@ -61,17 +61,6 @@
 	<image-files/>
 	<other-files/>
 	<text-files/>
-	<video-files/>
-</action>
-<action>
-	<icon></icon>
-	<name>Frame Blending</name>
-	<submenu></submenu>
-	<unique-id>1765692650372875-1</unique-id>
-	<command>/home/izunamori/.config/awesome/scripts/frame_blending.sh</command>
-	<description></description>
-	<range>*</range>
-	<patterns>*</patterns>
 	<video-files/>
 </action>
 </actions>

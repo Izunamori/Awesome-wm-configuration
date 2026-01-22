@@ -107,6 +107,8 @@ globalkeys = gears.table.join(
         {description = "| открыть профиль osu!", group = "Sites"}),
     awful.key({ "Mod1", "Mod4", "Control" }, "g", function () awful.util.spawn(browser .. " https://github.com/") end,
         {description = "| открыть GitHub", group = "Sites"}),
+    awful.key({ "Mod1", "Mod4", "Control" }, "m", function () awful.util.spawn(browser .. " https://mail.yandex.ru/") end,
+        {description = "| открыть Яндекс почту", group = "Sites"}),
     
     --- media ---
     awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause") end,
