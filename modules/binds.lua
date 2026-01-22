@@ -130,6 +130,16 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Mod1" }, "d", function () awful.client.focus.bydirection("right") end,
         {description = "| фокус на окно справа", group = "Window management"}),
 
+    -- move
+    awful.key({ "Control", "Mod1" }, "w", function (c) awful.client.swap.bydirection("up", c) end,
+        {description = "| переместить окно вверх", group = "Window management"}),
+    awful.key({ "Control", "Mod1" }, "a", function (c) awful.client.swap.bydirection("left", c) end,
+        {description = "| переместить окно влево", group = "Window management"}),
+    awful.key({ "Control", "Mod1" }, "s", function (c) awful.client.swap.bydirection("down", c) end,
+        {description = "| переместить окно вниз", group = "Window management"}),
+    awful.key({ "Control", "Mod1" }, "d", function (c) awful.client.swap.bydirection("right", c) end,
+        {description = "| переместить окно вправо", group = "Window management"}),
+
     -- resize
     awful.key({ modkey, "Control" }, "a", function () awful.tag.incmwfact(0.05) end,
         {description = "| увеличить ширину главного окна", group = "Window management"}),

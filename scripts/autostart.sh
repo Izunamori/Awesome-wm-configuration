@@ -46,5 +46,5 @@ export GOOGLE_CHROME_FLAGS="--disable-gpu-vsync"
 
 xset dpms force on &
 xset +dpms &
-xset dpms 300 &
+xset dpms 900 &
 
