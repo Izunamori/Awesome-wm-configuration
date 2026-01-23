@@ -81,8 +81,11 @@ awful.rules.rules = {
 
     { -- 5 tag
         rule_any = { class = {
-            "Steam"
-        } },
+            "Steam"  
+        },
+        name = {
+            "Steam",
+        }, },
         properties = { tag = screen[1].tags[5], screen = 1 }
     },
 

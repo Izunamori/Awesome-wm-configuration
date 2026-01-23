@@ -190,7 +190,7 @@ naughty.config.presets.critical = {
     timeout      = 0,
 }
 
-
+--- Stable with picom lags fix ---
 -- Сохраняем оригинальную notify
 local original_notify = naughty.notify
 
