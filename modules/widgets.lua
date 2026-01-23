@@ -229,7 +229,7 @@ scripts = {
 }
 
 programs = {
-    { "OBS-Studio", "obs"},
+    { "Steam", "steam"},
     { "Helvum", "helvum"},
 }
 
