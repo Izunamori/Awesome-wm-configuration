@@ -10,6 +10,12 @@ echo "настройки применены и создана резервная
 
 sleep 2
 
+# Power saving settings for monitors
+echo 'xset dpms 600 900 1200 && xset +dpms' >> ~/.xprofile
+echo 'настройки энергосбережения для мониторов применены'
+
+sleep 2
+
 # Mouse settings
 echo -e 'Section "InputClass"
                        Identifier "libinput mouse"

@@ -14,6 +14,7 @@ echo -e 'Section "InputClass"
                        Option "AccelSpeed" "0.3"
                    EndSection' | sudo tee /etc/X11/xorg.conf.d/40-libinput.conf > /dev/null
 
+
 # Keyboard settings
 echo -e 'Section "InputClass"
                        Identifier "system-keyboard"
@@ -22,6 +23,9 @@ echo -e 'Section "InputClass"
                        Option "XkbModel" "pc105"
                        Option "XkbOptions" "grp:alt_shift_toggle,terminate:ctrl_alt_bksp"
                    EndSection' | sudo tee /etc/X11/xorg.conf.d/00-keyboard.conf > /dev/null
+
+# Power saving settings for monitors
+echo 'xset dpms 600 900 1200 && xset +dpms' >> ~/.xprofile
 
 # Soft link for ~/Pictures & ~/Videos
 mv ~/Pictures ~/Pictures.backup
