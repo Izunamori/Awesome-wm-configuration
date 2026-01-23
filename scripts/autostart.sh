@@ -20,7 +20,7 @@ AyuGram &
 /usr/share/applications/yandexmusic.desktop
 pgrep -x clipit || clipit &
 # xcompmgr &
-# picom & 
+picom & 
 # steam -silent &
 /home/izunamori/Documents/Apps/Discord/Discord # --start-minimized &
 # vesktop &
@@ -42,9 +42,3 @@ export ELECTRON_EXTRA_FLAGS="--disable-gpu-vsync"
 export ELECTRON_ENABLE_GPU_VSYNC=false
 
 export GOOGLE_CHROME_FLAGS="--disable-gpu-vsync"
-
-
-xset dpms force on &
-xset +dpms &
-xset dpms 900 &
-

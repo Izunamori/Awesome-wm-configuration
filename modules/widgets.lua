@@ -134,17 +134,15 @@ end
 --- {{{Notifications configuration}}} ---
 
 -- STYLE / THEME (polished, modern look)
-local gears     = require("gears")
-local beautiful = require("beautiful")
 
 naughty.config.defaults.font                 = beautiful.font
 naughty.config.defaults.fg                   = beautiful.fg_normal
 naughty.config.defaults.bg                   = beautiful.bg_normal
 naughty.config.defaults.border_color         = beautiful.border_focus
 naughty.config.defaults.border_width         = 2
-naughty.config.defaults.shape                = function(cr, w, h)
-    gears.shape.rounded_rect(cr, w, h, 14)
-end
+--naughty.config.defaults.shape                = function(cr, w, h)
+--    gears.shape.rounded_rect(cr, w, h, 14)
+--end
 naughty.config.defaults.opacity              = 0.95
 
 naughty.config.defaults.icon_size            = 56
@@ -156,7 +154,7 @@ naughty.config.defaults.spacing              = 10
 
 -- BEHAVIOR / UX (clean, non-intrusive)
 naughty.config.defaults.position       = "bottom_right"
-naughty.config.defaults.screen         = 1
+naughty.config.defaults.screen         = 2
 naughty.config.defaults.ontop          = true
 naughty.config.defaults.sticky         = false
 naughty.config.defaults.ignore_suspend = false
@@ -164,8 +162,8 @@ naughty.config.defaults.ignore_suspend = false
 naughty.config.defaults.timeout        = 7
 naughty.config.defaults.hover_timeout  = 0
 
-naughty.config.defaults.max_width      = 420
-naughty.config.defaults.max_height     = 220
+naughty.config.defaults.max_width      = 9999999 --420
+naughty.config.defaults.max_height     = 9999999 --220
 naughty.config.defaults.width          = nil
 naughty.config.defaults.height         = nil
 
@@ -191,6 +189,61 @@ naughty.config.presets.critical = {
     border_color = beautiful.border_marked,
     timeout      = 0,
 }
+
+
+-- Сохраняем оригинальную notify
+local original_notify = naughty.notify
+
+-- Флаг блокировки
+local notifications_blocked = false
+
+-- Счётчик окон osu!
+local open_osu = 0
+
+-- Переопределяем notify через флаг
+naughty.notify = function(args)
+    if not notifications_blocked then
+        return original_notify(args)
+    end
+end
+
+-- Функции блокировки/разблокировки
+local function block_for(c)
+    if c.class == "osu!.exe" then
+        open_osu = open_osu + 1
+        notifications_blocked = true
+    end
+end
+
+local function unblock_for(c)
+    if c.class == "osu!.exe" then
+        open_osu = open_osu - 1
+        if open_osu <= 0 then
+            open_osu = 0
+            notifications_blocked = false
+        end
+    end
+end
+
+-- ⚠️ Используем глобальный client, не require
+client.connect_signal("manage", block_for)
+client.connect_signal("unmanage", unblock_for)
+
+-- Проверка уже существующих окон через таймер
+gears.timer {
+    timeout = 1,
+    single_shot = true,
+    autostart = true,
+    callback = function()
+        for _, c in pairs(client.get()) do
+            block_for(c)
+        end
+    end
+}
+
+
+
+
 
 
 
@@ -244,7 +297,9 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+menubar.utils.terminal = terminal
+menubar.placement = "bottom"
+ -- Set the terminal for applications that require it
 -- }}}
 
 -- {{{ Wibar 
@@ -327,10 +382,11 @@ awful.screen.connect_for_each_screen(function(s)
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+    screen  = s,
+    filter  = awful.widget.taglist.filter.all,
+    buttons = taglist_buttons,
     }
+
 
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {

@@ -18,7 +18,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 
 -- Notification library
-local naughty = require("naughty")
+ 
 local menubar = require("menubar")
 
 --####################################
@@ -93,14 +93,13 @@ awful.rules.rules = {
             "discord",
             "TelegramDesktop",
             "AyuGram",
-            "TeamSpeak",
         } },
         properties = { tag = screen[2].tags[1], screen = 2 }
     },
 
     { -- 2 tag
         rule_any = { class = {
-            
+            "TeamSpeak",
         } },
         properties = { tag = screen[2].tags[2], screen = 2 }
     },
