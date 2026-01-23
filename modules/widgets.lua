@@ -31,7 +31,7 @@ local sys_monitor = wibox.widget {
         {
             id = 'sys_text',
             text = "System Monitor",
-            font = "beautiful.font",
+            font = "ubuntu 12",
             widget = wibox.widget.textbox
         },
         left = 10,
@@ -94,6 +94,12 @@ tbox_separator = wibox.widget {
 --- Space separator ---
 space_separator = wibox.widget {
     text = "  ",
+    font = "beautiful.font",
+    widget = wibox.widget.textbox
+}
+
+sub_menu_arrow = wibox.widget {
+    text = " > ",
     font = "beautiful.font",
     widget = wibox.widget.textbox
 }
@@ -329,12 +335,37 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        buttons = tasklist_buttons,
+
+        filter = function(c, screen)
+            return awful.widget.tasklist.filter.currenttags(c, screen)
+        end,
+
+        source = function()
+            local clients = client.get()
+            local filtered = {}
+            for _, c in ipairs(clients) do
+                if awful.widget.tasklist.filter.currenttags(c, s) then
+                    table.insert(filtered, c)
+                end
+            end
+            return gears.table.reverse(filtered)
+        end,
     }
 
+
+
+
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({
+        position = "top",
+        screen   = s,
+        height   = 26
+    })
+
+    s.mywibox:struts {
+        top = 26
+    }
 
     --- Add widgets to wibar ---
     s.mywibox:setup {

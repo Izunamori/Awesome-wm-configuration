@@ -13,7 +13,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Montserrat Medium 12"
+theme.font          = "ubuntu 12"
 
 theme.bg_normal     = "#0f0f0fff"
 theme.bg_focus      = "#45454533"
@@ -27,10 +27,10 @@ theme.fg_urgent     = "#bdbdbdff"
 theme.fg_minimize   = "#797979ff"
 
 theme.useless_gap   = dpi(2)
-theme.border_width  = dpi(1)
-theme.border_normal = "#14161b7d"
-theme.border_focus  = "#717171ff"
-theme.border_marked = "#1e1e2e"
+theme.border_width  = dpi(2)
+theme.border_normal = "#1717177d"
+theme.border_focus  = "#515151ff"
+theme.border_marked = "#1717177d"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -53,6 +53,7 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
+theme.taglist_squarefw_icon = "/home/izunamori/.config/awesome/themes/default/taglist/squarefw.png"
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -63,9 +64,9 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = themes_path.."default/submenu.png"
+theme.menu_submenu_icon = "~/.config/awesome/themes/default/submenu.png"
 theme.menu_height = dpi(35)
-theme.menu_width  = dpi(200)
+theme.menu_width  = dpi(160)
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -130,7 +131,7 @@ theme.hotkeys_border_color     = "#454545ff"        -- рамка
 theme.hotkeys_border_width     = 1
 
 theme.hotkeys_modifiers_fg     = theme.fg_minimize        -- цвет модификаторов (Ctrl, Alt, Shift)
-theme.hotkeys_label_bg         = "#89b4fa"        -- фон заголовка группы
+theme.hotkeys_label_bg         = "#bcc3ceff"        -- фон заголовка группы
 theme.hotkeys_label_fg         = "#1e1e2e"        -- текст заголовка
 
 theme.hotkeys_group_margin     = 20               -- отступ между группами
@@ -144,7 +145,7 @@ theme.hotkeys_shape            = gears.shape.rounded_rect
 theme.hotkeys_label_shape      = gears.shape.rounded_rect
 
 -- Generate Awesome icon:
-theme.awesome_icon = themes_path.."sky/awesome-icon.png"
+theme.awesome_icon = "~/.config/awesome/themes/default/egor.png"
 
 
 -- Define the icon theme for application icons. If not set then the icons
