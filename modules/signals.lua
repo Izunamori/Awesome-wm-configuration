@@ -114,7 +114,7 @@ client.connect_signal("manage", function(c)
     if c.fullscreen or c.name == "Media viewer" or c.name == "Media viever" then
         local g = c.screen.geometry
         c.border_width = 0
-        c.floating = true
+        c.floating = false
         c.maximized = false
         c:geometry({
             x = g.x,
