@@ -45,73 +45,64 @@ awful.rules.rules = {
     --- {{{ Tag rules }}} ---
 
     --- 1 Monitor ---
-    {
-        rule = { class = "osu!" },
+
+    { -- 1 tag
+        rule_any = { class = {
+            "osu!",
+            "RimWorldLinux",
+            "steam_app_*"
+        } },
         properties = { tag = screen[1].tags[1], screen = 1 }
     },
-    {
-        rule = { class = "steam_app_*" },
-        properties = { tag = screen[1].tags[1], screen = 1 }
-    },
-    {
-        rule = { class = "v2rayN" },
-        properties = { tag = screen[1].tags[2], screen = 1 }
-    },
-    {
-        rule = { class = "obs" },
-        properties = { tag = screen[1].tags[2], screen = 1 }
-    },
-    {
-    rule = { class = "OpenTabletDriver.UX" },
-    properties = { 
-        tag = screen[1].tags[2], 
-        screen = 1,
-        floating = true,
-        width = 1200,
-        height = 1000
-        }
-    },
-    {
-        rule = { class = "firefox" },
-        properties = { tag = screen[1].tags[3], screen = 1 }
-    },  
-    {
-        rule = { class = "jetbrains-rider" },
-        properties = { tag = screen[1].tags[4], screen = 1 }
-    },
-    {
-        rule = { class = "Code" },
-        properties = { tag = screen[1].tags[4], screen = 1 }
-    },
-    {
-        rule = { name = "Steam" },
-        properties = { tag = screen[1].tags[5], screen = 1 }
-    },
-    {
-        rule = { name = "Media viever" },
+
+    { -- 2 tag
+        rule_any = { class = {
+            "v2rayN",
+            "obs",
+            "OpenTabletDriver.UX"
+        } },
         properties = { tag = screen[1].tags[2], screen = 1 }
     },
 
+    { -- 3 tag
+        rule_any = { class = {
+            "firefox"
+        } },
+        properties = { tag = screen[1].tags[3], screen = 1 }
+    },
+
+    { -- 4 tag
+        rule_any = { class = {
+            "jetbrains-rider",
+            "Code"
+        } },
+        properties = { tag = screen[1].tags[4], screen = 1 }
+    },
+
+    { -- 5 tag
+        rule_any = { class = {
+            "Steam"
+        } },
+        properties = { tag = screen[1].tags[5], screen = 1 }
+    },
+
     --- 2 Monitor ---
-     {
-        rule = { class = "discord", },
+
+    { -- 1 tag
+        rule_any = { class = {
+            "discord",
+            "TelegramDesktop",
+            "AyuGram",
+            "TeamSpeak",
+        } },
         properties = { tag = screen[2].tags[1], screen = 2 }
     },
-    {
-        rule = { class = "TeamSpeak", },
+
+    { -- 2 tag
+        rule_any = { class = {
+            
+        } },
         properties = { tag = screen[2].tags[2], screen = 2 }
-    },
-    {
-        rule = { class = "vesktop", },
-        properties = { tag = screen[2].tags[2], screen = 2 }
-    },
-    {
-        rule = { class = "TelegramDesktop" },
-       properties = { tag = screen[2].tags[1], screen = 2 }
-    },
-    {
-        rule = { class = "AyuGram" },
-        properties = { tag = screen[2].tags[1], screen = 2 }
     },
     
     --- Floating clients ---
@@ -158,19 +149,25 @@ awful.rules.rules = {
             "PhotoQt",
             "imv",
         },
-        name = {
-            "     ", -- Media viewer
-        },
+        name = {},
     }, properties = { fullscreen = true }},
 
     --- Maximized clients ---
     { rule_any = {
         instance = {},
-        class = {
-            "    ",
-        },
-        name = {
-            "      ",
-        },
+        class = {},
+        name = {},
     }, properties = { maximized = true }},
+
+    --- Window size rules ---
+    { -- 1200x1000
+        rule_any = { class = {
+            "OpenTabletDriver.UX"
+        } },
+        properties = {
+            floating = true,
+            width = 1200,
+            height = 1000
+            }
+    },
 }
