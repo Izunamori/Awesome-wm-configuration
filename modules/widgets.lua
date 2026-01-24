@@ -162,8 +162,8 @@ naughty.config.defaults.ignore_suspend = false
 naughty.config.defaults.timeout        = 7
 naughty.config.defaults.hover_timeout  = 0
 
-naughty.config.defaults.max_width      = 9999999 --420
-naughty.config.defaults.max_height     = 9999999 --220
+naughty.config.defaults.max_width      = 600 --420
+naughty.config.defaults.max_height     = 500 --220
 naughty.config.defaults.width          = nil
 naughty.config.defaults.height         = nil
 
