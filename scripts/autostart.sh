@@ -16,7 +16,7 @@ lxsession &
 
 ### прочее ### ------------------------------------------------------------------------
 # Telegram &
-AyuGram &
+sleep 10 && AyuGram &
 /usr/share/applications/yandexmusic.desktop
 pgrep -x clipit || clipit &
 # xcompmgr &
