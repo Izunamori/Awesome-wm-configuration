@@ -144,7 +144,7 @@ theme.hotkeys_shape            = gears.shape.rounded_rect
 theme.hotkeys_label_shape      = gears.shape.rounded_rect
 
 -- Generate Awesome icon:
-theme.awesome_icon = "~/.config/awesome/themes/default/egor.png"
+theme.awesome_icon = "~/.config/awesome/themes/default/icon.png"
 
 
 -- Define the icon theme for application icons. If not set then the icons
