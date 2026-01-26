@@ -111,4 +111,4 @@ local function setup_wallpapers()
 end
 
 -- setup_rnd_wallpapers()
--- setup_wallpapers()
+setup_wallpapers()

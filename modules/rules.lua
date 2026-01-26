@@ -50,7 +50,8 @@ awful.rules.rules = {
         rule_any = { class = {
             "osu!",
             "RimWorldLinux",
-            "steam_app_*"
+            "steam_app_*",
+            "Terraria.bin.x86_64"
         } },
         properties = { tag = screen[1].tags[1], screen = 1 }
     },
