@@ -172,4 +172,73 @@ awful.rules.rules = {
             height = 1000
             }
     },
+
+
+
+{
+    rule = { class = "YandexMusic" },
+    properties = {},
+    callback = function(c)
+        local last_tag = nil
+        local minimize_timer = nil
+        
+        local function update_minimize_state()
+            local current_tag = awful.screen.focused().selected_tag
+            local is_on_current_tag = false
+            
+            -- Проверяем, есть ли окно на текущем теге
+            for _, t in ipairs(c:tags()) do
+                if t == current_tag then
+                    is_on_current_tag = true
+                    break
+                end
+            end
+            
+            if not is_on_current_tag then
+                c.minimized = true
+            else
+                c.minimized = false
+            end
+            
+            last_tag = current_tag
+        end
+        
+        local function debounced_update()
+            if minimize_timer then
+                minimize_timer:stop()
+            end
+            
+            minimize_timer = gears.timer {
+                timeout = 0.1,
+                single_shot = true,
+                callback = update_minimize_state
+            }
+            minimize_timer:start()
+        end
+        
+        -- Инициализация при создании окна
+        update_minimize_state()
+        
+        -- Отслеживаем смену тегов окна
+        c:connect_signal("property::tags", debounced_update)
+        
+        -- Отслеживаем смену активного тега
+        tag.connect_signal("property::selected", function(t)
+            if t.screen == c.screen then
+                debounced_update()
+            end
+        end)
+        
+        -- Очистка при закрытии окна
+        c:connect_signal("unmanage", function()
+            if minimize_timer then
+                minimize_timer:stop()
+            end
+        end)
+    end
+}
+
+
+
+    
 }

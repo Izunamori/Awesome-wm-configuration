@@ -24,6 +24,9 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- require("awful.hotkeys_popup.keys")
 
+local key_cooldown = 0.1  -- время задержки в секундах (300мс)
+local active_keys = {} 
+
 --####################################
 
 --- Mouse binds ---

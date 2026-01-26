@@ -76,7 +76,7 @@ local function setup_rnd_wallpapers()
               callback = function()
                   set_rnd_wallpaper(s)
               end
-          }
+            }
         else
             -- 1 Monitor (other monitors)
             set_wallpaper(s)
