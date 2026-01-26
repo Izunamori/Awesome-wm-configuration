@@ -38,6 +38,21 @@ math.randomseed(os.time())
     end
 end
 
+local function set_wallpaper_2nd_monitor(s)
+math.randomseed(os.time())
+    -- Wallpaper
+    if beautiful.wallpaper then
+    
+        local wallpaper = "/home/izunamori/Pictures/Wallpaper/grey.png"
+        
+        -- If wallpaper is a function, call it with the screen
+        if type(wallpaper) == "function" then
+            wallpaper = wallpaper(s)
+        end
+        gears.wallpaper.fit(wallpaper, s)
+    end
+end
+
 ---  Func for random wallpapers ---
 local function set_rnd_wallpaper(s)
 math.randomseed(os.time())
@@ -59,8 +74,8 @@ function swap_wallpapers()
         if s.index == 1 then
             set_rnd_wallpaper(s)
         else
-            -- 1 Monitor (other monitors)
-            set_wallpaper(s)
+            -- 2 Monitor (other monitors)
+            set_wallpaper_2nd_monitor(s)
         end
     end)
 end
@@ -78,7 +93,7 @@ local function setup_rnd_wallpapers()
               end
             }
         else
-            -- 1 Monitor (other monitors)
+            -- 2 Monitor (other monitors)
             set_wallpaper(s)
         end
     end)
@@ -89,8 +104,8 @@ local function setup_wallpapers()
         if s.index == 1 then
             set_wallpaper(s)
         else
-            -- 1 Monitor (other monitors)
-            set_wallpaper(s)
+            -- 2 Monitor (other monitors)
+            set_wallpaper_2nd_monitor(s)
         end
     end)
 end

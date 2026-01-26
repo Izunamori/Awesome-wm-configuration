@@ -21,7 +21,7 @@ sleep 5 && AyuGram &
 pgrep -x clipit || clipit &
 # xcompmgr &
 picom --config ~/.config/awesome/.config/picom.conf &
-# steam -silent &
+steam -silent &
 /home/izunamori/Documents/Apps/Discord/Discord # --start-minimized &
 # vesktop &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
