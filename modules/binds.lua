@@ -176,7 +176,7 @@ globalkeys = gears.table.join(
         {description = "| показать главное меню", group = "Awesome"}),
 
     -- Standard program
-    awful.key({ modkey, }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey, }, "Return", function () awful.spawn(terminal) awful.spawn("xkb-switch -s us") end,
         {description = "| запустить терминал", group = "Programs/scripts"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         {description = "| перезагрузить Awesome", group = "Awesome"}),
@@ -191,7 +191,7 @@ globalkeys = gears.table.join(
                 )
             end
         end,
-        {description = "| восстановить свернутое окно", group = "Window management"}),
+        {description = "| свернуть окно", group = "Window management"}),
 
     -- Prompt
     awful.key({ modkey }, "p", function () awful.screen.focused().mypromptbox:run() end,
