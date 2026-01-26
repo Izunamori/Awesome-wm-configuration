@@ -58,4 +58,4 @@ makepkg -si
 
 # Packages
 sudo pacman -Syyu reflector thunar steam tumbler ffmpegthumbs xorg-xset lsd ffmpegthumbnailer maim mpv fish ttf-jetbrains-mono playerctl ntfs-3g pavucontrol lib32-nvidia-utils gvfs nwg-look polkit-gnome xcolor pipewire pipewire-pulse engrampa zip unzip btop flatpak obs-studio jp2a discord gparted telegram-desktop gparted thunar-archive-plugin xclip aria2 --noconfirm
-yay -S ttf-font-awesome ttf-jetbrains-mono-nerd tela-circle-icon-theme polychromatic ttf-monocraft teamspeak opentabletdriver clipit --noconfirm
+yay -S ttf-font-awesome ttf-jetbrains-mono-nerd tela-circle-icon-theme polychromatic ttf-monocraft teamspeak opentabletdriver clipit xkb-switch --noconfirm

@@ -209,8 +209,10 @@ globalkeys = gears.table.join(
         {description = "| выполнить Lua код", group = "Awesome"}),
 
     -- Menubar
-    awful.key({ modkey }, "a", function() menubar.show() end,
-        {description = "| показать меню приложений", group = "Launcher"})
+    awful.key({ modkey }, "a", function()
+        awful.spawn("xkb-switch -s us", false)
+        menubar.show()
+    end, {description = "| показать меню приложений (с англ. раскладкой)", group = "Launcher"})
 
 )
 
