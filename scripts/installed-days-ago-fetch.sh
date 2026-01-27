@@ -4,7 +4,7 @@ if [ -n "$install_date" ]; then
     install_seconds=$(date -d "$install_date" +%s 2>/dev/null)
     current_seconds=$(date +%s)
     days=$(( (current_seconds - install_seconds) / 86400 ))
-    echo "System installed $days days ago ($install_date)" # "System installed $days days ago ($install_date)"
+    echo "System installed $days days ago ($install_date)"
 else
     echo "N/A"
 fi
