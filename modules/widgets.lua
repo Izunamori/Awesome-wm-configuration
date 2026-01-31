@@ -156,11 +156,11 @@ naughty.config.defaults.spacing              = 10
 naughty.config.defaults.position       = "top_right"
 naughty.config.defaults.screen         = 2
 naughty.config.defaults.ontop          = true
-naughty.config.defaults.sticky         = false
+naughty.config.defaults.sticky         = true
 naughty.config.defaults.ignore_suspend = false
 
-naughty.config.defaults.timeout        = 7
-naughty.config.defaults.hover_timeout  = 0
+naughty.config.defaults.timeout        = 10
+naughty.config.defaults.hover_timeout  = 999
 
 naughty.config.defaults.max_width      = 600 --420
 naughty.config.defaults.max_height     = 500 --220
@@ -174,20 +174,20 @@ naughty.config.defaults.replaces_id    = nil
 naughty.config.presets.low = {
     fg       = beautiful.fg_minimize,
     bg       = beautiful.bg_normal,
-    timeout  = 3,
+    timeout  = 3
 }
 
 naughty.config.presets.normal = {
     fg       = beautiful.fg_normal,
     bg       = beautiful.bg_normal,
-    timeout  = 6,
+    timeout  = 6
 }
 
 naughty.config.presets.critical = {
     fg           = beautiful.fg_urgent,
     bg           = beautiful.bg_urgent,
     border_color = beautiful.border_marked,
-    timeout      = 0,
+    timeout      = 0
 }
 
 --- Stable with picom lags fix ---

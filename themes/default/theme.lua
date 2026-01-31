@@ -127,7 +127,7 @@ theme.hotkeys_bg               = theme.bg_normal        -- тёмный фон
 theme.hotkeys_fg               = theme.fg_normal        -- основной текст
 
 theme.hotkeys_border_color     = "#454545ff"        -- рамка
-theme.hotkeys_border_width     = 1
+theme.hotkeys_border_width     = 0
 
 theme.hotkeys_modifiers_fg     = theme.fg_minimize        -- цвет модификаторов (Ctrl, Alt, Shift)
 theme.hotkeys_label_bg         = "#bcc3ceff"        -- фон заголовка группы

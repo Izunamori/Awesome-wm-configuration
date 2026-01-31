@@ -4,13 +4,12 @@ configuration {
   drun-display-format:    "{name}";
   font:                   "Ubuntu 12";
   show-icons:             true;
-  icon-theme:             "Reversal-dark";
   sorting-method:         "fzf";
-  drun-match-fields:      "name,generic,";
+  drun-match-fields:      "name,generic";
 
-  location:               0;  // 0 = center
-  yoffset:               -300; // Сдвиг на 50px вверх
-  xoffset:               0;   // Без сдвига по горизонтали
+  location:               0;
+  yoffset:               -300;
+  xoffset:               0;
 }
 
 @theme "/dev/null"
