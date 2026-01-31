@@ -64,3 +64,10 @@ Sun Feb  1 01:21:11 AM +05 2026
 -------------------------------------
 Sun Feb  1 03:23:41 AM +05 2026
 
+[main 70c8cb6] update configuration
+ 7 files changed, 24 insertions(+), 19 deletions(-)
+ create mode 100755 scripts/toggle_comp.sh
+ delete mode 100755 scripts/toggle_picom.sh
+-------------------------------------
+Sun Feb  1 03:23:54 AM +05 2026
+
