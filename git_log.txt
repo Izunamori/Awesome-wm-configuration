@@ -37,3 +37,10 @@ Tue Jan 27 12:14:21 PM +05 2026
 -------------------------------------
 Sat Jan 31 02:24:48 PM +05 2026
 
+[main 298db52] update configuration
+ 10 files changed, 139 insertions(+), 8 deletions(-)
+ create mode 100644 .config/rofi/config.rasi
+ create mode 100755 scripts/toggle_picom.sh
+-------------------------------------
+Sat Jan 31 02:26:55 PM +05 2026
+
