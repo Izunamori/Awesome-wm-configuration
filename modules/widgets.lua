@@ -153,7 +153,7 @@ naughty.config.defaults.padding              = 14
 naughty.config.defaults.spacing              = 10
 
 -- BEHAVIOR / UX (clean, non-intrusive)
-naughty.config.defaults.position       = "bottom_right"
+naughty.config.defaults.position       = "top_right"
 naughty.config.defaults.screen         = 2
 naughty.config.defaults.ontop          = true
 naughty.config.defaults.sticky         = false

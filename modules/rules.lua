@@ -130,13 +130,16 @@ awful.rules.rules = {
           "Wpa_gui",
           "veromix",
           "OpenTabletDriver.UX",
-          "xtightvncviewer"},
+          "xtightvncviewer",
+          "pavucontrol"
+        },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",
-          "Friends List",  -- xev.
+          "Friends List",
+          "Geometry Dash"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -151,6 +154,7 @@ awful.rules.rules = {
         class = {
             "PhotoQt",
             "imv",
+            "Terraria.bin.x86_64"
         },
         name = {},
     }, properties = { fullscreen = true }},

@@ -74,6 +74,8 @@ globalkeys = gears.table.join(
         {description = "| запустить Btop (системный монитор)", group = "Programs/scripts"}),
     awful.key({ modkey, "Mod1" }, "r", function () awful.util.spawn("obs") end,
         {description = "| запустить OBS Studio", group = "Programs/scripts"}),
+    awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/toggle_picom.sh") end,
+        {description = "| запустить OBS Studio", group = "Programs/scripts"}),
 
     --- monitor focus swap ---
     awful.key({ modkey }, "Tab", function()
@@ -211,8 +213,9 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "a", function()
         awful.spawn("xkb-switch -s us", false)
-        menubar.show()
-    end, {description = "| показать меню приложений (с англ. раскладкой)", group = "Launcher"})
+        awful.spawn("rofi -show drun")
+        -- menubar.show()
+    end, {description = "| показать меню приложений", group = "Launcher"})
 
 )
 

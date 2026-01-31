@@ -67,4 +67,5 @@ rm -r ~/.config/pipewire; ln -s ~/.config/awesome/.config/pipewire/ ~/.config/pi
 rm -r ~/.config/MangoHud; ln -s ~/.config/awesome/.config/MangoHud/ ~/.config/MangoHud
 rm -r ~/.config/btop; ln -s ~/.config/awesome/.config/btop/ ~/.config/btop
 rm -r ~/.config/alacritty; ln -s ~/.config/awesome/.config/alacritty/ ~/.config/alacritty
+rm -r ~/.config/rofi; ln -s ~/.config/awesome/.config/rofi/ ~/.config/rofi
 ```

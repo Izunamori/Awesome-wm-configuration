@@ -11,6 +11,8 @@ mkdir -p "$SCREENSHOT_DIR"
 TEMP_FILE=$(mktemp -p /tmp screenshot_XXXXXX.png)
 FINAL_FILE="$SCREENSHOT_DIR/Screenshot-$(date "+%d_%m_%Y_%H:%M_%S").png"
 
+pkill picom
+
 # Делаем скриншот с обработкой ошибок
 if maim --hidecursor -s "$TEMP_FILE" 2>/dev/null; then
     # Перемещаем временный файл в финальное расположение
@@ -28,3 +30,5 @@ else
     # Если скриншот не сделан (Escape), удаляем временный файл
     rm -f "$TEMP_FILE"
 fi
+
+picom --daemon --config ~/.config/awesome/.config/picom.conf

@@ -1,0 +1,93 @@
+configuration {
+  modi:                   "drun";
+  display-drun:           "✦";
+  drun-display-format:    "{name}";
+  font:                   "Ubuntu 12";
+  show-icons:             true;
+  icon-theme:             "Reversal-dark";
+  sorting-method:         "fzf";
+  drun-match-fields:      "name,generic,";
+
+  location:               0;  // 0 = center
+  yoffset:               -300; // Сдвиг на 50px вверх
+  xoffset:               0;   // Без сдвига по горизонтали
+}
+
+@theme "/dev/null"
+
+* {
+  bg:                     #0f0f0f;
+  fg:                     #bdbdbd;
+  alt:                    #1b1b1b;
+  rad:                    0px;
+  background-color:       @bg;
+  text-color:             @fg;
+}
+
+window {
+  width: 20%;
+  height: 26.6%;
+  border: 0px;
+  border-color: #232323ff;
+  border-radius: @rad;
+  location: south;
+}
+
+mainbox {
+    children:               [ inputbar, listview ];
+    padding:                0px;
+    spacing:                0px;
+}
+
+inputbar {
+    children:               [ prompt, entry ];
+    border-radius:          @rad;
+    background-color:       @alt;
+}
+
+prompt, entry, element selected {
+    vertical-align:         0.5;
+    background-color:       @alt;
+}
+
+prompt {
+   font:                    "Material 14";
+   padding:                 1.5% 1%;
+}
+
+entry {
+    blink:                  false;
+    placeholder:            "";
+    placeholder-color:      grey;
+}
+
+listview {
+    layout:                 vertical;
+    lines:                  3;
+    columns:                1;
+    cycle:                  false;
+}
+
+element {
+    orientation:            horizontal;
+    padding:                15px;
+    spacing: 1em;
+    border-radius:          @rad;
+}
+
+element-text, element-icon {
+    vertical-align:       0.5;
+    background-color:       inherit;
+}
+
+element-text { expand: true; }
+element-icon { size: 32px; }
+
+listview, element, element selected, element-text, element-icon {
+    cursor:                 pointer;
+}
+
+entry {
+    cursor:                 text;
+}
+
