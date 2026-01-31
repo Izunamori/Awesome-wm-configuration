@@ -18,4 +18,5 @@ fastfetch
 export PATH="$HOME/.local/bin:$PATH"
 
 alias ls="lsd"
+alias pizdec="archarchive"
 
