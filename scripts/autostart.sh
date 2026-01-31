@@ -20,7 +20,7 @@ sleep 5 && AyuGram &
 /usr/share/applications/yandexmusic.desktop
 pgrep -x clipit || clipit &
 # xcompmgr &
-picom --config ~/.config/awesome/.config/picom.conf &
+# picom --config ~/.config/awesome/.config/picom.conf &
 steam -silent &
 /home/izunamori/Documents/Apps/Discord/Discord # --start-minimized &
 # vesktop &
