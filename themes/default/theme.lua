@@ -26,9 +26,9 @@ theme.fg_urgent     = "#bdbdbdff"
 theme.fg_minimize   = "#797979ff"
 
 theme.useless_gap   = dpi(2)
-theme.border_width  = dpi(0)
+theme.border_width  = dpi(1)
 theme.border_normal = "#1717177d"
-theme.border_focus  = "#2c2c2cff"
+theme.border_focus  = "#464646ff"
 theme.border_marked = "#1717177d"
 
 -- There are other variable sets
@@ -52,7 +52,9 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
-theme.taglist_squarefw_icon = "/home/izunamori/.config/awesome/themes/default/taglist/squarefw.png"
+
+-- theme.taglist_squares_sel   = "/home/izunamori/.config/awesome/themes/default/taglist/squarefw.png"
+-- theme.taglist_squares_unsel = "/home/izunamori/.config/awesome/themes/default/taglist/squarew.png"
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -127,7 +129,7 @@ theme.hotkeys_bg               = theme.bg_normal        -- тёмный фон
 theme.hotkeys_fg               = theme.fg_normal        -- основной текст
 
 theme.hotkeys_border_color     = "#454545ff"        -- рамка
-theme.hotkeys_border_width     = 0
+theme.hotkeys_border_width     = 2
 
 theme.hotkeys_modifiers_fg     = theme.fg_minimize        -- цвет модификаторов (Ctrl, Alt, Shift)
 theme.hotkeys_label_bg         = "#bcc3ceff"        -- фон заголовка группы
@@ -140,11 +142,11 @@ theme.hotkeys_opacity          = 10             -- прозрачность
 
 -- rounded corners
 local gears = require("gears")
-theme.hotkeys_shape            = gears.shape.rounded_rect
-theme.hotkeys_label_shape      = gears.shape.rounded_rect
+--theme.hotkeys_shape            = gears.shape.rounded_rect
+--theme.hotkeys_label_shape      = gears.shape.rounded_rect
 
 -- Generate Awesome icon:
-theme.awesome_icon = "~/.config/awesome/themes/default/icon.png"
+theme.awesome_icon = "~/.config/awesome/themes/default/egor.png"
 
 
 -- Define the icon theme for application icons. If not set then the icons

@@ -16,12 +16,13 @@ lxsession &
 
 ### прочее ### ------------------------------------------------------------------------
 # Telegram &
+timedatectl &
 sleep 5 && AyuGram &
 /usr/share/applications/yandexmusic.desktop
 pgrep -x clipit || clipit &
 # xcompmgr &
-# picom --config ~/.config/awesome/.config/picom.conf &
-steam -silent &
+picom --config ~/.config/awesome/.config/picom.conf &
+pgrep -x steam || steam -silent &
 /home/izunamori/Documents/Apps/Discord/Discord # --start-minimized &
 # vesktop &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -38,7 +39,6 @@ __GL_SYNC_TO_VBLANK=0
 GL_SYNC_DISPLAY_DEVICE=DP-0 
 vblank_mode=0
 
-export ELECTRON_EXTRA_FLAGS="--disable-gpu-vsync"
-export ELECTRON_ENABLE_GPU_VSYNC=false
+# export ELECTRON_ENABLE_GPU_VSYNC=false
 
-export GOOGLE_CHROME_FLAGS="--disable-gpu-vsync"
+# export GOOGLE_CHROME_FLAGS="--disable-gpu-vsync"

@@ -25,17 +25,17 @@ configuration {
 
 window {
   width: 20%;
-  height: 26.6%;
-  border: 0px;
-  border-color: #232323ff;
+  height: 27.8%;
+  border: 1px;
+  border-color: #292929ff;
   border-radius: @rad;
   location: south;
 }
 
 mainbox {
     children:               [ inputbar, listview ];
-    padding:                0px;
-    spacing:                0px;
+    padding:                5px;
+    spacing:                5px;
 }
 
 inputbar {
