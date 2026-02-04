@@ -44,8 +44,12 @@ globalkeys = gears.table.join(
     --- screenshots ---
     awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/screenshots/maim.sh") end,
         {description = "| скриншот области", group = "Screenshots"}),
+        awful.key({ modkey, "Control", "Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/screenshots/maim_satty.sh") end,
+        {description = "| скриншот области с satty", group = "Screenshots"}),
     awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/screenshots/maim_fullscreen.sh") end,
-        {description = "| скриншот всей рабочей области (все мониторы)", group = "Screenshots"}),
+        {description = "| скриншот DP-0", group = "Screenshots"}),
+        awful.key({ modkey, "Control", "Shift" }, "f", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/screenshots/maim_fullscreen_satty.sh") end,
+        {description = "| скриншот DP-0 с satty", group = "Screenshots"}),
 
     --- programs/scripts ---
     awful.key({ modkey, "Shift" }, "w", function () awful.util.spawn(swap_wallpapers()) end, 

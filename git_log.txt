@@ -91,3 +91,25 @@ Wed Feb  4 12:23:32 AM +05 2026
 -------------------------------------
 Wed Feb  4 01:22:42 PM +05 2026
 
+[main efa4712] update configuration
+ 23 files changed, 50 insertions(+), 89 deletions(-)
+ delete mode 100755 scripts/awesome_with_restart.sh
+ delete mode 100755 scripts/colorpicker.sh
+ create mode 100755 scripts/functional/colorpicker.sh
+ rename scripts/{ => functional}/discord_update.sh (100%)
+ rename scripts/{ => functional}/gamma.sh (100%)
+ rename scripts/{ => functional}/git_push_dotfiles.sh (100%)
+ rename scripts/{ => functional}/installed-days-ago-fetch.sh (100%)
+ rename scripts/{ => functional}/kill_v2rayN (100%)
+ create mode 100755 scripts/functional/toggle_comp.sh
+ delete mode 100644 scripts/gamma.sh.save
+ rename scripts/{ => installation}/install.sh (100%)
+ rename scripts/{ => installation}/install_do_not_touch.sh (100%)
+ delete mode 100755 scripts/osu_block_notify.sh
+ delete mode 100755 scripts/osu_lazer_low_latency.sh
+ rename scripts/{ => screenshots}/maim.sh (92%)
+ rename scripts/{ => screenshots}/maim_fullscreen.sh (100%)
+ delete mode 100755 scripts/toggle_comp.sh
+-------------------------------------
+Wed Feb  4 02:23:53 PM +05 2026
+

@@ -155,7 +155,8 @@ awful.rules.rules = {
         class = {
             "PhotoQt",
             "imv",
-            "Terraria.bin.x86_64"
+            "Terraria.bin.x86_64",
+            "satty"
         },
         name = {},
     }, properties = { fullscreen = true }},
@@ -181,7 +182,7 @@ awful.rules.rules = {
 
     { -- 1920x1080
         rule_any = { class = {
-            "satty"
+            "     "
         } },
         properties = {
             floating = true,
