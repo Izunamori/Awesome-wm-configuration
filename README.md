@@ -7,15 +7,18 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+
 ## My pkgs
 ```bash
 sudo pacman -Syyu dmenu rofi satty reflector thunar steam tumbler ffmpegthumbs xorg-xset lsd ffmpegthumbnailer maim mpv fish ttf-jetbrains-mono playerctl ntfs-3g pavucontrol lib32-nvidia-utils gvfs nwg-look polkit-gnome xcolor pipewire tela-circle-icon-theme-black pipewire-pulse engrampa zip unzip btop flatpak obs-studio jp2a discord gparted telegram-desktop gparted thunar-archive-plugin xclip aria2 --noconfirm
 yay -S ttf-font-awesome ttf-jetbrains-mono-nerd polychromatic ttf-monocraft teamspeak opentabletdriver clipit xkb-switch --noconfirm
 ```
+
 ## OTD
 ```bash
 systemctl --user enable opentabletdriver.service --now
 ```
+
 ## Mouse sensitivity & keyboard settings
 ```bash
 echo -e 'Section "InputClass"
@@ -43,6 +46,7 @@ ln -s /mnt/HDD/pictures_linux ~/Pictures
 mv ~/Videos ~/Videos.backup
 ln -s /mnt/HDD/videos_linux ~/Videos
 ```
+
 ## setup xinitrc
 ```bash
 cat > ~/.xinitrc << 'EOF'
@@ -55,8 +59,10 @@ EOF
 
 chmod +x ~/.xinitrc
 ```
+
 ## Osu contest wallpapers
 https://drive.google.com/drive/folders/1Nm4zB7QWDt6u4piY9MBQwlfVnTq9eos8
+
 ## Installing graphite GTK  theme with tweaks
 ```bash
 mkdir ~/Git
@@ -64,6 +70,7 @@ cd ~/Git
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
 ~/Git/Graphite-gtk-theme/install.sh -t default -c dark -s compact -l --tweaks black
 ```
+
 ## Sync configs with repository
 ```bash
 rm -r ~/.config/fish; ln -s ~/.config/awesome/.config/fish/ ~/.config/fish
