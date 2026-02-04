@@ -35,10 +35,7 @@ echo -e 'Section "InputClass"
                        Option "XkbOptions" "grp:alt_shift_toggle,terminate:ctrl_alt_bksp"
                    EndSection' | sudo tee /etc/X11/xorg.conf.d/00-keyboard.conf > /dev/null
 ```
-## Power saving mode for monitors
-```bash
-echo 'xset dpms 600 900 1200 && xset +dpms' >> ~/.xprofile
-```
+
 ## Soft link for ~/Pictures & ~/Videos
 ```bash
 mv ~/Pictures ~/Pictures.backup
@@ -46,9 +43,17 @@ ln -s /mnt/HDD/pictures_linux ~/Pictures
 mv ~/Videos ~/Videos.backup
 ln -s /mnt/HDD/videos_linux ~/Videos
 ```
-## Main monitor tags fast fix 
+## setup xinitrc
 ```bash
-echo "(sleep 1 && awesome-client 'awesome.restart()') &" >> ~/.xprofile
+cat > ~/.xinitrc << 'EOF'
+#!/bin/sh
+
+(sleep 1 && awesome-client 'awesome.restart()') &
+
+exec awesome
+EOF
+
+chmod +x ~/.xinitrc
 ```
 ## Osu contest wallpapers
 https://drive.google.com/drive/folders/1Nm4zB7QWDt6u4piY9MBQwlfVnTq9eos8

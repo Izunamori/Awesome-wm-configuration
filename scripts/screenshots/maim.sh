@@ -34,5 +34,3 @@ else
 fi
 
 picom --daemon --config ~/.config/awesome/.config/picom.conf
-
-xsetroot -cursor_name left_ptr

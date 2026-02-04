@@ -20,3 +20,16 @@ export PATH="$HOME/.local/bin:$PATH"
 alias ls="lsd"
 alias pizdec="archarchive"
 
+
+#########################
+
+if status is-login
+    if test -z "$DISPLAY"
+        if test (tty) = "/dev/tty1"
+            exec startx
+        end
+    end
+end
+
+#########################
+
