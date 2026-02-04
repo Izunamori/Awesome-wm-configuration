@@ -76,6 +76,8 @@ globalkeys = gears.table.join(
         {description = "| запустить VS Code", group = "Programs/scripts"}),
     awful.key({ "Control", "Shift" }, "Escape", function () awful.util.spawn(terminal .. " -e btop") end,
         {description = "| запустить Btop (системный монитор)", group = "Programs/scripts"}),
+    awful.key({ "Control", "Shift" }, "n", function () awful.util.spawn(terminal .. " -e nvtop") end,
+        {description = "| запустить NVtop (системный монитор Nvidia)", group = "Programs/scripts"}),
     awful.key({ modkey, "Mod1" }, "r", function () awful.util.spawn("obs") end,
         {description = "| запустить OBS Studio", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/toggle_comp.sh") end,

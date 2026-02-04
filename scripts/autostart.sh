@@ -39,6 +39,8 @@ __GL_SYNC_TO_VBLANK=0
 GL_SYNC_DISPLAY_DEVICE=DP-0 
 vblank_mode=0
 
+export QT_QPA_PLATFORMTHEME=qt6ct
+
 # export ELECTRON_ENABLE_GPU_VSYNC=false
 
 # export GOOGLE_CHROME_FLAGS="--disable-gpu-vsync"

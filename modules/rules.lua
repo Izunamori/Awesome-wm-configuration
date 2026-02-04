@@ -59,7 +59,6 @@ awful.rules.rules = {
     { -- 2 tag
         rule_any = { class = {
             "v2rayN",
-            "obs",
             "OpenTabletDriver.UX"
         } },
         properties = { tag = screen[1].tags[2], screen = 1 }
@@ -104,6 +103,7 @@ awful.rules.rules = {
     { -- 2 tag
         rule_any = { class = {
             "TeamSpeak",
+            "obs",
         } },
         properties = { tag = screen[2].tags[2], screen = 2 }
     },
