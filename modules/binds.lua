@@ -42,9 +42,9 @@ globalkeys = gears.table.join(
 ---------------- {{{ My (custom) key binds }}} ----------------
 
     --- screenshots ---
-    awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/maim.sh") end,
+    awful.key({ modkey, "Shift" }, "s", function () awful.util.spawn(".config/awesome/scripts/screenshots/maim.sh") end,
         {description = "| скриншот области", group = "Screenshots"}),
-    awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/maim_fullscreen.sh") end,
+    awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/screenshots/maim_fullscreen.sh") end,
         {description = "| скриншот всей рабочей области (все мониторы)", group = "Screenshots"}),
 
     --- programs/scripts ---
@@ -52,7 +52,7 @@ globalkeys = gears.table.join(
         {description = "| поменять обои", group = "Programs/scripts"}),
     awful.key({ modkey }, "b", function () awful.util.spawn(browser) end,
         {description = "| запустить Firefox", group = "Programs/scripts"}),
-    awful.key({ modkey, "Mod1" }, "g", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/gamma.sh") end,
+    awful.key({ modkey, "Mod1" }, "g", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/gamma.sh") end,
         {description = "| поменять гамму монитора", group = "Programs/scripts"}),
     awful.key({ modkey }, "o", function () awful.util.spawn("/home/izunamori/.local/bin/lazertweaks %U") end,
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
@@ -62,9 +62,9 @@ globalkeys = gears.table.join(
         {description = "| запустить OpenTabletDriver", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "v", function () awful.util.spawn("v2rayn") end,
         {description = "| запустить V2RayN", group = "Programs/scripts"}),
-    awful.key({ modkey, "Control", "Shift" }, "v", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/kill_v2rayN") end,
+    awful.key({ modkey, "Control", "Shift" }, "v", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/kill_v2rayN") end,
         {description = "| убить процесс V2RayN", group = "Programs/scripts"}),
-    awful.key({ modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/colorpicker.sh") end,
+    awful.key({ modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/functional/colorpicker.sh") end,
         {description = "| запустить Colorpicker", group = "Programs/scripts"}),
     awful.key({ modkey }, "e", function () awful.util.spawn(filemanager) end,
         {description = "| запустить файловый менеджер", group = "Programs/scripts"}),
@@ -74,7 +74,7 @@ globalkeys = gears.table.join(
         {description = "| запустить Btop (системный монитор)", group = "Programs/scripts"}),
     awful.key({ modkey, "Mod1" }, "r", function () awful.util.spawn("obs") end,
         {description = "| запустить OBS Studio", group = "Programs/scripts"}),
-    awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/toggle_comp.sh") end,
+    awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/toggle_comp.sh") end,
         {description = "| выкл/вкл композитор", group = "Programs/scripts"}),
 
     --- monitor focus swap ---

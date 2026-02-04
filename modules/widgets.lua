@@ -275,10 +275,10 @@ myawesomemenu = {
 
 scripts = {
     { "xprop", "alacritty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE)\"; read -p \"Press Enter to continue...\"'"},  
-    { "Discord Update", terminal .. " -e /home/izunamori/.config/awesome/scripts/discord_update.sh" },
+    { "Discord Update", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/discord_update.sh" },
     { "Full update", terminal .. " -e yay -Suy --ignore wireplumber --noconfirm" },
     { "Flatpak update", terminal .. " -e flatpak update"},
-    { "git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/git_push_dotfiles.sh"},
+    { "git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/git_push_dotfiles.sh"},
 }
 
 programs = {

@@ -5,6 +5,8 @@
 
 #!/bin/bash
 
+#!/bin/bash
+
 SCREENSHOT_DIR=~/Pictures/Screenshots
 mkdir -p "$SCREENSHOT_DIR"
 
@@ -32,3 +34,5 @@ else
 fi
 
 picom --daemon --config ~/.config/awesome/.config/picom.conf
+
+xsetroot -cursor_name left_ptr

@@ -11,7 +11,7 @@ set -U fish_greeting ""
 # Говорит терминалу установить курсор в виде блока
 printf "\e[4 q"
 
-/home/izunamori/.config/awesome/scripts/installed-days-ago-fetch.sh
+/home/izunamori/.config/awesome/scripts/functional/installed-days-ago-fetch.sh
 echo ""
 fastfetch
 

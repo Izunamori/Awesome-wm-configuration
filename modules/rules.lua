@@ -131,7 +131,8 @@ awful.rules.rules = {
           "veromix",
           "OpenTabletDriver.UX",
           "xtightvncviewer",
-          "pavucontrol"
+          "pavucontrol",
+          "satty"
         },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -175,6 +176,17 @@ awful.rules.rules = {
             floating = true,
             width = 1200,
             height = 1000
+            }
+    },
+
+    { -- 1920x1080
+        rule_any = { class = {
+            "satty"
+        } },
+        properties = {
+            floating = true,
+            width = 1920,
+            height = 1080
             }
     },
 
