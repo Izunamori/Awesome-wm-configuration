@@ -113,3 +113,11 @@ Wed Feb  4 01:22:42 PM +05 2026
 -------------------------------------
 Wed Feb  4 02:23:53 PM +05 2026
 
+[main 3766654] update configuration
+ 7 files changed, 132 insertions(+), 36 deletions(-)
+ create mode 100755 scripts/screenshots/maim_fullscreen_satty.sh
+ create mode 100755 scripts/screenshots/maim_satty.sh
+ delete mode 100644 volume.lua
+-------------------------------------
+Wed Feb  4 02:28:43 PM +05 2026
+
