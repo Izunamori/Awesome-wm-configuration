@@ -25,7 +25,7 @@ configuration {
 
 window {
   width: 20%;
-  height: 27.8%;
+  height: 28%;
   border: 1px;
   border-color: #292929ff;
   border-radius: @rad;

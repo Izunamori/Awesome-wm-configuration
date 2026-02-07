@@ -161,6 +161,16 @@ awful.rules.rules = {
         name = {},
     }, properties = { fullscreen = true }},
 
+    { rule_any = {
+        instance = {},
+        class = {
+            "satty"
+        },
+        name = {
+            "satty"
+        },
+    }, properties = { ontop = true }},
+
     --- Maximized clients ---
     { rule_any = {
         instance = {},
