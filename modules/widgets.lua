@@ -31,7 +31,7 @@ local sys_monitor = wibox.widget {
         {
             id = 'sys_text',
             text = "System Monitor",
-            font = "ubuntu 12",
+            font = "Google Sans Flex Medium 11",
             widget = wibox.widget.textbox
         },
         left = 10,
@@ -139,7 +139,7 @@ naughty.config.defaults.font                 = beautiful.font
 naughty.config.defaults.fg                   = beautiful.fg_normal
 naughty.config.defaults.bg                   = beautiful.bg_normal
 naughty.config.defaults.border_color         = beautiful.border_focus
-naughty.config.defaults.border_width         = 2
+naughty.config.defaults.border_width         = 1
 --naughty.config.defaults.shape                = function(cr, w, h)
 --    gears.shape.rounded_rect(cr, w, h, 14)
 --end
@@ -357,7 +357,7 @@ awful.screen.connect_for_each_screen(function(s)
         awful.tag({ "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  " }, s, awful.layout.layouts[1])
     else
         -- 1 Monitor (other monitors)
-        awful.tag({ "  ✦  ", "  ✦  "  }, s, awful.layout.layouts[1])
+        awful.tag({ "  ✦  ", "  ✦  ", "  ✦  "  }, s, awful.layout.layouts[1])
     end
 
     --- {{{ Sys tray }}} ---

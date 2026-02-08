@@ -52,7 +52,8 @@ awful.rules.rules = {
             "RimWorldLinux",
             "steam_app_*",
             "Terraria.bin.x86_64",
-            "gamescope"
+            "gamescope",
+            "factorio"
         } },
         properties = { tag = screen[1].tags[1], screen = 1 }
     },
@@ -156,7 +157,7 @@ awful.rules.rules = {
         class = {
             "PhotoQt",
             "imv",
-            "Terraria.bin.x86_64",
+            --"Terraria.bin.x86_64",
             "satty",
             "gamescope"
         },
@@ -176,7 +177,9 @@ awful.rules.rules = {
     --- Maximized clients ---
     { rule_any = {
         instance = {},
-        class = { "          "},
+        class = {
+            "Terraria.bin.x86_64"
+        },
         name = {},
     }, properties = { maximized = true }},
 

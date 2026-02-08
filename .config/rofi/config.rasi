@@ -2,10 +2,10 @@ configuration {
   modi:                   "drun";
   display-drun:           "✦";
   drun-display-format:    "{name}";
-  font:                   "Ubuntu 12";
+  font:                   "Google Sans Flex Medium 12";
   show-icons:             true;
   sorting-method:         "fzf";
-  drun-match-fields:      "name,generic";
+  drun-match-fields:      "name,generic,exec";
 
   location:               0;
   yoffset:               -300;
@@ -18,7 +18,7 @@ configuration {
   bg:                     #0f0f0f;
   fg:                     #bdbdbd;
   alt:                    #1b1b1b;
-  rad:                    0px;
+  rad:                    10px;
   background-color:       @bg;
   text-color:             @fg;
 }

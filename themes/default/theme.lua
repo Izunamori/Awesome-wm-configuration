@@ -12,7 +12,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "ubuntu 12"
+theme.font          = "Google Sans Flex Medium 11"
 
 theme.bg_normal     = "#0f0f0fff"
 theme.bg_focus      = "#32323288"
