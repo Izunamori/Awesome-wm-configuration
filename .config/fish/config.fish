@@ -19,7 +19,12 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias ls="lsd"
 alias pizdec="archarchive"
+alias ter="~/Documents/Terraria_serv/1454/Linux/TerrariaServer"
+alias gp="git add * && git commit -m "None" && git push origin main"
 
+# zerotier
+alias zj="sudo zerotier-cli join"
+alias zl="sudo zerotier-cli leave"
 
 #########################
 

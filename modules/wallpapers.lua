@@ -94,7 +94,7 @@ local function setup_rnd_wallpapers()
             }
         else
             -- 2 Monitor (other monitors)
-            set_wallpaper(s)
+            set_wallpaper_2nd_monitor(s)
         end
     end)
 end
@@ -110,5 +110,5 @@ local function setup_wallpapers()
     end)
 end
 
--- setup_rnd_wallpapers()
-setup_wallpapers()
+setup_rnd_wallpapers()
+-- setup_wallpapers()
