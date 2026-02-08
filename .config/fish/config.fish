@@ -20,6 +20,7 @@ export PATH="$HOME/.local/bin:$PATH"
 #### Aliases ####
 
 # default commands
+alias s="yay -q"
 alias p="sudo pacman"
 alias ls="lsd"
 alias pizdec="archarchive"

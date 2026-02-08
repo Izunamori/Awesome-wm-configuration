@@ -12,22 +12,22 @@ multiplier = 3
 
 # Font
 [font]
-size = 12
+size = 13
 
 [font.normal]
-family = "Anonymous Pro"
+family = "Terminus"
 style = "Bold"
 
 [font.bold]
-family = "Anonymous Pro"
+family = "Terminus"
 style = "Bold"
 
 [font.italic]
-family = "Anonymous Pro"
+family = "Terminus"
 style = "Bold Italic"
 
 [font.bold_italic]
-family = "Anonymous Pro"
+family = "Terminus"
 style = "Bold Italic"
 
 # Cursor
