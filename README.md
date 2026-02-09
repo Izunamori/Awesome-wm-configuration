@@ -60,6 +60,14 @@ EOF
 chmod +x ~/.xinitrc
 ```
 
+## setup xinitrc
+```bash
+echo "#!/bin/sh" >> ~/.xinitrc
+echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.xinitrc
+echo "(sleep 1 && awesome-client 'awesome.restart()') &" >> ~/.xinitrc
+echo "exec awesome" >> ~/.xinitrc
+```
+
 ## Osu contest wallpapers
 https://drive.google.com/drive/folders/1Nm4zB7QWDt6u4piY9MBQwlfVnTq9eos8
 

@@ -164,6 +164,17 @@ awful.rules.rules = {
         name = {},
     }, properties = { fullscreen = true }},
 
+    --- No border ---
+    { rule_any = {
+        instance = {},
+        class = {
+            "Terraria.bin.x86_64",
+            "steam"
+        },
+        name = {},
+    }, properties = { border_width = 0 }},
+
+    --- Ontop ---
     { rule_any = {
         instance = {},
         class = {

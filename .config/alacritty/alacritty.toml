@@ -4,7 +4,7 @@
 [window]
 padding = { x = 20, y = 20 }
 decorations = "full"
-opacity = 0.9
+opacity = 0.95
 
 [scrolling]
 history = 10000
@@ -12,22 +12,22 @@ multiplier = 3
 
 # Font
 [font]
-size = 13
+size = 10
 
 [font.normal]
-family = "Terminus"
+family = "JetBrains Mono" # Terminus
 style = "Bold"
 
 [font.bold]
-family = "Terminus"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.italic]
-family = "Terminus"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.bold_italic]
-family = "Terminus"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 # Cursor

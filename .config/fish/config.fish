@@ -30,7 +30,7 @@ alias gp="git add * && git commit -m "None" && git push origin main"
 
 # dedicated servers
 alias ter="~/Documents/Servers/Terraria/1454/Linux/TerrariaServer"
-alias fac="/home/izunamori/Documents/Servers/Factorio/bin/x64/factorio"
+alias fac="/home/izunamori/Documents/Servers/Factorio/bin/x64/factorio --start-server"
 
 # zerotier
 alias zj="sudo zerotier-cli join"
@@ -53,3 +53,4 @@ if status is-login
 end
 #########################
 
+starship init fish | source
