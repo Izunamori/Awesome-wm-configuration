@@ -21,6 +21,12 @@ pgrep -x clipit || clipit &
 picom --config ~/.config/awesome/.config/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 otd-daemon &
+export XDG_CURRENT_DESKTOP=gnome &
+export XDG_SESSION_DESKTOP=awesome &
+export GTK_USE_PORTAL=1 &
+export DESKTOP_SESSION=gnome &
+export DISPLAY=:0 &
+systemctl --user import-environment XDG_CURRENT_DESKTOP DISPLAY &
 
 
 # ---------- ### Programs ### ---------- #

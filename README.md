@@ -49,19 +49,6 @@ ln -s /mnt/HDD/videos_linux ~/Videos
 
 ## setup xinitrc
 ```bash
-cat > ~/.xinitrc << 'EOF'
-#!/bin/sh
-
-(sleep 1 && awesome-client 'awesome.restart()') &
-
-exec awesome
-EOF
-
-chmod +x ~/.xinitrc
-```
-
-## setup xinitrc
-```bash
 echo "#!/bin/sh" >> ~/.xinitrc
 echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.xinitrc
 echo "(sleep 1 && awesome-client 'awesome.restart()') &" >> ~/.xinitrc
