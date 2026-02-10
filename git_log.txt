@@ -193,3 +193,10 @@ Tue Feb 10 02:05:48 PM +05 2026
 -------------------------------------
 Wed Feb 11 12:59:09 AM +05 2026
 
+[main e8a9797] update configuration
+ 12 files changed, 178 insertions(+), 158 deletions(-)
+ delete mode 100755 scripts/functional/kill_v2rayN
+ create mode 100755 scripts/functional/vpn.sh
+-------------------------------------
+Wed Feb 11 02:07:29 AM +05 2026
+
