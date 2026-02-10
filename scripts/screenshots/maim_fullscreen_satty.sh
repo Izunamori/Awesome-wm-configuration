@@ -8,7 +8,7 @@
 SCREENSHOT_DIR=~/Pictures/Screenshots
 mkdir -p "$SCREENSHOT_DIR"
 
-MONITOR_NAME="DP-0"
+MONITOR_NAME="DP-2"
 
 # Получаем геометрию монитора автоматически
 MONITOR_GEOMETRY=$(xrandr | grep "^$MONITOR_NAME connected" | sed -E 's/.* ([0-9]+x[0-9]+\+[0-9]+\+[0-9]+).*/\1/')
