@@ -31,7 +31,7 @@
 	<command>chmod +x %f</command>
 	<description></description>
 	<range>*</range>
-	<patterns>*.sh</patterns>
+	<patterns>*</patterns>
 	<other-files/>
 </action>
 <action>

@@ -11,7 +11,7 @@ makepkg -si
 ## My pkgs
 ```bash
 sudo pacman -Syyu lxappearance dmenu rofi satty reflector thunar steam tumbler ffmpegthumbs xorg-xset lsd ffmpegthumbnailer maim mpv fish ttf-jetbrains-mono playerctl ntfs-3g pavucontrol lib32-nvidia-utils gvfs polkit-gnome xcolor pipewire tela-circle-icon-theme-black pipewire-pulse engrampa zip unzip btop flatpak obs-studio jp2a discord gparted telegram-desktop gparted thunar-archive-plugin xclip aria2 --noconfirm
-yay -S ttf-font-awesome ttf-jetbrains-mono-nerd polychromatic ttf-monocraft teamspeak opentabletdriver clipit xkb-switch --noconfirm
+yay -S throne ttf-font-awesome ttf-jetbrains-mono-nerd polychromatic ttf-monocraft teamspeak opentabletdriver clipit xkb-switch --noconfirm
 ```
 
 ## OTD
@@ -63,7 +63,7 @@ https://drive.google.com/drive/folders/1Nm4zB7QWDt6u4piY9MBQwlfVnTq9eos8
 mkdir ~/Git
 cd ~/Git
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
-~/Git/Graphite-gtk-theme/install.sh -t default -c dark -s compact -l --tweaks black
+~/Git/Graphite-gtk-theme/install.sh -t default -c dark -s compact -l --tweaks black rimless
 ```
 
 ## Sync configs with repository

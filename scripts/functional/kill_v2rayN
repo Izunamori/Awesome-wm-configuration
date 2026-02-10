@@ -1,4 +1,0 @@
-#!/bin/sh
-
-killall v2rayN
-killall xray

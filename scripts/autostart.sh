@@ -27,9 +27,14 @@ export GTK_USE_PORTAL=1 &
 export DESKTOP_SESSION=gnome &
 export DISPLAY=:0 &
 systemctl --user import-environment XDG_CURRENT_DESKTOP DISPLAY &
+pgrep -x Throne || Throne -silent &
 
 
 # ---------- ### Programs ### ---------- #
-sleep 5 && AyuGram &
 pgrep -x steam || steam -silent &
 /home/izunamori/Documents/Apps/Discord/Discord # --start-minimized &
+
+
+# ---------- ### Deferred ### ---------- #
+sleep 5 $
+AyuGram &

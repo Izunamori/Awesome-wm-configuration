@@ -357,7 +357,7 @@ awful.screen.connect_for_each_screen(function(s)
         awful.tag({ "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  " }, s, awful.layout.layouts[1])
     else
         -- 1 Monitor (other monitors)
-        awful.tag({ "  ✦  ", "  ✦  ", "  ✦  "  }, s, awful.layout.layouts[1])
+        awful.tag({ "  ✦  ", "  ✦  ", "  >_  "  }, s, awful.layout.layouts[1])
     end
 
     --- {{{ Sys tray }}} ---
