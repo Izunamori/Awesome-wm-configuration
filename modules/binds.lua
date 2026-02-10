@@ -154,9 +154,9 @@ globalkeys = gears.table.join(
         {description = "| переместить окно вправо", group = "Window management"}),
 
     -- resize
-    awful.key({ modkey, "Control" }, "a", function () awful.tag.incmwfact(0.05) end,
+    awful.key({ modkey, "Control" }, "a", function () awful.tag.incmwfact(0.09) end,
         {description = "| увеличить ширину главного окна", group = "Window management"}),
-    awful.key({ modkey, "Control" }, "d", function () awful.tag.incmwfact(-0.05) end,
+    awful.key({ modkey, "Control" }, "d", function () awful.tag.incmwfact(-0.09) end,
         {description = "| уменьшить ширину главного окна", group = "Window management"}),
 
 ---------------------------------------------------------

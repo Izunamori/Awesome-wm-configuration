@@ -12,22 +12,22 @@ multiplier = 3
 
 # Font
 [font]
-size = 10
+size = 11
 
 [font.normal]
-family = "JetBrains Mono" # Terminus
+family = "Space Mono" # Terminus
 style = "Bold"
 
 [font.bold]
-family = "JetBrains Mono"
+family = "Space Mono"
 style = "Bold"
 
 [font.italic]
-family = "JetBrains Mono"
+family = "Space Mono"
 style = "Bold Italic"
 
 [font.bold_italic]
-family = "JetBrains Mono"
+family = "Space Mono"
 style = "Bold Italic"
 
 # Cursor

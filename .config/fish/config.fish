@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 function fish_prompt
+    echo
     echo -n (prompt_pwd) "> " # ➜ ➤ ➦ ➥ ➔ ❯ ❱ ➭ ➙ ➽ ➼ 
 end
 
@@ -53,4 +54,4 @@ if status is-login
 end
 #########################
 
-starship init fish | source
+# starship init fish | source
