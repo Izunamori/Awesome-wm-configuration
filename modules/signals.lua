@@ -130,6 +130,44 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
+
+--- Terraria timeout fix ---
+-- таблица для хранения состояния fullscreen по клиенту
+local terraria_clients = {}
+-- функция проверяет, что это Террария
+local function is_terraria(c)
+    return c.class == "Terraria.bin.x86_64" -- проверь точное имя класса через xprop
+end
+-- ловим появление новых окон
+client.connect_signal("manage", function(c)
+    if is_terraria(c) then
+        terraria_clients[c] = {fullscreen = c.fullscreen}
+    end
+end)
+-- ловим смену тега
+tag.connect_signal("property::selected", function(t)
+    for c, state in pairs(terraria_clients) do
+        if c.valid then
+            if t ~= c.first_tag then
+                -- если Террария на другом теге, сохраняем fullscreen и отключаем
+                state.fullscreen = c.fullscreen
+                if c.fullscreen then
+                    c.fullscreen = false
+                end
+            else
+                -- если возвращаемся на тег с Террарией, восстанавливаем fullscreen
+                if state.fullscreen then
+                    c.fullscreen = true
+                end
+            end
+        end
+    end
+end)
+-- опционально: очищаем запись при закрытии окна
+client.connect_signal("unmanage", function(c)
+    terraria_clients[c] = nil
+end)
+
 --- My signals ---
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)

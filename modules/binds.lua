@@ -150,6 +150,8 @@ globalkeys = gears.table.join(
         {description = "| переместить окно вниз", group = "Window management"}),
     awful.key({ "Control", "Mod1" }, "d", function (c) awful.client.swap.bydirection("right", c) end,
         {description = "| переместить окно вправо", group = "Window management"}),
+        awful.key({ "Control", "Mod1" }, "x", function (c) awful.placement.centered(c) end,
+        {description = "| переместить окно вправо", group = "Window management"}),
 
     -- resize
     awful.key({ modkey, "Control" }, "a", function () awful.tag.incmwfact(0.09) end,
@@ -234,8 +236,14 @@ clientkeys = gears.table.join(
         {description = "| переключить полноэкранный режим", group = "Window management"}),
     awful.key({ modkey, }, "q", function (c) c:kill() end,
         {description = "| закрыть окно", group = "Window management"}),
-    awful.key({ modkey, }, "f", awful.client.floating.toggle,
-        {description = "| переключить плавающий режим", group = "Window management"}),
+    awful.key({ modkey }, "f", 
+    function(c)
+        awful.client.floating.toggle(c)
+        if c.floating then
+            awful.placement.centered(c, { honor_workarea = true })
+        end
+    end,
+    {description = "| переключить плавающий режим", group = "Window management"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
         {description = "| переместить в главное окно", group = "Window management"}),
     awful.key({ modkey, }, "o", function (c) c:move_to_screen() end,

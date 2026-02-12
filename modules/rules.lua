@@ -190,7 +190,7 @@ awful.rules.rules = {
     { rule_any = {
         instance = {},
         class = {
-            "Terraria.bin.x86_64"
+            "Terraria.bin.x86_64      "
         },
         name = {},
     }, properties = { maximized = true }},
@@ -198,10 +198,10 @@ awful.rules.rules = {
     --- Window size rules ---
     { -- 1200x1000
         rule_any = { class = {
-            "OpenTabletDriver.UX"
+            "OpenTabletDriver.UX",
+            "Alacritty"
         } },
         properties = {
-            floating = true,
             width = 1200,
             height = 1000
             }
@@ -212,7 +212,6 @@ awful.rules.rules = {
             "     "
         } },
         properties = {
-            floating = true,
             width = 1920,
             height = 1080
             }
