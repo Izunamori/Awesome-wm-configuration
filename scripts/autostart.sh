@@ -36,5 +36,5 @@ pgrep -x steam || steam -silent &
 
 
 # ---------- ### Deferred ### ---------- #
-sleep 5 $
+sleep 7 $
 AyuGram &
