@@ -31,7 +31,9 @@ alias gp="git add * && git commit -m "None" && git push origin main"
 
 # dedicated servers
 alias ter="~/Documents/Servers/Terraria/1455/Linux/TerrariaServer"
-alias fac="/home/izunamori/Documents/Servers/Factorio/bin/x64/factorio --start-server"
+alias fac="/home/izunamori/Documents/Servers/Factorio/bin/x64/factorio \
+            --server-settings /home/izunamori/Documents/Servers/Factorio/data/server-settings.example.json \
+            --start-server"
 
 # zerotier
 alias zj="sudo zerotier-cli join"

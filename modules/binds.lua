@@ -81,6 +81,15 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/toggle_comp.sh") end,
         {description = "| выкл/вкл композитор", group = "Programs/scripts"}),
 
+
+        awful.key({}, "Control_R",
+    function ()
+        awful.spawn.easy_async("pactl set-source-mute "..mic.." toggle", function()
+            update_mic()  -- обновляем виджет только после бинда
+        end)
+    end,
+    {description = "Toggle mic", group = "custom"}),
+
     --- monitor focus swap ---
     awful.key({ modkey }, "Tab", function()
         local current = awful.screen.focused()
