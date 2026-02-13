@@ -25,6 +25,7 @@ alias s="yay -q"
 alias p="sudo pacman"
 alias ls="lsd"
 alias pizdec="archarchive"
+alias reboot="aplay /home/izunamori/.config/awesome/sounds/windows-xp-shutdown.wav >/dev/null 2>&1; /sbin/reboot"
 
 # git
 alias gp="git add * && git commit -m "None" && git push origin main"

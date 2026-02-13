@@ -98,6 +98,7 @@ awful.rules.rules = {
             "discord",
             "TelegramDesktop",
             "AyuGram",
+            "vesktop",
         } },
         properties = { tag = screen[2].tags[1], screen = 2 }
     },
