@@ -22,13 +22,24 @@ local beautiful = require("beautiful")
  
 local menubar = require("menubar")
 
+local calendar = require("awesome-wm-widgets.calendar-widget.calendar")
+
 --####################################
+
+local my_calendar = calendar({
+    theme = 'naughty',  -- или другой theme из списка
+    placement = 'top_right',
+    radius = 8,
+    -- другие параметры по желанию
+})
 
 -- Signal function to execute when a new client appears.
 local urgent_exclude = {
     class = {
         AYUGRAMDESKTOP = true,
         DISCORD = true,
+        STEAM = true,
+        VESKTOP = true,
     },
     instance = {}
 }
@@ -166,6 +177,12 @@ end)
 -- опционально: очищаем запись при закрытии окна
 client.connect_signal("unmanage", function(c)
     terraria_clients[c] = nil
+end)
+
+mytextclock:connect_signal("button::press", function(_,_,_,button)
+    if button == 1 then
+        my_calendar.toggle()
+    end
 end)
 
 --- My signals ---

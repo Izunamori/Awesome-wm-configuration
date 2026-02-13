@@ -50,6 +50,7 @@ ln -s /mnt/HDD/videos_linux ~/Videos
 ## setup xinitrc
 ```bash
 echo "#!/bin/sh" >> ~/.xinitrc
+echo "export XCURSOR_SIZE=24"
 echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.xinitrc
 echo "(sleep 1 && awesome-client 'awesome.restart()') &" >> ~/.xinitrc
 echo "exec awesome" >> ~/.xinitrc

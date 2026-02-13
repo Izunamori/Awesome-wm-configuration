@@ -53,7 +53,8 @@ awful.rules.rules = {
             "steam_app_*",
             "Terraria.bin.x86_64",
             "gamescope",
-            "factorio"
+            "factorio",
+            "portal2_linux",
         } },
         properties = { tag = screen[1].tags[1], screen = 1 }
     },
@@ -136,7 +137,8 @@ awful.rules.rules = {
           "xtightvncviewer",
           "pavucontrol",
           "satty",
-          "qBittorrent"
+          "qBittorrent",
+          "Lutris"
         },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client

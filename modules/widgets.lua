@@ -43,39 +43,45 @@ local sys_monitor = wibox.widget {
 
 local function update_sys_monitor()
     local cpu_cmd = [[bash -c "top -bn1 | grep 'Cpu(s)' | awk '{print $2+$4}' | cut -d'.' -f1"]]
-    local cpu_temp_cmd = [[bash -c "sensors | grep -E '(Package id|Core 0)' | head -1 | awk '{print \$4}' | tr -d '+°C'"]]
+    local cpu_temp_cmd = [[bash -c "sensors 2>/dev/null | awk '/(Tctl|Tdie|Package id|CPU Temp|Core 0)/{for(i=1;i<=NF;i++) if($i ~ /\+?[0-9]+\.[0-9]+°C/){gsub(/[+°C]/,\"\",$i); print int($i); exit}}' || echo 0"]]
     local gpu_cmd = [[bash -c "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits 2>/dev/null || echo '0,0'"]]
-    local ram_cmd = [[bash -c "free | grep Mem | awk '{printf \"%.0f\", \$3/\$2 * 100.0}'"]]
-    
+    local ram_cmd = [[bash -c "free | grep Mem | awk '{printf \"%.0f\", $3/$2 * 100.0}'"]]
+    local ram_gb_cmd = [[bash -c "free -b | awk '/Mem:/ {printf \"%.1f\", $3/1024/1024/1024}'"]]
+
     awful.spawn.easy_async(cpu_cmd, function(cpu_usage)
-        local cpu = cpu_usage:gsub("%s+", "")
-        cpu = cpu:match("%d+") or "0"
-        
+        local cpu = cpu_usage:gsub("%s+", ""):match("%d+") or "0"
+
         awful.spawn.easy_async(cpu_temp_cmd, function(cpu_temp)
-            
+            local ctemp = cpu_temp:gsub("%s+", ""):match("%d+") or "0"
+
             awful.spawn.easy_async(gpu_cmd, function(gpu_data)
                 local gpu_load, gpu_temp = "0", "0"
                 if gpu_data then
                     gpu_load, gpu_temp = gpu_data:match("([^,]+),([^,]+)")
-                    gpu_load = gpu_load:gsub("%s+", "") or "0"
-                    gpu_temp = gpu_temp:gsub("%s+", "") or "0"
+                    gpu_load = (gpu_load or "0"):gsub("%s+", "")
+                    gpu_temp = (gpu_temp or "0"):gsub("%s+", "")
                 end
-                
+
                 awful.spawn.easy_async(ram_cmd, function(ram_usage)
-                    local ram = ram_usage:gsub("%s+", "")
-                    ram = ram:match("%d+") or "0"
-                                        
-                    local text = string.format(
-                        "Cpu %s%%    %sGpu %s%% %s°C    Mem %s%%",
-                        cpu, cpu_temp, gpu_load, gpu_temp, ram
-                    )
-                    
-                    sys_monitor:get_children_by_id('sys_text')[1]:set_text(text)
+                    local ram = ram_usage:gsub("%s+", ""):match("%d+") or "0"
+
+                    awful.spawn.easy_async(ram_gb_cmd, function(ram_gb)
+                        local gb = ram_gb:gsub("%s+", "") or "0"
+
+                        local text = string.format(
+                            "Cpu %s%% %s°C    Gpu %s%% %s°C    Mem %s%% %sG",
+                            cpu, ctemp, gpu_load, gpu_temp, ram, gb
+                        )
+
+                        sys_monitor:get_children_by_id('sys_text')[1]:set_text(text)
+                    end)
                 end)
             end)
         end)
     end)
 end
+
+
 
 local sys_timer = gears.timer({
     timeout = 1,
@@ -83,6 +89,8 @@ local sys_timer = gears.timer({
     autostart = true,
     callback = update_sys_monitor
 })
+
+---
 
 --- Pipe separator ---
 tbox_separator = wibox.widget {
@@ -111,7 +119,7 @@ sub_menu_arrow = wibox.widget {
 local mic_widget = wibox.widget {
     {
         id = "icon",
-        text = "(?)", -- начальное состояние
+        text = "(?)", -- start condition
         widget = wibox.widget.textbox,
     },
     widget = wibox.container.margin,
@@ -126,10 +134,10 @@ function update_mic()
             local state = stdout:match("Mute: (%w+)")
             if state == "yes" then
                 mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_off..'"> </span>' -- Off
-                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/mute_alt.wav")
+                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/mute.wav")
             else
-                mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_on..'">()</span>' -- On 🎙️
-                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/unmute_alt.wav")
+                mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_on..'">()</span>' -- On 
+                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/unmute.wav")
             end
         end
     )
@@ -396,6 +404,7 @@ local tasklist_buttons = gears.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
+
 awful.screen.connect_for_each_screen(function(s)
 
     --- Tags ---
@@ -456,9 +465,6 @@ awful.screen.connect_for_each_screen(function(s)
         end,
     }
 
-
-
-
     -- Create the wibox
     s.mywibox = awful.wibar({
         position = "top",
@@ -489,6 +495,7 @@ awful.screen.connect_for_each_screen(function(s)
             space_separator,
             centered_systray,
             space_separator,
+            -- s.mylayoutbox,
             -- cpu_widget(),
             -- space_separator,
             -- ram_widget(),
