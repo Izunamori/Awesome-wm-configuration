@@ -106,7 +106,6 @@ sub_menu_arrow = wibox.widget {
 
 
 --- Microphone widget ---
-mic = "alsa_input.usb-Focusrite_Scarlett_2i2_USB-00.HiFi__Mic1__source"
 
 -- Widget
 local mic_widget = wibox.widget {
@@ -122,21 +121,35 @@ local mic_widget = wibox.widget {
 -- Upd func
 function update_mic()
     awful.spawn.easy_async_with_shell(
-        "pactl list sources | grep -A 15 '"..mic.."' | grep Mute",
+        "pactl list sources | grep -A 15 '"..microphone.."' | grep Mute",
         function(stdout)
             local state = stdout:match("Mute: (%w+)")
             if state == "yes" then
-                mic_widget.icon.text = "(X)" -- Off
-                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/mute.wav")
+                mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_off..'"> </span>' -- Off
+                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/mute_alt.wav")
             else
-                mic_widget.icon.text = "(0)" -- On
-                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/unmute.wav")
+                mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_on..'">()</span>' -- On 🎙️
+                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/unmute_alt.wav")
             end
         end
     )
 end
 
-update_mic()
+local function update_mic_quiet()
+    awful.spawn.easy_async_with_shell(
+        "pactl list sources | grep -A 15 '"..microphone.."' | grep Mute",
+        function(stdout)
+            local state = stdout:match("Mute: (%w+)")
+            if state == "yes" then
+                mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_off..'"> </span>' -- Off
+            else
+                mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_on..'">()</span>' -- On 🎙️
+            end
+        end
+    )
+end
+
+update_mic_quiet()
 
 --- {{{ Other widgets }}} ---
 

@@ -31,6 +31,7 @@ terminal = "alacritty"
 browser = "firefox"
 filemanager = "thunar"
 editor = os.getenv("EDITOR") or "/home/izunamori/Documents/Apps/VSCode-linux-x64/code"
+microphone = "alsa_input.usb-Focusrite_Scarlett_2i2_USB-00.HiFi__Mic1__source"
 
 --- Default modkey ---
 modkey = "Mod4"

@@ -84,7 +84,7 @@ globalkeys = gears.table.join(
 
         awful.key({}, "Control_R",
     function ()
-        awful.spawn.easy_async("pactl set-source-mute "..mic.." toggle", function()
+        awful.spawn.easy_async("pactl set-source-mute "..microphone.." toggle", function()
             update_mic()  -- обновляем виджет только после бинда
         end)
     end,
