@@ -43,6 +43,8 @@ alias zl="sudo zerotier-cli leave"
 # zellij
 alias zel="zellij a; or zellij"
 
+alias ago="/home/izunamori/.config/awesome/scripts/functional/installed-days-ago-fetch.sh"
+
 #################
 
 #########################

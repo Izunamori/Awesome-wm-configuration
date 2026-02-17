@@ -127,7 +127,7 @@ local mic_widget = wibox.widget {
 }
 
 -- Upd func
-function update_mic()
+function update_mic_widget()
     awful.spawn.easy_async_with_shell(
         "pactl list sources | grep -A 15 '"..microphone.."' | grep Mute",
         function(stdout)
@@ -143,7 +143,7 @@ function update_mic()
     )
 end
 
-local function update_mic_quiet()
+local function update_mic_widget_quiet()
     awful.spawn.easy_async_with_shell(
         "pactl list sources | grep -A 15 '"..microphone.."' | grep Mute",
         function(stdout)
@@ -157,7 +157,7 @@ local function update_mic_quiet()
     )
 end
 
-update_mic_quiet()
+update_mic_widget_quiet()
 
 --- {{{ Other widgets }}} ---
 
@@ -412,7 +412,7 @@ awful.screen.connect_for_each_screen(function(s)
         -- 1 Monitor
         awful.tag({ "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  " }, s, awful.layout.layouts[1])
     else
-        -- 1 Monitor (other monitors)
+        -- 2 Monitor (other monitors)
         awful.tag({ "  ✦  ", "  ✦  ", "  >_  "  }, s, awful.layout.layouts[1])
     end
 
