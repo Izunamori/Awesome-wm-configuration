@@ -18,7 +18,7 @@ configuration {
   bg:                     #0f0f0f;
   fg:                     #bdbdbd;
   alt:                    #1b1b1b;
-  rad:                    12px;
+  rad:                    0px;
   background-color:       @bg;
   text-color:             @fg;
 }
