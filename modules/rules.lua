@@ -138,7 +138,9 @@ awful.rules.rules = {
           "pavucontrol",
           "satty",
           "qBittorrent",
-          "Lutris"
+          "Lutris",
+          "firefox",
+          "steam"
         },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -200,10 +202,16 @@ awful.rules.rules = {
 
     --- Window size rules ---
     { -- 1200x1000
-        rule_any = { class = {
+        rule_any = { 
+            class = {
             "OpenTabletDriver.UX",
-            "Alacritty"
-        } },
+            "Alacritty",
+            "Thunar"
+            },
+            name = {
+                "     "
+            }
+        },
         properties = {
             width = 1200,
             height = 1000
@@ -211,9 +219,14 @@ awful.rules.rules = {
     },
 
     { -- 1920x1080
-        rule_any = { class = {
-            "     "
-        } },
+        rule_any = { 
+            class = {
+            "firefox"
+            },
+            name = {
+                "Steam"
+            }
+        },
         properties = {
             width = 1920,
             height = 1080

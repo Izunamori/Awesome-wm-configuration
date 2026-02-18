@@ -27,7 +27,7 @@ export GTK_USE_PORTAL=1 &
 export DESKTOP_SESSION=gnome &
 export DISPLAY=:0 &
 systemctl --user import-environment XDG_CURRENT_DESKTOP DISPLAY &
-pgrep -x Throne || Throne -silent &
+# pgrep -x Throne || Throne -silent &
 
 
 # ---------- ### Programs ### ---------- #

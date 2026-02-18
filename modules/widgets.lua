@@ -333,6 +333,7 @@ scripts = {
     { "Discord Update", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/discord_update.sh" },
     { "Full update", terminal .. " -e yay -Suy --ignore wireplumber --noconfirm" },
     { "Flatpak update", terminal .. " -e flatpak update"},
+    { "Update hosts", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/update_hosts.sh"},
     { "git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/git_push_dotfiles.sh"},
 }
 
@@ -469,11 +470,12 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({
         position = "top",
         screen   = s,
-        height   = 26
+        height   = 28,
+        -- width    = 1500
     })
 
     s.mywibox:struts {
-        top = 26
+        top = s.mywibox.height
     }
 
     --- Add widgets to wibar ---
