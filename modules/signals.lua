@@ -38,7 +38,7 @@ local urgent_exclude = {
     class = {
         AYUGRAMDESKTOP = true,
         DISCORD = true,
-        STEAM = true,
+        --STEAM = true,
         VESKTOP = true,
     },
     instance = {}
