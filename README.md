@@ -41,8 +41,11 @@ echo -e 'Section "InputClass"
 
 ## Soft link for ~/Pictures & ~/Videos
 ```bash
+cd
+mkdir Pictures
 mv ~/Pictures ~/Pictures.backup
 ln -s /mnt/HDD/pictures_linux ~/Pictures
+mkdir Videos
 mv ~/Videos ~/Videos.backup
 ln -s /mnt/HDD/videos_linux ~/Videos
 ```
