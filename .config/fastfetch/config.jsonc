@@ -44,46 +44,46 @@
             "type": "kernel"
         },
         {
-            "key": "│ {#31}  term    {#keys}│",
+            "key": "│ {#31}󰏖  pkgs    {#keys}│",
+            "type": "packages"
+        },
+        {
+            "key": "│ {#32}  term    {#keys}│",
             "type": "terminal"
         },
         {
-            "key": "│ {#32}  shell   {#keys}│",
+            "key": "│ {#33}  shell   {#keys}│",
             "type": "shell"
         },
         {
-            "key": "│ {#33}  wm      {#keys}│",
+            "key": "│ {#34}  wm      {#keys}│",
             "type": "wm"
         },
         {
             "type": "lm",
-            "key": "│ {#33}  lm      {#keys}│"
+            "key": "│ {#35}  lm      {#keys}│"
         },
         {
-            "key": "│ {#34}󰍛  cpu     {#keys}│",
+            "key": "│ {#31}󰍛  cpu     {#keys}│",
             "type": "cpu",
             "showPeCoreCount": true
         },
         {
-            "key": "│ {#35}󰍛  gpu     {#keys}│",
+            "key": "│ {#32}󰍛  gpu     {#keys}│",
             "type": "gpu"
         },
         {
-            "key": "│ {#31}󰉉  disk    {#keys}│",
+            "key": "│ {#33}󰉉  disk    {#keys}│",
             "type": "disk",
             "folders": "/"
         },
         {
-            "key": "│ {#32}  memory  {#keys}│",
+            "key": "│ {#34}  memory  {#keys}│",
             "type": "memory"
         },
         {
             "type": "swap",
-            "key": "│ {#31}󰉉  swap    {#keys}│"
-        },
-        {
-            "key": "│ {#33}󰏖  pkgs    {#keys}│",
-            "type": "packages"
+            "key": "│ {#35}󰉉  swap    {#keys}│"
         },
         // {
         //     "key": "│ {#36}󰩟  network {#keys}│",
