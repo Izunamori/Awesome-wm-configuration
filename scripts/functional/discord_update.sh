@@ -13,10 +13,10 @@ mkdir -p ~/Documents/Apps
 wget "https://discord.com/api/download?platform=linux&format=tar.gz" -O ~/discord.tar.gz
 
 # Распаковываем в нужную директорию
-tar -xzvf ~/discord.tar.gz -C ~/Documents/Apps/
+tar -xzvf ~/discord.tar.gz -C ~/Apps/
 
 # Удаляем архив
 rm ~/discord.tar.gz
 
 # Запускаем Discord
-nohup ~/Documents/Apps/Discord/Discord > /dev/null 2>&1 &
+~/Apps/Discord/Discord > /dev/null 2>&1 &

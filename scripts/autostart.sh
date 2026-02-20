@@ -32,7 +32,7 @@ pgrep -x Throne || Throne -silent &
 
 # ---------- ### Programs ### ---------- #
 pgrep -x steam || steam -silent &
-/home/izunamori/Documents/Apps/Discord/Discord # --start-minimized &
+/home/izunamori/Apps/Discord/Discord # --start-minimized &
 
 
 # ---------- ### Deferred ### ---------- #
