@@ -134,10 +134,10 @@ function update_mic_widget()
             local state = stdout:match("Mute: (%w+)")
             if state == "yes" then
                 mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_off..'"> </span>' -- Off
-                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/mute.wav")
+                awful.spawn.with_shell("paplay /home/izunamori/.config/awesome/sounds/mute.wav")
             else
                 mic_widget.icon.markup =  '<span foreground="'..beautiful.fg_on..'">()</span>' -- On 
-                awful.spawn.with_shell("aplay /home/izunamori/.config/awesome/sounds/unmute.wav")
+                awful.spawn.with_shell("paplay /home/izunamori/.config/awesome/sounds/unmute.wav")
             end
         end
     )

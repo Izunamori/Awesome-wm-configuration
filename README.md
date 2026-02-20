@@ -79,4 +79,5 @@ rm -r ~/.config/MangoHud; ln -s ~/.config/awesome/.config/MangoHud/ ~/.config/Ma
 rm -r ~/.config/btop; ln -s ~/.config/awesome/.config/btop/ ~/.config/btop
 rm -r ~/.config/alacritty; ln -s ~/.config/awesome/.config/alacritty/ ~/.config/alacritty
 rm -r ~/.config/rofi; ln -s ~/.config/awesome/.config/rofi/ ~/.config/rofi
+rm -r ~/.config/fastfetch; ln -s ~/.config/awesome/.config/fastfetch/ ~/.config/fastfetch
 ```

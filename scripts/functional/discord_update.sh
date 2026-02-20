@@ -4,10 +4,10 @@
 killall Discord 2>/dev/null
 
 # Удаляем старую версию
-rm -rf ~/Documents/Apps/Discord
+rm -rf ~/Apps/Discord
 
 # Создаем директории (если они еще не существуют)
-mkdir -p ~/Documents/Apps
+mkdir -p ~/Apps
 
 # Скачиваем Discord
 wget "https://discord.com/api/download?platform=linux&format=tar.gz" -O ~/discord.tar.gz
