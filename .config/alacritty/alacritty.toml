@@ -12,7 +12,7 @@ multiplier = 3
 
 # Font
 [font]
-size = 13
+size = 15
 
 [font.normal]
 family = "Ubuntu Mono" # Terminus
