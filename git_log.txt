@@ -302,3 +302,70 @@ Sat Feb 21 00:29:44 +05 2026
 -------------------------------------
 Sat Feb 21 00:30:38 +05 2026
 
+[main 1b31264] update configuration
+ 65 files changed, 415 insertions(+), 18 deletions(-)
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/OFL.txt
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/README.txt
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-Black.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-Bold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-ExtraBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-ExtraLight.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-Light.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-Medium.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-Regular.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-SemiBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_120pt-Thin.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-Black.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-Bold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-ExtraBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-ExtraLight.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-Light.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-Medium.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-Regular.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-SemiBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_24pt-Thin.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-Black.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-Bold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-ExtraBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-ExtraLight.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-Light.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-Medium.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-Regular.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-SemiBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_36pt-Thin.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-Black.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-Bold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-ExtraBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-ExtraLight.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-Light.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-Medium.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-Regular.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-SemiBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_72pt-Thin.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-Black.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-Bold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-ExtraBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-ExtraLight.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-Light.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-Medium.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-Regular.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-SemiBold.ttf
+ create mode 100644 dependencies/fonts/Google_Sans_Flex/static/GoogleSansFlex_9pt-Thin.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/UFL.txt
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-Bold.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-BoldItalic.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-Italic.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-Light.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-LightItalic.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-Medium.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-MediumItalic.ttf
+ create mode 100644 dependencies/fonts/Ubuntu/Ubuntu-Regular.ttf
+ create mode 100644 dependencies/fonts/Ubuntu_Mono/UFL.txt
+ create mode 100644 dependencies/fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf
+ create mode 100644 dependencies/fonts/Ubuntu_Mono/UbuntuMono-BoldItalic.ttf
+ create mode 100644 dependencies/fonts/Ubuntu_Mono/UbuntuMono-Italic.ttf
+ create mode 100644 dependencies/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf
+-------------------------------------
+Sat Feb 21 00:44:31 +05 2026
+
