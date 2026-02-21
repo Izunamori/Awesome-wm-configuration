@@ -178,7 +178,9 @@ awful.rules.rules = {
         instance = {},
         class = {
             "Terraria.bin.x86_64",
-            "steam"
+            "steam",
+            "discord",
+            "AyuGramDesktop"
         },
         name = {},
     }, properties = { border_width = 0 }},
@@ -270,4 +272,46 @@ awful.rules.rules = {
             height = 600
             }
     },
+
+    { -- gaps ~18px
+        rule = { class = "discord" },
+        properties = {
+            floating = true,        -- нужно, чтобы можно было задать размер и позицию
+            width = 1500,
+            height = 1052,
+            x = 0,                -- позиция по X
+            y = 308,                 -- позиция по Y
+        }
+    },
+    {
+        rule = { class = "AyuGramDesktop" },
+        properties = {
+            floating = true,        -- нужно, чтобы можно было задать размер и позицию
+            width = 420,
+            height = 1052,
+            x = 1500,                -- позиция по X
+            y = 308,                 -- позиция по Y
+        }
+    },
+
+    -- { -- gaps ~18px
+    --     rule = { class = "discord" },
+    --     properties = {
+    --         floating = true,        -- нужно, чтобы можно было задать размер и позицию
+    --         width = 1463,
+    --         height = 1017,
+    --         x = 18,                -- позиция по X
+    --         y = 325,                 -- позиция по Y
+    --     }
+    -- },
+    -- {
+    --     rule = { class = "AyuGramDesktop" },
+    --     properties = {
+    --         floating = true,        -- нужно, чтобы можно было задать размер и позицию
+    --         width = 400,
+    --         height = 1017,
+    --         x = 1500,                -- позиция по X
+    --         y = 325,                 -- позиция по Y
+    --     }
+    -- },
 }

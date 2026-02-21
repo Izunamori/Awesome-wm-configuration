@@ -109,12 +109,17 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 --- Centering windows ---
+local no_center = { "discord", "AyuGramDesktop" } -- Excludes 
 client.connect_signal("manage", function(c)
-    if c.floating or awful.client.floating.get(c) then
-        awful.placement.centered(c, {
-            honor_workarea = true, 
-            honor_padding = true  
-        })
+    local skip = false
+    for _, class in ipairs(no_center) do
+        if c.class == class then
+            skip = true
+            break
+        end
+    end
+    if not skip then
+        awful.placement.centered(c)
     end
 end)
 
