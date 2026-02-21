@@ -204,11 +204,21 @@ awful.rules.rules = {
     }, properties = { maximized = true }},
 
 
-    { -- 1920x1080
+    { -- 2240x1260
         rule_any = { 
             class = {
             "firefox"
             },
+            name = {}
+        },
+        properties = {
+            width = 2240,
+            height = 1260
+            }
+    },
+    { -- 1920x1080
+        rule_any = { 
+            class = {},
             name = {
                 "Steam"
             }
@@ -217,7 +227,8 @@ awful.rules.rules = {
             width = 1920,
             height = 1080
             }
-    }, { -- 1200x1000
+    }, 
+    { -- 1200x1000
         rule_any = { 
             class = {
                 "OpenTabletDriver.UX",
@@ -232,7 +243,8 @@ awful.rules.rules = {
             width = 1200,
             height = 1000
             }
-    }, { -- 1000x600
+    }, 
+    { -- 1000x600
         rule_any = { 
             class = {
                 "terminal_float"
@@ -244,7 +256,8 @@ awful.rules.rules = {
             width = 1000,
             height = 600
             }
-    }, { -- 800x600
+    }, 
+    { -- 800x600
         rule_any = { 
             class = {
                 "    "

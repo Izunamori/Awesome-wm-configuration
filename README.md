@@ -70,6 +70,18 @@ git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
 ~/Git/Graphite-gtk-theme/install.sh -t default -c dark -s compact -l --tweaks black rimless
 ```
 
+## rEFInd
+```bash
+vim /boot/EFI/refind/refind.conf
+# insert this
+timeout 5
+default_selection "Arch Linux"
+dont_scan_volumes "EFI","Recovery","USB1","USB2"
+scanfor manual,internal
+dont_scan_files vmlinuz-linux initramfs-linux.img
+include themes/rEFInd-nils/theme.conf
+```
+
 ## Sync configs with repository
 ```bash
 rm -r ~/.config/fish; ln -s ~/.config/awesome/.config/fish/ ~/.config/fish
