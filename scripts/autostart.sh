@@ -41,5 +41,5 @@ pgrep -x Discord || /home/izunamori/Apps/Discord/Discord &
 
 
 # ---------- ### Deferred ### ---------- #
-sleep 7 $
+sleep 3
 pgrep -x AyuGram || AyuGram &
