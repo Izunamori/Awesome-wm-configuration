@@ -28,6 +28,11 @@ export DESKTOP_SESSION=gnome &
 export DISPLAY=:0 &
 systemctl --user import-environment XDG_CURRENT_DESKTOP DISPLAY &
 pgrep -x Throne || Throne -silent &
+pactl set-source-volume \@DEFAULT_SOURCE@ 99% &
+pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
+pactl set-source-volume \@DEFAULT_SOURCE@ 99% &
+pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
+pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 
 
 # ---------- ### Programs ### ---------- #
