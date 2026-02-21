@@ -141,7 +141,6 @@ awful.rules.rules = {
           "Lutris",
           "firefox",
           "steam",
-          "terminal_float",
           "Throne"
         },
 
@@ -214,6 +213,7 @@ awful.rules.rules = {
             name = {}
         },
         properties = {
+            floating = true,
             width = 2240,
             height = 1260
             }
@@ -226,6 +226,7 @@ awful.rules.rules = {
             }
         },
         properties = {
+            floating = true,
             width = 1920,
             height = 1080
             }
@@ -234,16 +235,29 @@ awful.rules.rules = {
         rule_any = { 
             class = {
                 "OpenTabletDriver.UX",
-                "Alacritty",
-                "terminal_float",
             },
             name = {
                 "Steam Settings"
             }
         },
         properties = {
+            floating = true,
             width = 1200,
             height = 1000
+            }
+    }, 
+    { -- 1000x800
+        rule_any = { 
+            class = {
+                "filemanager_float"
+            },
+            name = {
+            }
+        },
+        properties = {
+            floating = true,
+            width = 1000,
+            height = 800
             }
     }, 
     { -- 1000x600
@@ -255,6 +269,7 @@ awful.rules.rules = {
             }
         },
         properties = {
+            floating = true,
             width = 1000,
             height = 600
             }
@@ -268,6 +283,7 @@ awful.rules.rules = {
             }
         },
         properties = {
+            floating = true,
             width = 800,
             height = 600
             }

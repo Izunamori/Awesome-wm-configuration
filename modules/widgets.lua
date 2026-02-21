@@ -417,6 +417,16 @@ awful.screen.connect_for_each_screen(function(s)
         awful.tag({ "  ✦  ", "  ✦  ", "  >_  "  }, s, awful.layout.layouts[1])
     end
 
+    -- Backup tag when restart
+    local f = io.open("/tmp/awesome_tag_state_" .. s.index, "r")
+    if f then
+        local last_tag_index = tonumber(f:read("*all"))
+        f:close()
+        if last_tag_index and s.tags[last_tag_index] then
+            s.tags[last_tag_index]:view_only()
+        end
+    end
+
     --- {{{ Sys tray }}} ---
     
     --- Icons size ---

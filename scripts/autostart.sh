@@ -37,5 +37,9 @@ pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 
 # ---------- ### Programs ### ---------- #
 pgrep -x steam || steam -silent &
-/home/izunamori/Apps/Discord/Discord & # --start-minimized &
-AyuGram &
+pgrep -x Discord || /home/izunamori/Apps/Discord/Discord &
+
+
+# ---------- ### Deferred ### ---------- #
+sleep 7 $
+pgrep -x AyuGram || AyuGram &
