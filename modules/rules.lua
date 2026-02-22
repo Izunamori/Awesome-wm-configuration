@@ -249,7 +249,8 @@ awful.rules.rules = {
     { -- 1000x800
         rule_any = { 
             class = {
-                "filemanager_float"
+                "filemanager_float",
+                "Thunar"
             },
             name = {
             }

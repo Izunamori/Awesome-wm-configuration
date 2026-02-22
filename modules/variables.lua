@@ -30,7 +30,7 @@ beautiful.init(".config/awesome/themes/default/theme.lua")
 terminal = "alacritty"
 browser = "firefox"
 filemanager = "thunar"
-editor = os.getenv("EDITOR") or "/home/izunamori/Apps/VSCode-linux-x64/code"
+editor = "/home/izunamori/Apps/VSCode-linux-x64/code" -- terminal .. " -e nvim"
 microphone = "alsa_input.usb-Focusrite_Scarlett_2i2_USB-00.HiFi__Mic1__source"
 
 --- Default modkey ---

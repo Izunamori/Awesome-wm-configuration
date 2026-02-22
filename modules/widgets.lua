@@ -323,7 +323,7 @@ end
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor .. " " .. awesome.conffile },
+   { "edit config", terminal .. " nvim ~/.config/awesome/" },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
 }

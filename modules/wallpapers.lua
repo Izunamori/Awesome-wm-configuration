@@ -43,7 +43,7 @@ math.randomseed(os.time())
     -- Wallpaper
     if beautiful.wallpaper then
     
-        local wallpaper = "/home/izunamori/Pictures/Wallpaper/1.png"
+        local wallpaper = "/home/izunamori/Pictures/Wallpaper/vim.png"
         
         -- If wallpaper is a function, call it with the screen
         if type(wallpaper) == "function" then
