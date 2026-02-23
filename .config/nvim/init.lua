@@ -138,7 +138,7 @@ require("lazy").setup({
       dashboard.button("f", "> Find file", ":Telescope find_files<cr>"),
       dashboard.button("r", "> Recent files", ":Telescope oldfiles<cr>"),
       dashboard.button("a", "> Awesome config", ":e ~/.config/awesome<cr>"),
-      dashboard.button("nv", "> Neovim config", ":e ~/.config/nvim/init.lua<cr>"),
+      dashboard.button("n", "> Neovim config", ":e ~/.config/nvim/init.lua<cr>"),
       dashboard.button("c", "> .config", ":e ~/.config/<cr>"),
       dashboard.button("l", "> Lazy", ":Lazy<cr>"),
 
