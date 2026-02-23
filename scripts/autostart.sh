@@ -33,6 +33,8 @@ pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 99% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
+pactl load-module module-null-sink sink_name=Discord_Audio sink_properties=device.description=Discord_Audio
+
 
 
 # ---------- ### Programs ### ---------- #

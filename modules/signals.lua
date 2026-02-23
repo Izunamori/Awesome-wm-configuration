@@ -141,6 +141,24 @@ client.connect_signal("manage", function(c)
     end
 end)
 
+client.connect_signal("manage", function(c)
+    if c.type == "utility" or c.type == "dialog" or c.type == "splash" then return end
+
+    -- Telegram image viewer / override fullscreen windows
+    if c.fullscreen or c.name == "Projector - Scene: Scene" or c.name == "Projector - Scene: Scene" then
+        local g = c.screen.geometry
+        c.border_width = 0
+        c.floating = false
+        c.maximized = true
+        c:geometry({
+            x = g.x,
+            y = g.y,
+            width  = g.width,
+            height = g.height
+        })
+    end
+end)
+
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})

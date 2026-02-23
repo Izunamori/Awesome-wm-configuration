@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Убиваем процесс Discord
 killall Discord 2>/dev/null

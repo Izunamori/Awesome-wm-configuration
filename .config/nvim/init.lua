@@ -98,7 +98,7 @@ require("lazy").setup({
     opts = {
         padding = true,
         sticky = true,
-        ignore = nil,
+        ignore = "-",
     },
   },
   {
