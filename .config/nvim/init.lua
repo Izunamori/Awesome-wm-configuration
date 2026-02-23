@@ -1,3 +1,4 @@
+----- General settings -----
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.cmdheight = 0
@@ -7,6 +8,7 @@ vim.opt.cursorline = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.shiftwidth = 2
 
+----- Commands -----
 vim.api.nvim_create_user_command("Tab", function(opts)
   local n = tonumber(opts.args)
   if not n then return end
@@ -24,7 +26,7 @@ vim.api.nvim_create_user_command("Tab", function(opts)
   vim.fn.writefile(lines, path)
 end, { nargs = 1 })
 
--- bootstrap lazy.nvim
+----- bootstrap lazy.nvim -----
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -112,7 +114,7 @@ require("lazy").setup({
       easing_function = "cubic",  
       hide_cursor = true,
       stop_eof = true,
-      use_local_scrolloff = false,
+      use_locaЖцl_scrolloff = false,
       respect_scrolloff = false,
       cursor_scrolls_alone = true,
     })
@@ -211,8 +213,7 @@ require("lazy").setup({
   }
 })
 
---- binds ---
-
+----- binds -----
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Open Neo-tree" })
