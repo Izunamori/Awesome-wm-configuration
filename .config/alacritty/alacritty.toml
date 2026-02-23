@@ -4,7 +4,7 @@
 [window]
 padding = { x = 20, y = 20 }
 decorations = "full"
-opacity = 0.85
+opacity = 1
 
 [scrolling]
 history = 10000

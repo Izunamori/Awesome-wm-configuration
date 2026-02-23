@@ -77,7 +77,8 @@ awful.rules.rules = {
     { -- 4 tag
         rule_any = { class = {
             "jetbrains-rider",
-            "Code"
+            "Code",
+	    "nvim"
         } },
         properties = { tag = screen[1].tags[4], screen = 1 }
     },
@@ -257,7 +258,7 @@ awful.rules.rules = {
         },
         properties = {
             floating = true,
-            width = 1000,
+            width = 1300,
             height = 800
             }
     }, 
