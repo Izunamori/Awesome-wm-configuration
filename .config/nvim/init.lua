@@ -37,6 +37,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+----- Lazy setup -----
 require("lazy").setup({
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   { "neovim/nvim-lspconfig" },
@@ -86,12 +87,7 @@ require("lazy").setup({
   "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
   config = function()
-    -- Базовая настройка (появятся вертикальные линии)
     require("ibl").setup()
-    
-    -- Если нужны линии для скобок (а не только для отступов)
-    -- Добавьте эту опцию:
-    -- scope = { enabled = true },
   end,
   },
   {

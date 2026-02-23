@@ -438,3 +438,10 @@ Mon Feb 23 18:50:37 +05 2026
 -------------------------------------
 Mon Feb 23 18:59:12 +05 2026
 
+[main f269c89] update configuration
+ 3 files changed, 294 insertions(+)
+ create mode 100644 .config/nvim/init.lua
+ create mode 100644 .config/nvim/lazy-lock.json
+-------------------------------------
+Mon Feb 23 19:00:47 +05 2026
+
