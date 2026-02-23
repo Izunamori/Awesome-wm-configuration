@@ -114,7 +114,7 @@ require("lazy").setup({
       easing_function = "cubic",  
       hide_cursor = true,
       stop_eof = true,
-      use_locaЖцl_scrolloff = false,
+      use_local_scrolloff = false,
       respect_scrolloff = false,
       cursor_scrolls_alone = true,
     })
