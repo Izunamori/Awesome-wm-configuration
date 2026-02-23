@@ -195,9 +195,9 @@ globalkeys = gears.table.join(
         {description = "| показать главное меню", group = "Awesome"}),
 
     -- Standard program
-    awful.key({ modkey, }, "Return", function () awful.spawn(terminal) awful.spawn("xkb-switch -s us") end,
+    awful.key({ modkey, }, "Return", function () awful.spawn(terminal .. " --class tile ") awful.spawn("xkb-switch -s us") end,
         {description = "| запустить терминал", group = "Programs/scripts"}),
-        awful.key({ modkey, "Shift" }, "Return", function () awful.spawn(terminal .. " --class terminal_float") awful.spawn("xkb-switch -s us") end,
+        awful.key({ modkey, "Shift" }, "Return", function () awful.spawn(terminal) awful.spawn("xkb-switch -s us") end,
         {description = "| запустить терминал (float)", group = "Programs/scripts"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         {description = "| перезагрузить Awesome", group = "Awesome"}),

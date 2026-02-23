@@ -205,6 +205,15 @@ awful.rules.rules = {
         name = {},
     }, properties = { maximized = true }},
 
+    { 
+        rule_any = { 
+            class = {
+            "tile"
+            },
+            name = {}
+        },
+        properties = { floating = false }
+    },
 
     { -- 2240x1260
         rule_any = { 
@@ -265,7 +274,7 @@ awful.rules.rules = {
     { -- 1000x600
         rule_any = { 
             class = {
-                "terminal_float"
+                "Alacritty"
             },
             name = {
             }
