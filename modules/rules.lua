@@ -221,10 +221,10 @@ awful.rules.rules = {
     { rule_any = {
         instance = {},
         class = {
-            "satty"
+            "satty",
         },
         name = {
-            "satty"
+            "satty",
         },
     }, properties = { ontop = true }},
 
@@ -233,7 +233,6 @@ awful.rules.rules = {
         instance = {},
         class = {
             "Terraria.bin.x86_64      ",
-	    "Projector - Scene: osu"
         },
         name = {},
     }, properties = { maximized = true }},
