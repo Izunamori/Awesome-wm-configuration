@@ -470,3 +470,29 @@ Tue Feb 24 01:41:30 +05 2026
 -------------------------------------
 Tue Feb 24 22:12:30 +05 2026
 
+[main b05ec87] update configuration
+ 27 files changed, 648 insertions(+), 275 deletions(-)
+ create mode 100644 .config/nvim/init.lua.bak
+ create mode 100644 .config/nvim/init1.lua
+ create mode 100644 .config/nvim/lua/core/autocmds.lua
+ create mode 100644 .config/nvim/lua/core/commands.lua
+ create mode 100644 .config/nvim/lua/core/keymap.lua
+ create mode 100644 .config/nvim/lua/core/lazy.lua
+ create mode 100644 .config/nvim/lua/core/options.lua
+ create mode 100644 .config/nvim/lua/plugins/alpha-nvim.lua
+ create mode 100644 .config/nvim/lua/plugins/bufferline.lua
+ create mode 100644 .config/nvim/lua/plugins/comment.lua
+ create mode 100644 .config/nvim/lua/plugins/indent-blankline.lua
+ create mode 100644 .config/nvim/lua/plugins/lualine.lua
+ create mode 100644 .config/nvim/lua/plugins/neo-tree.lua
+ create mode 100644 .config/nvim/lua/plugins/neoscroll.lua
+ create mode 100644 .config/nvim/lua/plugins/nvim-colorizer.lua
+ create mode 100644 .config/nvim/lua/plugins/nvim-lspconfig.lua
+ create mode 100644 .config/nvim/lua/plugins/nvim.lua
+ create mode 100644 .config/nvim/lua/plugins/telescope.lua
+ create mode 100644 .config/nvim/lua/plugins/treesitter.lua
+ create mode 100644 .config/nvim/lua/plugins/vim-suda.lua
+ create mode 100644 .config/nvim/lua/plugins/vscode.lua
+-------------------------------------
+Tue Feb 24 22:26:39 +05 2026
+
