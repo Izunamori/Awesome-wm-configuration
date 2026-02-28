@@ -45,6 +45,8 @@ alias zel="zellij a; or zellij"
 
 alias ago="/home/izunamori/.config/awesome/scripts/functional/installed-days-ago-fetch.sh"
 
+alias dsupd="~/.config/awesome/scripts/functional/discord_update.sh"
+
 #################
 
 #########################
@@ -52,7 +54,7 @@ alias ago="/home/izunamori/.config/awesome/scripts/functional/installed-days-ago
 #########################
 if status is-login
     if test -z "$DISPLAY"
-        if test (tty) = "/dev/tty1"
+        if test (tty) = /dev/tty1
             exec startx
         end
     end

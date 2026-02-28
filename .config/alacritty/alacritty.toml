@@ -4,7 +4,7 @@
 [window]
 padding = { x = 20, y = 20 }
 decorations = "full"
-opacity = 1
+opacity = 0.9
 
 [scrolling]
 history = 10000
@@ -15,20 +15,28 @@ multiplier = 3
 size = 15
 
 [font.normal]
-family = "Ubuntu Mono" # Terminus
+family = "UbuntuMono Nerd Font" # Terminus
 style = "Bold"
 
 [font.bold]
-family = "Ubuntu Mono"
+family = "UbuntuMono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "Ubuntu Mono"
+family = "UbuntuMono Nerd Font"
 style = "Bold Italic"
 
 [font.bold_italic]
-family = "Ubuntu Mono"
+family = "UbuntuMono Nerd Font"
 style = "Bold Italic"
+
+[font.offset]
+x = 0
+y = 0
+
+[font.glyph_offset]
+x = 0
+y = 0
 
 # Cursor
 [cursor]
@@ -86,3 +94,6 @@ matches = { foreground = "#151515", background = "#8C977D" }
 focused_match = { foreground = "#151515", background = "#D9BC8C" }
 
 [terminal]
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"

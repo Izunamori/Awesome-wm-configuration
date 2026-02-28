@@ -496,3 +496,10 @@ Tue Feb 24 22:12:30 +05 2026
 -------------------------------------
 Tue Feb 24 22:26:39 +05 2026
 
+[main 973b273] update configuration
+ 4 files changed, 27 insertions(+), 85 deletions(-)
+ delete mode 100644 .config/fish/functions/fish_user_key_bindings.fish
+ delete mode 100644 .config/nvim/init1.lua
+-------------------------------------
+Sat Feb 28 21:41:38 +05 2026
+
