@@ -339,7 +339,7 @@ scripts = {
 
 programs = {
     { "Steam", "steam"},
-    { "Obsidian", "obsidian"},
+    { "Obsidian", "obsidian --force-device-scale-factor=1.5"},
     { "Helvum", "helvum"},
 }
 

@@ -80,6 +80,8 @@ globalkeys = gears.table.join(
         {description = "| запустить OBS Studio", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/toggle_comp.sh") end,
         {description = "| выкл/вкл композитор", group = "Programs/scripts"}),
+    awful.key({ modkey, "Shift" }, "n", function () awful.util.spawn("obsidian --force-device-scale-factor=1.5") end,
+        {description = "| запустить Obsidian", group = "Programs/scripts"}),
 
 
         awful.key({}, "Control_R",
