@@ -288,7 +288,7 @@ awful.rules.rules = {
 			height = 1260,
 		},
 	},
-	{ -- 2240x1260
+	{ -- 2240x1280
 		rule_any = {
 			class = {
 				"nvim",
@@ -298,7 +298,7 @@ awful.rules.rules = {
 		properties = {
 			floating = true,
 			width = 2350,
-			height = 1260,
+			height = 1270,
 		},
 	},
 	{ -- 1920x1080
