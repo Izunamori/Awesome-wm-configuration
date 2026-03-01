@@ -10,7 +10,7 @@ makepkg -si
 
 ## My pkgs
 ```bash
-sudo pacman -Syyu iv4l2loopback-dkms magemagick lxappearance dmenu rofi satty reflector thunar steam tumbler ffmpegthumbs xorg-xset lsd ffmpegthumbnailer maim mpv fish ttf-jetbrains-mono playerctl ntfs-3g pavucontrol lib32-nvidia-utils gvfs polkit-gnome xcolor pipewire tela-circle-icon-theme-black pipewire-pulse engrampa zip unzip btop flatpak obs-studio jp2a discord gparted telegram-desktop gparted thunar-archive-plugin xclip aria2 --noconfirm
+sudo pacman -Syyu obsidian iv4l2loopback-dkms magemagick lxappearance dmenu rofi satty reflector thunar steam tumbler ffmpegthumbs xorg-xset lsd ffmpegthumbnailer maim mpv fish ttf-jetbrains-mono playerctl ntfs-3g pavucontrol lib32-nvidia-utils gvfs polkit-gnome xcolor pipewire tela-circle-icon-theme-black pipewire-pulse engrampa zip unzip btop flatpak obs-studio jp2a discord gparted telegram-desktop gparted thunar-archive-plugin xclip aria2 --noconfirm
 yay -S throne ttf-font-awesome ttf-jetbrains-mono-nerd polychromatic ttf-monocraft teamspeak opentabletdriver clipit xkb-switch --noconfirm
 ```
 
@@ -48,6 +48,13 @@ ln -s /mnt/HDD/pictures_linux ~/Pictures
 mkdir Videos
 mv ~/Videos ~/Videos.backup
 ln -s /mnt/HDD/videos_linux ~/Videos
+```
+
+## Nvidia settings (IMPORTANT)
+```bash
+echo 'options nvidia NVreg_RegistryDwords="PerfLevelSrc=0x2222"' | sudo tee /etc/modprobe.d/nvidia.conf
+```
+```
 ```
 
 ## setup xinitrc

@@ -339,6 +339,7 @@ scripts = {
 
 programs = {
     { "Steam", "steam"},
+    { "Obsidian", "obsidian"},
     { "Helvum", "helvum"},
 }
 
