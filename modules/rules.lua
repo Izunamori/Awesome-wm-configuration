@@ -115,7 +115,7 @@ awful.rules.rules = {
 		rule_any = {
 			class = {
 				"TeamSpeak",
-				-- "obs",
+				"obs",
 			},
 		},
 		properties = { tag = screen[2].tags[2], screen = 2 },
@@ -277,7 +277,7 @@ awful.rules.rules = {
 		properties = { maximized = true },
 	},
 
-	{
+	{ -- tile clients override
 		rule_any = {
 			class = {
 				"tile",
