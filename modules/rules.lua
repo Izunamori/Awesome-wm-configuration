@@ -66,6 +66,7 @@ awful.rules.rules = {
 		rule_any = { class = {
 			"v2rayN",
 			"OpenTabletDriver.UX",
+      "obsidian"
 		} },
 		properties = { tag = screen[1].tags[2], screen = 1 },
 	},
@@ -104,9 +105,10 @@ awful.rules.rules = {
 				"TelegramDesktop",
 				"AyuGram",
 				"vesktop",
-				"Projector - Scene: osu",
-				"Projector - Scene: Scene",
 			},
+      name = {
+        "Projector"
+      }
 		},
 		properties = { tag = screen[2].tags[1], screen = 2 },
 	},
@@ -115,8 +117,10 @@ awful.rules.rules = {
 		rule_any = {
 			class = {
 				"TeamSpeak",
-				"obs",
 			},
+      name = {
+        "OBS"
+      },
 		},
 		properties = { tag = screen[2].tags[2], screen = 2 },
 	},
@@ -131,29 +135,10 @@ awful.rules.rules = {
 	},
 
 	--- obs scene projector ------------
-	--[[     {
-      rule_any = { 
-        name = {
-          "Projector - Scene: osu",
-          "Projector - Scene: Scene"
-        }, },
-      properties = { floating = false }
-    },
-
-    {
-      rule_any = { 
-        name = {
-          "Projector - Scene: osu",
-          "Projector - Scene: Scene"
-        }, },
-      properties = { maximized = true }
-    }, ]]
-
 	{
 		rule_any = {
 			name = {
-				"Projector - Scene: osu",
-				"Projector - Scene: Scene",
+        "Projector"
 			},
 		},
 		properties = { fullscreen = false },
