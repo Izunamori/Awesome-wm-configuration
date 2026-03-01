@@ -128,7 +128,7 @@ awful.rules.rules = {
 	{ -- 3 tag
 		rule_any = {
 			class = {
-				"Nvidia-settings",
+				-- "Nvidia-settings",
 			},
 		},
 		properties = { tag = screen[2].tags[3], screen = 2 },
@@ -149,7 +149,7 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
-				"Nvidia-settings",
+				-- "Nvidia-settings",
 			},
 		},
 		properties = { minimized = true },
@@ -274,8 +274,11 @@ awful.rules.rules = {
 
 	{ -- 2240x1260
 		rule_any = {
+      role = {
+        "browser"
+      },
 			class = {
-				"firefox",
+				-- "firefox",
 			},
 			name = {},
 		},
@@ -319,12 +322,26 @@ awful.rules.rules = {
 			},
 			name = {
 				"Steam Settings",
+        "File"
 			},
 		},
 		properties = {
 			floating = true,
 			width = 1200,
 			height = 1000,
+		},
+	},
+  { -- 1200x800
+		rule_any = {
+			class = {},
+			name = {
+        "File"
+			},
+		},
+		properties = {
+			floating = true,
+			width = 1200,
+			height = 800,
 		},
 	},
 	{ -- 1000x800
@@ -356,9 +373,7 @@ awful.rules.rules = {
 	},
 	{ -- 800x600
 		rule_any = {
-			class = {
-				"    ",
-			},
+			class = {},
 			name = {},
 		},
 		properties = {
