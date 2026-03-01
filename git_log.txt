@@ -503,3 +503,32 @@ Tue Feb 24 22:26:39 +05 2026
 -------------------------------------
 Sat Feb 28 21:41:38 +05 2026
 
+[main c781be2] update configuration
+ 33 files changed, 621 insertions(+), 593 deletions(-)
+ create mode 100644 .config/nvim.old/init.lua
+ rename .config/{nvim => nvim.old}/init.lua.bak (100%)
+ rename .config/{nvim => nvim.old}/lazy-lock.json (94%)
+ rename .config/{nvim => nvim.old}/lua/core/autocmds.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/core/commands.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/core/keymap.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/core/lazy.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/core/options.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/alpha-nvim.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/bufferline.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/comment.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/indent-blankline.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/lualine.lua (100%)
+ create mode 100644 .config/nvim.old/lua/plugins/neo-tree.lua
+ rename .config/{nvim => nvim.old}/lua/plugins/neoscroll.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/nvim-colorizer.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/nvim-lspconfig.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/nvim.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/telescope.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/treesitter.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/vim-suda.lua (100%)
+ rename .config/{nvim => nvim.old}/lua/plugins/vscode.lua (100%)
+ delete mode 100644 .config/nvim/init.lua
+ delete mode 100644 .config/nvim/lua/plugins/neo-tree.lua
+-------------------------------------
+Sun Mar  1 13:00:20 +05 2026
+

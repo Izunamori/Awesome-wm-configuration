@@ -121,6 +121,15 @@ awful.rules.rules = {
 		properties = { tag = screen[2].tags[2], screen = 2 },
 	},
 
+	{ -- 3 tag
+		rule_any = {
+			class = {
+				"Nvidia-settings",
+			},
+		},
+		properties = { tag = screen[2].tags[3], screen = 2 },
+	},
+
 	--- obs scene projector ------------
 	--[[     {
       rule_any = { 
@@ -150,6 +159,16 @@ awful.rules.rules = {
 		properties = { fullscreen = false },
 	},
 	------------------------------------
+
+	--- Minimized clients ---
+	{
+		rule_any = {
+			class = {
+				"Nvidia-settings",
+			},
+		},
+		properties = { minimized = true },
+	},
 
 	--- Floating clients ---
 	{
