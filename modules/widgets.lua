@@ -334,6 +334,7 @@ scripts = {
     { "Full update", terminal .. " -e yay -Suy --ignore wireplumber --noconfirm" },
     { "Flatpak update", terminal .. " -e flatpak update"},
     { "Update hosts", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/update_hosts.sh"},
+    { "Zapret", terminal .. " -e ~/Git/zapret-discord-youtube-linux/service.sh"},
     { "git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/git_push_dotfiles.sh"},
 }
 
