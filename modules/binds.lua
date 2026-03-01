@@ -64,7 +64,7 @@ globalkeys = gears.table.join(
         {description = "| запустить osu! (Wine)", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "o", function () awful.util.spawn("otd-gui") end,
         {description = "| запустить OpenTabletDriver", group = "Programs/scripts"}),
-    awful.key({ modkey, "Shift" }, "v", function () awful.util.spawn("throne") end,
+    awful.key({ modkey, "Shift", "Control" }, "v", function () awful.util.spawn("throne") end,
         {description = "| запустить VPN", group = "Programs/scripts"}),
     awful.key({ modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/functional/colorpicker.sh") end,
         {description = "| запустить Colorpicker", group = "Programs/scripts"}),
@@ -161,8 +161,10 @@ globalkeys = gears.table.join(
         {description = "| переместить окно вниз", group = "Window management"}),
     awful.key({ "Control", "Mod1" }, "d", function (c) awful.client.swap.bydirection("right", c) end,
         {description = "| переместить окно вправо", group = "Window management"}),
-        awful.key({ "Control", "Mod1" }, "x", function (c) awful.placement.centered(c) end,
+    awful.key({ "Control", "Mod1" }, "x", function (c) awful.placement.centered(c) end,
         {description = "| переместить окно вправо", group = "Window management"}),
+    awful.key({ modkey, "Shift"}, "Tab", function (c) awful.client.movetoscreen(c) end,
+              {description = "переместить на другой монитор", group = "client"}),
 
     -- resize
     awful.key({ modkey, "Control" }, "a", function () awful.tag.incmwfact(0.09) end,
