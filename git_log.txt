@@ -633,3 +633,9 @@ Mon Mar  2 00:29:37 +05 2026
 -------------------------------------
 Mon Mar  2 00:37:19 +05 2026
 
+[main 608a0fb] update configuration
+ 4 files changed, 11 insertions(+), 2 deletions(-)
+ create mode 100644 .config/nvim/lua/plugins/suda.lua
+-------------------------------------
+Mon Mar  2 00:55:05 +05 2026
+

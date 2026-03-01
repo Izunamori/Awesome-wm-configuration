@@ -20,6 +20,16 @@ return {
     },
   },
 
+  {
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      opts.cmdline = {
+        view = "cmdline_popup",
+        position = { row = "100%", col = "50%", anchor = "SW" },
+      }
+    end,
+  },
+
   -- change trouble config
   {
     "folke/trouble.nvim",
