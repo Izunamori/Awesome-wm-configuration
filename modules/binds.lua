@@ -60,7 +60,7 @@ globalkeys = gears.table.join(
         {description = "| поменять гамму монитора", group = "Programs/scripts"}),
     awful.key({ modkey }, "o", function () awful.util.spawn("env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U") end,
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
-    awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/Git/osu-winello/osu-wine") end,
+    awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("env OBS_VKCAPTURE=1 obs-gamecapture osu-wine") end,
         {description = "| запустить osu! (Wine)", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "o", function () awful.util.spawn("otd-gui") end,
         {description = "| запустить OpenTabletDriver", group = "Programs/scripts"}),
