@@ -92,6 +92,7 @@ awful.rules.rules = {
 			"Steam",
 		}, name = {
 			"Steam",
+      "Lutris"
 		} },
 		properties = { tag = screen[1].tags[5], screen = 1 },
 	},
