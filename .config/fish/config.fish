@@ -14,7 +14,7 @@ printf "\e[4 q"
 
 # /home/izunamori/.config/awesome/scripts/functional/installed-days-ago-fetch.sh
 # echo ""
-fastfetch
+# fastfetch
 
 export PATH="$HOME/.local/bin:$PATH"
 

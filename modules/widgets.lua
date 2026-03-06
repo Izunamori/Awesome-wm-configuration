@@ -342,6 +342,7 @@ programs = {
     { "Steam", "steam"},
     { "Obsidian", "obsidian --force-device-scale-factor=1.5"},
     { "Helvum", "helvum"},
+    { "Danser", "danser"},
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
