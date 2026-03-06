@@ -184,7 +184,7 @@ awful.rules.rules = {
 				"satty",
 				"qBittorrent",
 				"Lutris",
-				"firefox",
+				-- "firefox",
 				"steam",
 				"Throne",
 			},
@@ -276,7 +276,7 @@ awful.rules.rules = {
 	{ -- 2240x1260
 		rule_any = {
       role = {
-        "browser"
+        -- "browser"
       },
 			class = {
 				-- "firefox",
