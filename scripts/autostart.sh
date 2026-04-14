@@ -38,7 +38,6 @@ gsettings set org.gnome.system.proxy.socks host '127.0.0.1'
 gsettings set org.gnome.system.proxy.socks port 2080
 # pgrep -x nvidia-settings || nvidia-settings &
 # gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &
-systemctl --user restart pipewire pipewire-pulse wireplumber
 
 # ---------- ### Programs ### ---------- #
 pgrep -x Throne || throne -silent&

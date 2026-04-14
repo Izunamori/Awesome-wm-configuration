@@ -58,7 +58,7 @@ globalkeys = gears.table.join(
         {description = "| запустить Firefox", group = "Programs/scripts"}),
     awful.key({ modkey, "Mod1" }, "g", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/gamma.sh") end,
         {description = "| поменять гамму монитора", group = "Programs/scripts"}),
-    awful.key({ modkey }, "o", function () awful.util.spawn("env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U") end,
+    awful.key({ modkey }, "o", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/lazer-low-latency.sh") end, -- env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
     awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("env OBS_VKCAPTURE=1 obs-gamecapture osu-wine") end,
         {description = "| запустить osu! (Wine)", group = "Programs/scripts"}),
