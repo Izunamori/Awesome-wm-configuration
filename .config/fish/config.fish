@@ -3,7 +3,6 @@ if status is-interactive
 end
 
 function fish_prompt
-    echo
     echo -n (prompt_pwd) "> " # ➜ ➤ ➦ ➥ ➔ ❯ ❱ ➭ ➙ ➽ ➼ 
 end
 

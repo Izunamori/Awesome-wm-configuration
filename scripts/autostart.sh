@@ -32,11 +32,16 @@ pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 99% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
 pactl set-source-volume \@DEFAULT_SOURCE@ 100% &
-pactl load-module module-null-sink sink_name=Discord_Audio sink_properties=device.description=Discord_Audio
+# pactl load-module module-null-sink sink_name=Discord_Audio sink_properties=device.description=Discord_Audio
+gsettings set org.gnome.system.proxy mode 'manual'
+gsettings set org.gnome.system.proxy.socks host '127.0.0.1'
+gsettings set org.gnome.system.proxy.socks port 2080
 # pgrep -x nvidia-settings || nvidia-settings &
 # gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' &
+systemctl --user restart pipewire pipewire-pulse wireplumber
 
 # ---------- ### Programs ### ---------- #
+pgrep -x Throne || throne -silent&
 pgrep -x steam || steam -silent &
 pgrep -x Discord || /home/izunamori/Apps/Discord/Discord &
 
