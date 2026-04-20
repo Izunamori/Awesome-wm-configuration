@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export OSU_CLIENT_ID:51989
+SETUVAR --export OSU_CLIENT_SECRET:DMSbL0UAiRGNgW8quK7P9DOXb39evRGCKOaYXmSp
 SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:
 SETUVAR fish_user_paths:/home/izunamori/\x2elocal/share/nvim/lazy/fzf/bin

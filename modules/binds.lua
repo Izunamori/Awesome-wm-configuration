@@ -131,6 +131,8 @@ globalkeys = gears.table.join(
         {description = "| открыть Яндекс почту", group = "Sites"}),
     awful.key({ "Mod1", "Mod4", "Control" }, "w", function () awful.util.spawn(browser .. " https://terraria.wiki.gg/ru/") end,
         {description = "| открыть Terraria wiki", group = "Sites"}),
+    awful.key({ "Mod1", "Mod4", "Control" }, "n", function () awful.util.spawn(browser .. " https://to-do.live.com/tasks/") end,
+        {description = "| открыть Microsoft To Do", group = "Sites"}),
     
     --- media ---
     awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause") end,
