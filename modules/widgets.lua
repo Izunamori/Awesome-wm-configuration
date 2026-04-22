@@ -343,6 +343,7 @@ programs = {
     { "Obsidian", "obsidian --force-device-scale-factor=1.5"},
     { "Helvum", "helvum"},
     { "Danser", "danser"},
+    { "Mppr", "/home/izunamori/.config/awesome/scripts/functional/Mapperatorinator.sh"},
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
