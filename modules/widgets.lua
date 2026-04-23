@@ -335,6 +335,7 @@ scripts = {
     { "Flatpak update", terminal .. " -e flatpak update"},
     { "Update hosts", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/update_hosts.sh"},
     { "Zapret", terminal .. " -e /home/izunamori/Git/zapret-discord-youtube-linux/service.sh"},
+    { "Exposure", terminal .. " -e v4l2-ctl -d /dev/video0 --set-ctrl=exposure_time_absolute=400"},
     { "Git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/git_push_dotfiles.sh"},
 }
 
