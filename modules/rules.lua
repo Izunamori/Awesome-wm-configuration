@@ -383,6 +383,17 @@ awful.rules.rules = {
 			height = 600,
 		},
 	},
+		{ -- 200x100
+		rule_any = {
+			class = {},
+			name = {"Create New Folder"},
+		},
+		properties = {
+			floating = true,
+			width = 300,
+			height = 100,
+		},
+	},
 
 	{ -- gaps ~18px
 		rule = { class = "discord" },
