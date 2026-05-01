@@ -16,6 +16,7 @@ printf "\e[4 q"
 # fastfetch
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/home/izunamori/.dotnet/tools"
 
 #### Aliases ####
 
