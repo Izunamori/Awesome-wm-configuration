@@ -66,7 +66,8 @@ awful.rules.rules = {
 		rule_any = { class = {
 			"v2rayN",
 			"OpenTabletDriver.UX",
-      "obsidian"
+      		"obsidian",
+			"Lutris"
 		} },
 		properties = { tag = screen[1].tags[2], screen = 1 },
 	},
@@ -92,7 +93,6 @@ awful.rules.rules = {
 			"Steam",
 		}, name = {
 			"Steam",
-      "Lutris"
 		} },
 		properties = { tag = screen[1].tags[5], screen = 1 },
 	},

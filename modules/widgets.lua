@@ -336,6 +336,7 @@ scripts = {
     { "Update hosts", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/update_hosts.sh"},
     { "Zapret", terminal .. " -e /home/izunamori/Git/zapret-discord-youtube-linux/service.sh"},
     { "Exposure", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/fix-exposure.sh"},
+    { "fix HDD", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/fix-hdd.sh"},
     { "Git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/git_push_dotfiles.sh"},
 }
 

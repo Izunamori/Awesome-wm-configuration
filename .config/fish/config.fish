@@ -47,7 +47,7 @@ alias ago="/home/izunamori/.config/awesome/scripts/functional/installed-days-ago
 
 alias dsupd="~/.config/awesome/scripts/functional/discord_update.sh"
 
-alias steam-ni='nohup sg no-internet -c "steam"'
+alias steam-ni='firejail --net=none steam'
 
 #################
 

@@ -42,7 +42,7 @@ gsettings set org.gnome.system.proxy.socks port 2080
 # ---------- ### Programs ### ---------- #
 pgrep -x Throne || throne -silent&
 pgrep -x steam || steam -silent &
-pgrep -x Discord || /home/izunamori/Apps/Discord/Discord &
+pgrep -x Discord || /home/izunamori/Apps/Discord/discord &
 
 # ---------- ### Deferred ### ---------- #
 sleep 3
