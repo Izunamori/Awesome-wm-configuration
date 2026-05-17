@@ -67,7 +67,8 @@ awful.rules.rules = {
 			"v2rayN",
 			"OpenTabletDriver.UX",
       		"obsidian",
-			"Lutris"
+			"Lutris",
+			"Gale"
 		} },
 		properties = { tag = screen[1].tags[2], screen = 1 },
 	},
@@ -334,7 +335,7 @@ awful.rules.rules = {
 	},
   { -- 1200x800
 		rule_any = {
-			class = {},
+			class = {"Gale"},
 			name = {
         "File"
 			},
