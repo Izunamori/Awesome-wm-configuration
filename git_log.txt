@@ -766,3 +766,11 @@ Sat May  2 02:55:40 AM +05 2026
 -------------------------------------
 Sat May 16 10:51:25 AM +05 2026
 
+[main aad41ae] update configuration
+ 9 files changed, 20 insertions(+), 5 deletions(-)
+ create mode 100755 scripts/functional/copy-engine.sh
+ create mode 100755 scripts/functional/fix-hdd.sh
+ create mode 100755 scripts/functional/steam-no-internet.sh
+-------------------------------------
+Sun May 17 06:04:33 PM +05 2026
+

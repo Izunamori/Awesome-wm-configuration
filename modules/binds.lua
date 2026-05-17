@@ -74,6 +74,8 @@ globalkeys = gears.table.join(
         {description = "| запустить Btop (системный монитор)", group = "Programs/scripts"}),
     awful.key({ "Control", "Shift" }, "n", function () awful.util.spawn(terminal .. " --class tile -e nvtop") end,
         {description = "| запустить NVtop (системный монитор Nvidia)", group = "Programs/scripts"}),
+    awful.key({ modkey }, "g", function () awful.util.spawn("/usr/share/applications/Gale.desktop") end,
+        {description = "| запустить NVtop (системный монитор Nvidia)", group = "Programs/scripts"}),
     awful.key({ modkey, "Mod1" }, "r", function () awful.util.spawn("obs") end,
         {description = "| запустить OBS Studio", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/toggle_comp.sh") end,
