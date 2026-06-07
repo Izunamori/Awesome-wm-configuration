@@ -341,6 +341,7 @@ scripts = {
 }
 
 programs = {
+    { "Torii", "/home/izunamori/.config/awesome/scripts/functional/torii-low-latency.sh"},
     { "Steam", "steam"},
     { "Obsidian", "obsidian --force-device-scale-factor=1.5"},
     { "Helvum", "helvum"},

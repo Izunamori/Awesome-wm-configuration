@@ -20,12 +20,14 @@ export PATH="$PATH:/home/izunamori/.dotnet/tools"
 
 #### Aliases ####
 
-# default commands
+# default commands & other
 alias s="yay -q"
 alias p="sudo pacman"
 alias ls="lsd"
 alias pizdec="archarchive"
 alias reboot="paplay /home/izunamori/.config/awesome/sounds/windows-xp-shutdown.wav >/dev/null 2>&1; /sbin/reboot"
+alias steam-ni='firejail --net=none steam'
+alias reflect="sudo reflector --country Russia --protocol https,http --latest 10 --sort rate --save /etc/pacman.d/mirrorlist"
 
 # git
 alias gp="git add * && git commit -m "None" && git push origin main"
@@ -46,8 +48,6 @@ alias zel="zellij a; or zellij"
 alias ago="/home/izunamori/.config/awesome/scripts/functional/installed-days-ago-fetch.sh"
 
 alias dsupd="~/.config/awesome/scripts/functional/discord_update.sh"
-
-alias steam-ni='firejail --net=none steam'
 
 #################
 

@@ -57,6 +57,7 @@ awful.rules.rules = {
 				"gamescope",
 				"factorio",
 				"portal2_linux",
+				"torii",
 			},
 		},
 		properties = { tag = screen[1].tags[1], screen = 1 },
@@ -398,6 +399,16 @@ awful.rules.rules = {
 
 	{ -- gaps ~18px
 		rule = { class = "discord" },
+		properties = {
+			floating = true, -- нужно, чтобы можно было задать размер и позицию
+			width = 1500,
+			height = 1052,
+			x = 0, -- позиция по X
+			y = 308, -- позиция по Y
+		},
+	},
+	{ -- gaps ~18px
+		rule = { class = "vesktop" },
 		properties = {
 			floating = true, -- нужно, чтобы можно было задать размер и позицию
 			width = 1500,
