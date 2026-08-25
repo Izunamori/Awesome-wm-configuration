@@ -19,4 +19,4 @@ tar -xzvf ~/discord.tar.gz -C ~/Apps/
 rm ~/discord.tar.gz
 
 # Запускаем Discord
-~/Apps/Discord/Discord > /dev/null 2>&1 &
+~/Apps/Discord/discord > /dev/null 2>&1 &

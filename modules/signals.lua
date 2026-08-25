@@ -36,8 +36,9 @@ local my_calendar = calendar({
 local urgent_exclude = {
 	class = {
 		AYUGRAMDESKTOP = true,
+		TELEGRAMDESKTOP = true,
 		DISCORD = true,
-		--STEAM = true,
+		STEAM = true,
 		VESKTOP = true,
 	},
 	instance = {},
@@ -107,7 +108,7 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 --- Centering windows ---
-local no_center = { "discord", "AyuGramDesktop" } -- Excludes
+local no_center = { "discord", "AyuGramDesktop", "TelegramDesktop", "vesktop" } -- Excludes
 client.connect_signal("manage", function(c)
 	local skip = false
 	for _, class in ipairs(no_center) do

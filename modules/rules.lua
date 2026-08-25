@@ -84,7 +84,7 @@ awful.rules.rules = {
 	{ -- 4 tag
 		rule_any = { class = {
 			"jetbrains-rider",
-			"Code",
+			"code",
 			"nvim",
 		} },
 		properties = { tag = screen[1].tags[4], screen = 1 },
@@ -232,7 +232,9 @@ awful.rules.rules = {
 				"Terraria.bin.x86_64",
 				"steam",
 				"discord",
+				"vesktop",
 				"AyuGramDesktop",
+				"TelegramDesktop",
 			},
 			name = {},
 		},
@@ -418,7 +420,7 @@ awful.rules.rules = {
 		},
 	},
 	{
-		rule = { class = "AyuGramDesktop" },
+		rule = { class = "TelegramDesktop" },
 		properties = {
 			floating = true, -- нужно, чтобы можно было задать размер и позицию
 			width = 420,

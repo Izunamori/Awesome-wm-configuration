@@ -341,12 +341,11 @@ scripts = {
 }
 
 programs = {
-    { "Torii", "/home/izunamori/.config/awesome/scripts/functional/torii-low-latency.sh"},
+    { "NuPhy", "chromium https://drive.nuphy.io/"},
     { "Steam", "steam"},
-    { "Obsidian", "obsidian --force-device-scale-factor=1.5"},
+    { "Obsidian", "obsidian --force-device-scale-factor=1.25"},
     { "Helvum", "helvum"},
     { "Danser", "danser"},
-    { "Mppr", "/home/izunamori/.config/awesome/scripts/functional/Mapperatorinator.sh"},
 }
 
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
@@ -488,6 +487,7 @@ awful.screen.connect_for_each_screen(function(s)
         position = "top",
         screen   = s,
         height   = 28,
+        visible  = s.index ~= 1,
         -- width    = 1500
     })
 

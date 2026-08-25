@@ -60,13 +60,13 @@ globalkeys = gears.table.join(
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
     awful.key({ "Control", modkey }, "o", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/torii-low-latency.sh") end, -- env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
-    awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("env OBS_VKCAPTURE=1 obs-gamecapture osu-wine") end,
+    awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("osu-wine") end,
         {description = "| запустить osu! (Wine)", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "o", function () awful.util.spawn("otd-gui") end,
         {description = "| запустить OpenTabletDriver", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift", "Control" }, "v", function () awful.util.spawn("throne") end,
         {description = "| запустить VPN", group = "Programs/scripts"}),
-    awful.key({ modkey }, "c", function () awful.util.spawn(".config/awesome/scripts/functional/colorpicker.sh") end,
+    awful.key({ modkey, "Shift" }, "c", function () awful.util.spawn(".config/awesome/scripts/functional/colorpicker.sh") end,
         {description = "| запустить Colorpicker", group = "Programs/scripts"}),
     awful.key({ modkey }, "e", function () awful.util.spawn(filemanager) end,
         {description = "| запустить файловый менеджер", group = "Programs/scripts"}),
@@ -93,6 +93,17 @@ globalkeys = gears.table.join(
         end)
     end,
     {description = "Toggle mic", group = "custom"}),
+
+    --- Hide/show wibar on main monitor ---
+    awful.key({
+        modkey,
+    }, "c", function()
+        local s = awful.screen.focused()
+
+        if s.index == 1 and s.mywibox then
+            s.mywibox.visible = not s.mywibox.visible
+        end
+    end),
 
     --- monitor focus swap ---
     awful.key({ modkey }, "Tab", function()

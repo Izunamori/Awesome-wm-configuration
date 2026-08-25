@@ -64,4 +64,4 @@ end
 #########################
 
 # starship init fish | source
-pyenv init - | source
+# pyenv init - | source
