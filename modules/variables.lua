@@ -27,7 +27,7 @@ beautiful.init(".config/awesome/themes/default/theme.lua")
 
 --- {{{ Global Variables }}} ---
 terminal = "alacritty"
-browser = "firefox"
+browser = "zen-browser"
 filemanager = "thunar"
 editor = "/home/izunamori/Apps/VSCode-linux-x64/code" --terminal .. " --class nvim -o font.size=18 -o window.padding.x=10 -o window.padding.y=10 -e nvim"
 microphone = "alsa_input.usb-Focusrite_Scarlett_2i2_USB-00.HiFi__Mic1__source"

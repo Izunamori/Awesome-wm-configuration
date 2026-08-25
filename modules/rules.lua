@@ -77,6 +77,7 @@ awful.rules.rules = {
 	{ -- 3 tag
 		rule_any = { class = {
 			"firefox",
+			"zen",
 		} },
 		properties = { tag = screen[1].tags[3], screen = 1 },
 	},
