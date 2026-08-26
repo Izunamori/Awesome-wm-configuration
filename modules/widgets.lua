@@ -331,7 +331,6 @@ myawesomemenu = {
 scripts = {
     { "xprop", "alacritty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE|WINDOW_TYPE)\"; read -p \"Press Enter to continue...\"'"},
     { "music > YADisk", terminal .. " -e rclone sync /mnt/HDD/MUSIC/ Yandex:Music/ --progress -v" },
-    { "music < YADisk", terminal .. " -e rclone sync Yandex:Music/ /mnt/HDD/MUSIC/ --progress -v" },
     { "Discord Update", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/discord_update.sh" },
     { "Full update", terminal .. " -e yay -Suy --ignore wireplumber --noconfirm" },
     { "Flatpak update", terminal .. " -e flatpak update"},
@@ -339,6 +338,7 @@ scripts = {
     { "Zapret", terminal .. " -e /home/izunamori/Git/zapret-discord-youtube-linux/service.sh"},
     { "Exposure", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/fix-exposure.sh"},
     { "fix HDD", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/fix-hdd.sh"},
+    { "music < YADisk", terminal .. " -e rclone sync Yandex:Music/ /mnt/HDD/MUSIC/ --progress -v" },
     { "Git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/git_push_dotfiles.sh"},
 }
 
