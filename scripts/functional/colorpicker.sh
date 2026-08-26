@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xcolor --format=hex | xclip -selection clipboard
+xcolor --format=hex | tr -d '\n' | xclip -selection clipboard

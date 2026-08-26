@@ -44,10 +44,13 @@ echo -e 'Section "InputClass"
 cd
 mkdir Pictures
 mv ~/Pictures ~/Pictures.backup
-ln -s /mnt/HDD/pictures_linux ~/Pictures
+ln -s /mnt/HDD/PICTURES ~/Pictures
 mkdir Videos
 mv ~/Videos ~/Videos.backup
-ln -s /mnt/HDD/videos_linux ~/Videos
+ln -s /mnt/HDD/VIDEOS ~/Videos
+mkdir Music
+mv ~/Music ~/Music.backup
+ln -s /mnt/HDD/MUSIC ~/Music
 ```
 
 ## Nvidia settings (IMPORTANT)

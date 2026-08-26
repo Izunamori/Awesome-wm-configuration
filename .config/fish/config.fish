@@ -65,3 +65,5 @@ end
 
 # starship init fish | source
 # pyenv init - | source
+
+fish_add_path /home/izunamori/.spicetify
