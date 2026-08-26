@@ -97,7 +97,7 @@ globalkeys = gears.table.join(
     --- Hide/show wibar on main monitor ---
     awful.key({
         modkey,
-    }, "w", function()
+    }, "c", function()
         local s = awful.screen.focused()
 
         if s.index == 1 and s.mywibox then
@@ -210,7 +210,7 @@ globalkeys = gears.table.join(
     --     end,
     --     {description = "| предыдущий клиент", group = "Window management"}
     -- ),
-    awful.key({ modkey, }, "c", function () mymainmenu:show() end,
+    awful.key({ modkey, }, "w", function () mymainmenu:show() end,
         {description = "| показать главное меню", group = "Awesome"}),
 
     -- Standard program
