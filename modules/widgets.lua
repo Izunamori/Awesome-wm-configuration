@@ -344,8 +344,8 @@ scripts = {
 
 programs = {
     { "NuPhy", "chromium https://drive.nuphy.io/"},
+    { "Music", "tauon"},
     { "Steam", "steam"},
-    { "Obsidian", "obsidian --force-device-scale-factor=1.25"},
     { "Helvum", "helvum"},
     { "Danser", "danser"},
 }
@@ -414,58 +414,72 @@ local tasklist_buttons = gears.table.join(
                                           end))
 
 
+local mysystray = wibox.widget.systray()
+mysystray:set_base_size(20)
+mysystray:set_screen(screen[2])
+
+local centered_systray = wibox.container.place(mysystray)
+centered_systray.valign = "center"
+
+local systray_on_second = awful.widget.only_on_screen(
+    centered_systray,
+    2
+)
+
 awful.screen.connect_for_each_screen(function(s)
 
-    --- Tags ---
     if s.index == 1 then
-        -- 1 Monitor
-        awful.tag({ "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  " }, s, awful.layout.layouts[1])
+        awful.tag(
+            { "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  " },
+            s,
+            awful.layout.layouts[1]
+        )
     else
-        -- 2 Monitor (other monitors)
-        awful.tag({ "  ✦  ", "  ✦  ", "  >_  "  }, s, awful.layout.layouts[1])
+        awful.tag(
+            { "  ✦  ", "  ✦  ", "  ✦  ", "  >_  " },
+            s,
+            awful.layout.layouts[1]
+        )
     end
 
-    -- Backup tag when restart
     local f = io.open("/tmp/awesome_tag_state_" .. s.index, "r")
+
     if f then
         local last_tag_index = tonumber(f:read("*all"))
         f:close()
+
         if last_tag_index and s.tags[last_tag_index] then
             s.tags[last_tag_index]:view_only()
         end
     end
 
-    --- {{{ Sys tray }}} ---
-    
-    --- Icons size ---
-    local mysystray = wibox.widget.systray()
-    mysystray:set_base_size(20)
-    
-    local centered_systray = wibox.container.place(mysystray)
-    centered_systray.valign = "center"
-    ------------------------
-
-    -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
-    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
+
     s.mylayoutbox = awful.widget.layoutbox(s)
+
     s.mylayoutbox:buttons(gears.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
-    -- Create a taglist widget
+        awful.button({}, 1, function()
+            awful.layout.inc(1)
+        end),
+        awful.button({}, 3, function()
+            awful.layout.inc(-1)
+        end),
+        awful.button({}, 4, function()
+            awful.layout.inc(1)
+        end),
+        awful.button({}, 5, function()
+            awful.layout.inc(-1)
+        end)
+    ))
+
     s.mytaglist = awful.widget.taglist {
-    screen  = s,
-    filter  = awful.widget.taglist.filter.all,
-    buttons = taglist_buttons,
+        screen = s,
+        filter = awful.widget.taglist.filter.all,
+        buttons = taglist_buttons,
     }
 
-
-    -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
-        screen  = s,
+        screen = s,
         buttons = tasklist_buttons,
 
         filter = function(c, screen)
@@ -475,38 +489,40 @@ awful.screen.connect_for_each_screen(function(s)
         source = function()
             local clients = client.get()
             local filtered = {}
+
             for _, c in ipairs(clients) do
                 if awful.widget.tasklist.filter.currenttags(c, s) then
                     table.insert(filtered, c)
                 end
             end
+
             return gears.table.reverse(filtered)
         end,
     }
 
-    -- Create the wibox
     s.mywibox = awful.wibar({
         position = "top",
-        screen   = s,
-        height   = 28,
-        visible  = s.index ~= 1,
-        -- width    = 1500
+        screen = s,
+        height = 28,
+        visible = s.index ~= 1,
     })
 
     s.mywibox:struts {
         top = s.mywibox.height
     }
 
-    --- Add widgets to wibar ---
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
-        { -- Left widgets
+
+        {
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
+
+        s.mytasklist,
+
+        {
             layout = wibox.layout.fixed.horizontal,
             sys_monitor,
             mic_widget,
@@ -514,13 +530,8 @@ awful.screen.connect_for_each_screen(function(s)
             mytextclock,
             calendar_widge,
             space_separator,
-            centered_systray,
+            systray_on_second,
             space_separator,
-            -- s.mylayoutbox,
-            -- cpu_widget(),
-            -- space_separator,
-            -- ram_widget(),
-            -- logout_menu_widget(),
         },
     }
 end)

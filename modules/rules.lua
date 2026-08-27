@@ -132,10 +132,20 @@ awful.rules.rules = {
 	{ -- 3 tag
 		rule_any = {
 			class = {
-				-- "Nvidia-settings",
+				"folderplay",
+				"tauonmb"
 			},
 		},
 		properties = { tag = screen[2].tags[3], screen = 2 },
+	},
+
+		{ -- 4 tag
+		rule_any = {
+			class = {
+				"Throne",
+			},
+		},
+		properties = { tag = screen[2].tags[4], screen = 2 },
 	},
 
 	--- obs scene projector ------------
@@ -339,7 +349,11 @@ awful.rules.rules = {
 	},
   { -- 1200x800
 		rule_any = {
-			class = {"Gale"},
+			class = {
+				"Gale",
+				"folderplay",
+				"tauonmb"
+		},
 			name = {
         "File"
 			},
