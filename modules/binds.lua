@@ -150,11 +150,11 @@ globalkeys = gears.table.join(
         {description = "| открыть Microsoft To Do", group = "Sites"}),
     
     --- media ---
-    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl play-pause") end,
+    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl --player=tauon,%any play-pause") end,
         {description = "| воспроизвести/пауза", group = "Media"}),
-    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl next") end,
+    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl --player=tauon,%any next") end,
         {description = "| следующий трек", group = "Media"}),
-    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl previous") end,
+    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl --player=tauon,%any previous") end,
         {description = "| предыдущий трек", group = "Media"}),
 
     --- window management ---
