@@ -323,6 +323,7 @@ awful.rules.rules = {
 			name = {
 				"Steam",
 				"mpv",
+				"org.nicotine_plus.Nicotine"
 			},
 		},
 		properties = {
