@@ -60,7 +60,7 @@ globalkeys = gears.table.join(
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
     awful.key({ "Control", modkey }, "o", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/torii-low-latency.sh") end, -- env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
-    awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("osu-wine") end,
+    awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("obs-gamecapture osu-wine") end,
         {description = "| запустить osu! (Wine)", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "o", function () awful.util.spawn("otd-gui") end,
         {description = "| запустить OpenTabletDriver", group = "Programs/scripts"}),
@@ -86,6 +86,8 @@ globalkeys = gears.table.join(
         {description = "| выкл/вкл композитор", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "n", function () awful.util.spawn("obsidian --force-device-scale-factor=1.25") end,
         {description = "| запустить Obsidian", group = "Programs/scripts"}),
+    awful.key({ "Mod1", "Mod4", "Control" }, "Escape", function () awful.spawn.with_shell("sleep 3; systemctl suspend") end,
+        {description = "| Спящий режим", group = "Programs/scripts"}),
 
 
         awful.key({}, "Control_R",
@@ -130,7 +132,7 @@ globalkeys = gears.table.join(
     --- Sites ---
     awful.key({ "Mod1", "Mod4", "Control" }, "a", function () awful.util.spawn(browser .. " https://aur.archlinux.org/") end,
         {description = "| открыть AUR", group = "Sites"}),
-    awful.key({ "Mod1", "Mod4", "Control" }, "t", function () awful.util.spawn(browser .. " https://translate.yandex.ru/") end,
+    awful.key({ "Mod1", "Mod4", "Control" }, "t", function () awful.util.spawn(browser .. " https://translate.google.com/") end,
         {description = "| открыть Переводчик", group = "Sites"}),
     awful.key({ "Mod1", "Mod4", "Control" }, "c", function () awful.util.spawn(browser .. " https://chatgpt.com/") end,
         {description = "| открыть ChatGPT", group = "Sites"}),
@@ -148,6 +150,10 @@ globalkeys = gears.table.join(
         {description = "| открыть Terraria wiki", group = "Sites"}),
     awful.key({ "Mod1", "Mod4", "Control" }, "n", function () awful.util.spawn(browser .. " https://to-do.live.com/tasks/") end,
         {description = "| открыть Microsoft To Do", group = "Sites"}),
+    awful.key({ "Mod1", "Mod4", "Control" }, "u", function () awful.util.spawn(browser .. " https://online.susu.ru/schedule") end,
+        {description = "| Открыть сайт универа", group = "Sites"}),
+    awful.key({ "Mod1", "Mod4", "Control" }, "l", function () awful.util.spawn(browser .. " https://www.youtube.com/watch?v=rFZHOHl-L8A") end,
+        {description = "| LO-FI Music", group = "Sites"}),
     
     --- media ---
     awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl --player=tauon,%any play-pause") end,

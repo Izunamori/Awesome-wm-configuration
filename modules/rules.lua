@@ -133,7 +133,7 @@ awful.rules.rules = {
 		rule_any = {
 			class = {
 				"folderplay",
-				"tauonmb"
+				"aonsoku"
 			},
 		},
 		properties = { tag = screen[2].tags[3], screen = 2 },
@@ -200,6 +200,7 @@ awful.rules.rules = {
 				-- "firefox",
 				"steam",
 				"Throne",
+				"flameshot",
 			},
 
 			-- Note that the name property shown in xprop might be set slightly after creation of the client

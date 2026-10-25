@@ -5,10 +5,10 @@ xrandr \
   --output DP-2 \
   --primary \
   --mode 2560x1440 \
-  --rate 164.83 \
+  --rate 239.97 \
   --pos 0x0 \
   --rotate normal \
-  --output HDMI-0 \
+  --output DP-0 \
   --mode 1920x1080 \
   --rate 165.00 \
   --pos -1920x280 \
@@ -20,6 +20,7 @@ pgrep -x clipit || clipit &
 picom --config ~/.config/awesome/.config/picom.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 otd-daemon &
+unclutter &
 export XDG_CURRENT_DESKTOP=gnome &
 export XDG_SESSION_DESKTOP=awesome &
 export GTK_USE_PORTAL=1 &

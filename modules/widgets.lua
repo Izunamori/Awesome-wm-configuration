@@ -31,7 +31,7 @@ local sys_monitor = wibox.widget {
         {
             id = 'sys_text',
             text = "System Monitor",
-            font = "Google Sans Flex Medium 11",
+            font = "BigBlueTermPlus Nerd Font 11",
             widget = wibox.widget.textbox
         },
         left = 10,
@@ -331,28 +331,35 @@ myawesomemenu = {
 scripts = {
     { "xprop", "alacritty -e sh -c 'xprop | grep -E \"(CLASS|WM_NAME|ROLE|WINDOW_TYPE)\"; read -p \"Press Enter to continue...\"'"},
     { "music > YADisk", terminal .. " -e rclone sync /mnt/HDD/MUSIC/ Yandex:Music/ --progress -v" },
-    { "Discord Update", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/discord_update.sh" },
+    { "Discord Update", terminal .. " -e /home/izunamori/.ome/scripts/functional/fix-hdd.sh"},
+    { "music < YADisk", terminal .. " -e rclone sync Yanconfig/awesome/scripts/functional/discord_update.sh" },
     { "Full update", terminal .. " -e yay -Suy --ignore wireplumber --noconfirm" },
     { "Flatpak update", terminal .. " -e flatpak update"},
     { "Update hosts", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/update_hosts.sh"},
     { "Zapret", terminal .. " -e /home/izunamori/Git/zapret-discord-youtube-linux/service.sh"},
     { "Exposure", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/fix-exposure.sh"},
-    { "fix HDD", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/fix-hdd.sh"},
-    { "music < YADisk", terminal .. " -e rclone sync Yandex:Music/ /mnt/HDD/MUSIC/ --progress -v" },
+    { "fix HDD", terminal .. " -e /home/izunamori/.config/awesdex:Music/ /mnt/HDD/MUSIC/ --progress -v" },
     { "Git push conf", terminal .. " -e /home/izunamori/.config/awesome/scripts/functional/git_push_dotfiles.sh"},
 }
 
 programs = {
     { "NuPhy", "chromium https://drive.nuphy.io/"},
-    { "Music", "tauon"},
+    { "Music", "/opt/Aonsoku/aonsoku %U"},
+    { "Math", "flatpak run com.github.scrivanolabs.scrivano"},
     { "Steam", "steam"},
     { "Helvum", "helvum"},
     { "Danser", "danser"},
 }
 
+otd = {
+    {"osu!", "otd loadsettings /home/izunamori/Documents/OTD_profiles/osu!.json"},
+    {"math", "otd loadsettings /home/izunamori/Documents/OTD_profiles/math.json"},
+}
+
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },                                    
                                     { "  Scripts", scripts },
                                     { "  Programs", programs },
+                                    { "  OTD", otd },
                                     -- { "FGG", "chromium https://hub.f.gg/"},                                                                     
                                   }
                         })
@@ -430,13 +437,13 @@ awful.screen.connect_for_each_screen(function(s)
 
     if s.index == 1 then
         awful.tag(
-            { "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  ", "  ✦  " },
+            { " * ", " * ", " * ", " * ", " * " },
             s,
             awful.layout.layouts[1]
         )
     else
         awful.tag(
-            { "  ✦  ", "  ✦  ", "  ✦  ", "  >_  " },
+            { " * ", " * ", " * ", " >_ " },
             s,
             awful.layout.layouts[1]
         )

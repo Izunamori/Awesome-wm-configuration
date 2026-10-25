@@ -2,7 +2,7 @@ configuration {
   modi:                   "drun";
   display-drun:           "✦";
   drun-display-format:    "{name}";
-  font:                   "Google Sans Flex Medium 12";
+  font:                   "BigBlueTermPlus Nerd Font 11";
   show-icons:             true;
   sorting-method:         "fzf";
   drun-match-fields:      "name,generic,exec";

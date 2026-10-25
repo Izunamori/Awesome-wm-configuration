@@ -13,22 +13,22 @@ multiplier = 3
 
 # Font
 [font]
-size = 15
+size = 18
 
 [font.normal]
-family = "UbuntuMono Nerd Font" # Terminus
+family = "BigBlueTermPlus Nerd Font" # Terminus
 style = "Bold"
 
 [font.bold]
-family = "UbuntuMono Nerd Font"
+family = "BigBlueTermPlus Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "UbuntuMono Nerd Font"
+family = "BigBlueTermPlus Nerd Font"
 style = "Bold Italic"
 
 [font.bold_italic]
-family = "UbuntuMono Nerd Font"
+family = "BigBlueTermPlus Nerd Font"
 style = "Bold Italic"
 
 [font.offset]
@@ -48,7 +48,7 @@ unfocused_hollow = false
 
 # Colors
 [colors.primary]
-background = "#0f0f0f"
+background = "#000000" #0f0f0f
 foreground = "#bfbfbf"
 
 # Normal colors
