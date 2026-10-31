@@ -58,8 +58,8 @@ globalkeys = gears.table.join(
         {description = "| поменять гамму монитора", group = "Programs/scripts"}),
     awful.key({ modkey }, "o", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/lazer-low-latency.sh") end, -- env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U
         {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
-    awful.key({ "Control", modkey }, "o", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/torii-low-latency.sh") end, -- env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U
-        {description = "| запустить osu!Lazer", group = "Programs/scripts"}),
+    awful.key({ "Control", modkey }, "o", function () awful.util.spawn("/home/izunamori/.config/awesome/scripts/functional/mosu-low-latency.sh") end, -- env OBS_VKCAPTURE=1 obs-gamecapture /home/izunamori/.local/bin/lazertweaks %U
+        {description = "| запустить Morasooma", group = "Programs/scripts"}),
     awful.key({ modkey, "Mod1" }, "o", function () awful.util.spawn("obs-gamecapture osu-wine") end,
         {description = "| запустить osu! (Wine)", group = "Programs/scripts"}),
     awful.key({ modkey, "Shift" }, "o", function () awful.util.spawn("otd-gui") end,
@@ -156,11 +156,11 @@ globalkeys = gears.table.join(
         {description = "| LO-FI Music", group = "Sites"}),
     
     --- media ---
-    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl --player=tauon,%any play-pause") end,
+    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("playerctl --player=aonsoku,%any play-pause") end,
         {description = "| воспроизвести/пауза", group = "Media"}),
-    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl --player=tauon,%any next") end,
+    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("playerctl --player=aonsoku,%any next") end,
         {description = "| следующий трек", group = "Media"}),
-    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl --player=tauon,%any previous") end,
+    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("playerctl --player=aonsoku,%any previous") end,
         {description = "| предыдущий трек", group = "Media"}),
 
     --- window management ---

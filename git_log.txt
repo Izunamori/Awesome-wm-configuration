@@ -874,3 +874,10 @@ Sat Aug 29 10:26:19 PM +05 2026
 -------------------------------------
 Sun Oct 25 01:49:58 PM +05 2026
 
+[main 188ab77] update configuration
+ 25 files changed, 435 insertions(+), 86 deletions(-)
+ create mode 100644 .config/pipewire/filter-chain/sink-dolby-pro-logic-ii.conf
+ create mode 100644 .config/pipewire/media-session.d/with-alsa
+-------------------------------------
+Sat Oct 31 10:24:22 AM +05 2026
+
